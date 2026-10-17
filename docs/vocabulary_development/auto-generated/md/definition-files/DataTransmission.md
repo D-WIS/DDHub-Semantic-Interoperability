@@ -378,12 +378,14 @@ Here is a class inheritance diagram for the verbs contained in this definition s
 ```mermaid
 classDiagram
 DWISVerb <|-- IsTransmittedBy
+DWISVerb <|-- SupportsTelemetry
 ```
 ## Relations
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
 ```mermaid
 erDiagram
 DrillingDataPoint ||--o{ Telemetry : IsTransmittedBy
+InstrumentInstance ||--o{ Telemetry : SupportsTelemetry
 ```
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
@@ -418,5 +420,44 @@ WHERE {
 	?downholeWOB_1 rdf:type ddhub:WOB .
 	?downholeWOB_1 ddhub:IsOfMeasurableQuantity ?ForceQuantity .
 	?downholeWOB_1 ddhub:IsTransmittedBy ?inductionCouplingTelemetry .
+}
+```
+## SupportsTelemetry <!-- VERB -->
+- Display name: SupportsTelemetry
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [InstrumentInstance](./InstrumentIdentity.md#InstrumentInstance)
+- Object class: [Telemetry](./DataTransmission.md#Telemetry)
+- Definition set: DataTransmission
+- Description: 
+Identifies a telemetry path available to an instrument in its deployed configuration, including a path supplied through attached MWD equipment. It does not assert that the instrument contains the transmitter or that every signal is actually transmitted on that path. Use IsTransmittedBy on each delivered data point for actual transport. Absence of this fact does not assert that a path is unsupported; complete allowed-path lists require deployment validation.
+- Examples:
+```dwis SupportsTelemetryExample
+InstrumentInstance:baseStarUnit
+MudPulseTelemetry:mwdMudPulsePath
+WiredPipeTelemetry:wiredPipePath
+baseStarUnit SupportsTelemetry mwdMudPulsePath
+baseStarUnit SupportsTelemetry wiredPipePath
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseStarUnit] -->|BelongsToClass| N0001(InstrumentInstance) 
+	N0002[mwdMudPulsePath] -->|BelongsToClass| N0003(MudPulseTelemetry) 
+	N0004[wiredPipePath] -->|BelongsToClass| N0005(WiredPipeTelemetry) 
+	N0000[baseStarUnit] -->|SupportsTelemetry| N0002[mwdMudPulsePath] 
+	N0000[baseStarUnit] -->|SupportsTelemetry| N0004[wiredPipePath] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?SupportsTelemetryExample
+WHERE {
+	?baseStarUnit rdf:type ddhub:InstrumentInstance .
+	?mwdMudPulsePath rdf:type ddhub:MudPulseTelemetry .
+	?wiredPipePath rdf:type ddhub:WiredPipeTelemetry .
+	?baseStarUnit ddhub:SupportsTelemetry ?mwdMudPulsePath .
+	?baseStarUnit ddhub:SupportsTelemetry ?wiredPipePath .
 }
 ```

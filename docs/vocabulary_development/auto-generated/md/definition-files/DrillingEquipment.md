@@ -15,7 +15,13 @@ PowerGenerationSystem <|-- ElectricalControlSystem
 PowerGenerationSystem <|-- PowerScrSystem
 RigEquipment <|-- HoistingSystem
 HoistingSystem <|-- RackAndPinionHoistingSystem
+RackAndPinionHoistingSystem <|-- RackAndPinionHydraulicDrive
+RackAndPinionHoistingSystem <|-- RackAndPinionElectricDrive
 HoistingSystem <|-- RamHoistingSystem
+RamHoistingSystem <|-- RamRig
+RamHoistingSystem <|-- HoistingCylinder
+HoistingCylinder <|-- HoistingCylinderCapChamber
+HoistingCylinder <|-- HoistingCylinderRodChamber
 HoistingSystem <|-- Derrick
 Derrick <|-- ConventionalDerrick
 Derrick <|-- SlantDerrick
@@ -27,7 +33,6 @@ HoistingSystem <|-- Drawworks
 Drawworks <|-- StandardElectricalDrawworks
 Drawworks <|-- MechanicalDrawworks
 Drawworks <|-- DieselElectricalDrawworks
-Drawworks <|-- RamRig
 HoistingSystem <|-- MechanicalBlock
 MechanicalBlock <|-- TravellingBlock
 MechanicalBlock <|-- CrownBlock
@@ -351,6 +356,7 @@ Casingwhiledrilling <|-- DirectionalCasingWhileDrilling
 DrillingEquipment <|-- LinerDrilling
 LinerDrilling <|-- SteerableLinerDrilling
 DrillingEquipment <|-- CirculationSub
+DrillingEquipment <|-- InstrumentedSub
 DrillingEquipment <|-- Whipstock
 DrillingEquipment <|-- FishingTools
 FishingTools <|-- Overshot
@@ -483,9 +489,33 @@ GenericEquipment <|-- ThreeWayValve
 - Display name: Rack and Pinion Hoisting System
 - Parent class: [HoistingSystem](./DrillingEquipment.md#HoistingSystem)
 - Definition set: DrillingEquipment
+## RackAndPinionHydraulicDrive <!-- NOUN -->
+- Display name: Rack and Pinion Hydraulic Drive
+- Parent class: [RackAndPinionHoistingSystem](./DrillingEquipment.md#RackAndPinionHoistingSystem)
+- Definition set: DrillingEquipment
+## RackAndPinionElectricDrive <!-- NOUN -->
+- Display name: Rack and Pinion Electric Drive
+- Parent class: [RackAndPinionHoistingSystem](./DrillingEquipment.md#RackAndPinionHoistingSystem)
+- Definition set: DrillingEquipment
 ## RamHoistingSystem <!-- NOUN -->
 - Display name: Ram Hoisting System
 - Parent class: [HoistingSystem](./DrillingEquipment.md#HoistingSystem)
+- Definition set: DrillingEquipment
+## RamRig <!-- NOUN -->
+- Display name: Ram Rig
+- Parent class: [RamHoistingSystem](./DrillingEquipment.md#RamHoistingSystem)
+- Definition set: DrillingEquipment
+## HoistingCylinder <!-- NOUN -->
+- Display name: Hoisting Cylinder
+- Parent class: [RamHoistingSystem](./DrillingEquipment.md#RamHoistingSystem)
+- Definition set: DrillingEquipment
+## HoistingCylinderCapChamber <!-- NOUN -->
+- Display name: Hoisting Cylinder Cap Chamber
+- Parent class: [HoistingCylinder](./DrillingEquipment.md#HoistingCylinder)
+- Definition set: DrillingEquipment
+## HoistingCylinderRodChamber <!-- NOUN -->
+- Display name: Hoisting Cylinder Rod Chamber
+- Parent class: [HoistingCylinder](./DrillingEquipment.md#HoistingCylinder)
 - Definition set: DrillingEquipment
 ## Derrick <!-- NOUN -->
 - Display name: Derrick
@@ -529,10 +559,6 @@ GenericEquipment <|-- ThreeWayValve
 - Definition set: DrillingEquipment
 ## DieselElectricalDrawworks <!-- NOUN -->
 - Display name: Diesel Electrical Drawworks
-- Parent class: [Drawworks](./DrillingEquipment.md#Drawworks)
-- Definition set: DrillingEquipment
-## RamRig <!-- NOUN -->
-- Display name: Ram Rig
 - Parent class: [Drawworks](./DrillingEquipment.md#Drawworks)
 - Definition set: DrillingEquipment
 ## MechanicalBlock <!-- NOUN -->
@@ -1825,6 +1851,10 @@ GenericEquipment <|-- ThreeWayValve
 - Definition set: DrillingEquipment
 ## CirculationSub <!-- NOUN -->
 - Display name: Circulation Sub
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Definition set: DrillingEquipment
+## InstrumentedSub <!-- NOUN -->
+- Display name: Instrumented Sub
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
 - Definition set: DrillingEquipment
 ## Whipstock <!-- NOUN -->

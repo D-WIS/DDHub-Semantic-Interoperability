@@ -26,6 +26,7 @@ ContextualData <|-- Field
 ContextualData <|-- Cluster
 ContextualData <|-- TargetGroup
 ContextualData <|-- Target
+ContextualData <|-- Rig
 ContextualData <|-- Well
 ContextualData <|-- WellConcept
 ContextualData <|-- WellBore
@@ -47,7 +48,7 @@ WellBoreData <|-- GeoPressuresDescription
 WellBoreData <|-- GeoThermalDescription
 WellBoreData <|-- FormationStrengthDescription
 WellBoreData <|-- StratigraphyDescription
-WellBoreData <|-- RigDescription
+ContextualData <|-- RigDescription
 DWISNoun <|-- WellBoreDataCharateristic
 WellBoreDataCharateristic <|-- Planned
 WellBoreDataCharateristic <|-- Prognosed
@@ -895,6 +896,89 @@ WHERE {
 }
 ```
 This example describes a signal that contains a json string that represent a target.
+## Rig <!-- NOUN -->
+- Display name: Rig
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+Rig is used to describe meta information about a drilling rig, i.e., what is necessary to identify it, like its name, its type and its identifier in the rig catalog. The detailed characteristics of the equipment of a rig are provided by the RigDescription.
+- Definition set: ContextualData
+- Examples:
+``` dwis rig_0
+DynamicDrillingSignal:rig_0
+DrillingDataPoint: rig_1
+rig_1 BelongsToClass Rig
+rig_1 BelongsToClass JSonDataType
+rig_1 HasDynamicValue rig_0
+DrillingContractor:drillingContractor_1
+rig_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+rig_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rig_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rig_1] -->|BelongsToClass| N0003(Rig) 
+	N0002[rig_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[rig_1] -->|HasDynamicValue| N0000[rig_0] 
+	N0005[drillingContractor_1] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0002[rig_1] -->|IsProvidedBy| N0005[drillingContractor_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0002[rig_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rig_0
+WHERE {
+	?rig_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rig_1 rdf:type ddhub:Rig .
+	?rig_1 rdf:type ddhub:JSonDataType .
+	?rig_1 ddhub:HasDynamicValue ?rig_0 .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?rig_1 ddhub:IsProvidedBy ?drillingContractor_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?rig_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a rig.
+``` dwis selectedRig_0
+DynamicDrillingSignal:selectedRig_0
+DrillingDataPoint: selectedRig_1
+selectedRig_1 BelongsToClass Rig
+selectedRig_1 BelongsToClass StringDataType
+selectedRig_1 HasDynamicValue selectedRig_0
+Current:current_1
+selectedRig_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[selectedRig_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[selectedRig_1] -->|BelongsToClass| N0003(Rig) 
+	N0002[selectedRig_1] -->|BelongsToClass| N0004(StringDataType) 
+	N0002[selectedRig_1] -->|HasDynamicValue| N0000[selectedRig_0] 
+	N0005[current_1] -->|BelongsToClass| N0006(Current) 
+	N0002[selectedRig_1] -->|IsCharacterizedBy| N0005[current_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?selectedRig_0
+WHERE {
+	?selectedRig_0 rdf:type ddhub:DynamicDrillingSignal .
+	?selectedRig_1 rdf:type ddhub:Rig .
+	?selectedRig_1 rdf:type ddhub:StringDataType .
+	?selectedRig_1 ddhub:HasDynamicValue ?selectedRig_0 .
+	?current_1 rdf:type ddhub:Current .
+	?selectedRig_1 ddhub:IsCharacterizedBy ?current_1 .
+}
+```
+This example describes a signal that identifies the rig that is currently selected as the official one, e.g., by a user in a web application.
 ## Well <!-- NOUN -->
 - Display name: Well
 - Parent class: [ContextualData](./ContextualData.md#ContextualData)
@@ -1925,10 +2009,11 @@ WHERE {
 ```
 ## RigDescription <!-- NOUN -->
 - Display name: Rig Description
-- Parent class: [WellBoreData](./ContextualData.md#WellBoreData)
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
 - Description: 
 The rig data structure describes the characteristics of the drilling equipment and any additional equipment
-associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
+associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,... It is the detailed
+counterpart of the Rig noun, which only identifies a rig.
 - Definition set: ContextualData
 - Examples:
 ``` dwis rigDescription_0
@@ -2155,7 +2240,7 @@ WHERE {
 - Display name: Current
 - Parent class: [WellBoreDataCharateristic](./ContextualData.md#WellBoreDataCharateristic)
 - Description: 
-Current characterizes that the wellbore data is the currently selected one as the official one.
+Current characterizes that the contextual data (e.g., a wellbore description, a rig, a rig description) is the currently selected one as the official one.
 - Definition set: ContextualData
 - Examples:
 ``` dwis rigDescription_0
@@ -2266,6 +2351,7 @@ Here is a class inheritance diagram for the verbs contained in this definition s
 ```mermaid
 classDiagram
 DWISVerb <|-- IsCharacterizedBy
+DWISVerb <|-- IsDescriptionOf
 DWISVerb <|-- HasOperationalStep
 DWISVerb <|-- IsAnActionOf
 DWISVerb <|-- IsATaskOf
@@ -2275,7 +2361,8 @@ DWISVerb <|-- IsAContextOf
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
 ```mermaid
 erDiagram
-WellBoreData ||--o{ WellBoreDataCharateristic : IsCharacterizedBy
+ContextualData ||--o{ WellBoreDataCharateristic : IsCharacterizedBy
+ContextualData ||--o{ ContextualData : IsDescriptionOf
 OperationalStep ||--o{ OperationalStep : HasOperationalStep
 ActionStep ||--o{ PhaseStep : IsAnActionOf
 TaskStep ||--o{ ActionStep : IsATaskOf
@@ -2284,11 +2371,11 @@ Context ||--o{ TaskStep : IsAContextOf
 ## IsCharacterizedBy <!-- VERB -->
 - Display name: Is Characterized By
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [WellBoreData](./ContextualData.md#WellBoreData)
+- Subject class: [ContextualData](./ContextualData.md#ContextualData)
 - Object class: [WellBoreDataCharateristic](./ContextualData.md#WellBoreDataCharateristic)
 - Definition set: ContextualData
 - Description: 
-this Verb is used to state some characteristics of a well bore data.
+this Verb is used to state some characteristics of a contextual data, e.g., a well bore data or a rig.
 - Examples:
 ``` dwis trajectoryDescription_0
 DynamicDrillingSignal:trajectoryDescription_0
@@ -2340,6 +2427,51 @@ WHERE {
 	?trajectoryDescription_1 ddhub:IsCharacterizedBy ?extrapolated_1 .
 	?measured_1 rdf:type ddhub:Measured .
 	?trajectoryDescription_1 ddhub:IsCharacterizedBy ?measured_1 .
+}
+```
+## IsDescriptionOf <!-- VERB -->
+- Display name: Is Description Of
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [ContextualData](./ContextualData.md#ContextualData)
+- Object class: [ContextualData](./ContextualData.md#ContextualData)
+- Definition set: ContextualData
+- Description: 
+this Verb is used to state that a contextual data is the detailed description of the entity that another contextual data identifies, e.g., a rig description of a rig, or a wellbore architecture description of a wellbore.
+- Examples:
+``` dwis rigDescription_0
+DynamicDrillingSignal:rig_0
+Rig:rig_1
+rig_1 HasDynamicValue rig_0
+DynamicDrillingSignal:rigDescription_0
+RigDescription:rigDescription_1
+rigDescription_1 HasDynamicValue rigDescription_0
+rigDescription_1 IsDescriptionOf rig_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rig_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rig_1] -->|BelongsToClass| N0003(Rig) 
+	N0002[rig_1] -->|HasDynamicValue| N0000[rig_0] 
+	N0004[rigDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[rigDescription_1] -->|BelongsToClass| N0006(RigDescription) 
+	N0005[rigDescription_1] -->|HasDynamicValue| N0004[rigDescription_0] 
+	N0005[rigDescription_1] -->|IsDescriptionOf| N0002[rig_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigDescription_0
+WHERE {
+	?rig_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rig_1 rdf:type ddhub:Rig .
+	?rig_1 ddhub:HasDynamicValue ?rig_0 .
+	?rigDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigDescription_1 rdf:type ddhub:RigDescription .
+	?rigDescription_1 ddhub:HasDynamicValue ?rigDescription_0 .
+	?rigDescription_1 ddhub:IsDescriptionOf ?rig_1 .
 }
 ```
 ## HasOperationalStep <!-- VERB -->

@@ -10,6 +10,8 @@ namespace DWIS.Vocabulary.Development.Actions
     {
         static void Main(string[] args)
         {
+            System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+            System.Globalization.CultureInfo.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
             Console.WriteLine("DWIS Vocabulary development: vocabulary actions");
 
             using IHost host = CreateHostBuilder(args).Build();
@@ -22,10 +24,13 @@ namespace DWIS.Vocabulary.Development.Actions
             else
             {
                 Console.WriteLine("Perform actions returned false.");
+                Environment.ExitCode = 1;
             }
-            Console.WriteLine("Press any key to exit...");
-
-            Console.ReadLine();
+            if (!Console.IsInputRedirected && Environment.UserInteractive)
+            {
+                Console.WriteLine("Press enter to exit...");
+                Console.ReadLine();
+            }
         }
 
 

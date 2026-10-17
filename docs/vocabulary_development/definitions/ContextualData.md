@@ -327,6 +327,35 @@ DWISContextualDataBuilder:contextualDataBuilder_1
 targetData_1 IsProvidedTo contextualDataBuilder_1
 ```
 This example describes a signal that contains a json string that represent a target.
+## Rig <!-- NOUN -->
+- Display name: Rig
+- Parent class: ContextualData
+- Attributes:
+- Specialization:
+- Description: Rig is used to describe meta information about a drilling rig, i.e., what is necessary to identify it, like its name, its type and its identifier in the rig catalog. The detailed characteristics of the equipment of a rig are provided by the RigDescription.
+- Examples:
+``` dwis rig_0
+DynamicDrillingSignal:rig_0
+DrillingDataPoint: rig_1
+rig_1 BelongsToClass Rig
+rig_1 BelongsToClass JSonDataType
+rig_1 HasDynamicValue rig_0
+DrillingContractor:drillingContractor_1
+rig_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+rig_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a rig.
+``` dwis selectedRig_0
+DynamicDrillingSignal:selectedRig_0
+DrillingDataPoint: selectedRig_1
+selectedRig_1 BelongsToClass Rig
+selectedRig_1 BelongsToClass StringDataType
+selectedRig_1 HasDynamicValue selectedRig_0
+Current:current_1
+selectedRig_1 IsCharacterizedBy current_1
+```
+This example describes a signal that identifies the rig that is currently selected as the official one, e.g., by a user in a web application.
 ## Well <!-- NOUN -->
 - Display name: Well
 - Parent class: ContextualData
@@ -724,11 +753,12 @@ stratigraphyDescription_1 IsCharacterizedBy measured_1
 ```
 ## RigDescription <!-- NOUN -->
 - Display name: Rig Description
-- Parent class: WellBoreData
+- Parent class: ContextualData
 - Attributes:
 - Specialization: 
 - Description: The rig data structure describes the characteristics of the drilling equipment and any additional equipment
-associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
+associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,... It is the detailed
+counterpart of the Rig noun, which only identifies a rig.
 - Examples:
 ``` dwis rigDescription_0
 DynamicDrillingSignal:rigDescription_0
@@ -814,7 +844,7 @@ fluidDescription_1 IsCharacterizedBy measured_1
 - Parent class: WellBoreDataCharateristic
 - Attributes:
 - Specialization: 
-- Description: Current characterizes that the wellbore data is the currently selected one as the official one.
+- Description: Current characterizes that the contextual data (e.g., a wellbore description, a rig, a rig description) is the currently selected one as the official one.
 - Examples:
 ``` dwis rigDescription_0
 DynamicDrillingSignal:rigDescription_0
@@ -854,9 +884,9 @@ trajectoryDescription_1 IsCharacterizedBy measured_1
 ## IsCharacterizedBy <!-- VERB -->
 - Display name: Is Characterized By
 - Parent verb: DWISVerb
-- Subject class: WellBoreData
+- Subject class: ContextualData
 - Object class: WellBoreDataCharateristic
-- Description: this Verb is used to state some characteristics of a well bore data.
+- Description: this Verb is used to state some characteristics of a contextual data, e.g., a well bore data or a rig.
 - Examples: 
 ``` dwis trajectoryDescription_0
 DynamicDrillingSignal:trajectoryDescription_0
@@ -872,6 +902,22 @@ Extrapolated: extrapolated_1
 trajectoryDescription_1 IsCharacterizedBy extrapolated_1
 Measured:measured_1
 trajectoryDescription_1 IsCharacterizedBy measured_1
+```
+## IsDescriptionOf <!-- VERB -->
+- Display name: Is Description Of
+- Parent verb: DWISVerb
+- Subject class: ContextualData
+- Object class: ContextualData
+- Description: this Verb is used to state that a contextual data is the detailed description of the entity that another contextual data identifies, e.g., a rig description of a rig, or a wellbore architecture description of a wellbore.
+- Examples:
+``` dwis rigDescription_0
+DynamicDrillingSignal:rig_0
+Rig:rig_1
+rig_1 HasDynamicValue rig_0
+DynamicDrillingSignal:rigDescription_0
+RigDescription:rigDescription_1
+rigDescription_1 HasDynamicValue rigDescription_0
+rigDescription_1 IsDescriptionOf rig_1
 ```
 ## HasOperationalStep <!-- VERB -->
 - Display name: Has Operational Step

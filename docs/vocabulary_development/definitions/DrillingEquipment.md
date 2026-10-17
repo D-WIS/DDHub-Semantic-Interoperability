@@ -41,9 +41,39 @@
 - Parent class: HoistingSystem
 - Description:
 - Examples:
+## RackAndPinionHydraulicDrive <!-- NOUN -->
+- Display name: Rack and Pinion Hydraulic Drive
+- Parent class: RackAndPinionHoistingSystem
+- Description:
+- Examples:
+## RackAndPinionElectricDrive <!-- NOUN -->
+- Display name: Rack and Pinion Electric Drive
+- Parent class: RackAndPinionHoistingSystem
+- Description:
+- Examples:
 ## RamHoistingSystem <!-- NOUN -->
 - Display name: Ram Hoisting System
 - Parent class: HoistingSystem
+- Description:
+- Examples:
+## RamRig <!-- NOUN -->
+- Display name: Ram Rig
+- Parent class: RamHoistingSystem
+- Description:
+- Examples:
+## HoistingCylinder <!-- NOUN -->
+- Display name: Hoisting Cylinder
+- Parent class: RamHoistingSystem
+- Description:
+- Examples:
+## HoistingCylinderCapChamber <!-- NOUN -->
+- Display name: Hoisting Cylinder Cap Chamber
+- Parent class: HoistingCylinder
+- Description:
+- Examples:
+## HoistingCylinderRodChamber <!-- NOUN -->
+- Display name: Hoisting Cylinder Rod Chamber
+- Parent class: HoistingCylinder
 - Description:
 - Examples:
 ## Derrick <!-- NOUN -->
@@ -98,11 +128,6 @@
 - Examples:
 ## DieselElectricalDrawworks <!-- NOUN -->
 - Display name: Diesel Electrical Drawworks
-- Parent class: Drawworks
-- Description:
-- Examples:
-## RamRig <!-- NOUN -->
-- Display name: Ram Rig
 - Parent class: Drawworks
 - Description:
 - Examples:
@@ -1718,6 +1743,11 @@
 - Examples:
 ## CirculationSub <!-- NOUN -->
 - Display name: Circulation Sub
+- Parent class: DrillingEquipment
+- Description:
+- Examples:
+## InstrumentedSub <!-- NOUN -->
+- Display name: Instrumented Sub
 - Parent class: DrillingEquipment
 - Description:
 - Examples:

@@ -169,3 +169,18 @@ downholeWOB_1 IsOfMeasurableQuantity ForceQuantity
 InductionCouplingDownholeTelemetry: inductionCouplingTelemetry
 downholeWOB_1 IsTransmittedBy inductionCouplingTelemetry
 ```
+
+## SupportsTelemetry <!-- VERB -->
+- Display name: SupportsTelemetry
+- Parent verb: DWISVerb
+- Subject class: InstrumentInstance
+- Object class: Telemetry
+- Description: Identifies a telemetry path available to an instrument in its deployed configuration, including a path supplied through attached MWD equipment. It does not assert that the instrument contains the transmitter or that every signal is actually transmitted on that path. Use IsTransmittedBy on each delivered data point for actual transport. Absence of this fact does not assert that a path is unsupported; complete allowed-path lists require deployment validation.
+- Examples:
+```dwis SupportsTelemetryExample
+InstrumentInstance:baseStarUnit
+MudPulseTelemetry:mwdMudPulsePath
+WiredPipeTelemetry:wiredPipePath
+baseStarUnit SupportsTelemetry mwdMudPulsePath
+baseStarUnit SupportsTelemetry wiredPipePath
+```

@@ -1099,7 +1099,7 @@ drillingLiquidType HasRheologicalBehavior quemada
 This example states that a drilling liquid has a Quemada rheological behavior.
 ## FlowMeasurementPrinciple <!-- NOUN -->
 - Display name: Flow Measurement Principle
-- Parent class: DWISNoun
+- Parent class: MeasurementPrinciple
 - Attributes:
 - Specialization:
 - Description: Describes the underlying principle used to obtain a measurement about a flowing medium.
@@ -1107,7 +1107,7 @@ This example states that a drilling liquid has a Quemada rheological behavior.
 ```dwis FlowMeasurementPrincipleExample
 DrillingDataPoint:realtimeSignal
 FlowMeasurementPrinciple:flowMeasurementPrinciple
-realtimeSignal UsesFlowMeasurementPrinciple flowMeasurementPrinciple
+realtimeSignal UsesMeasurementPrinciple flowMeasurementPrinciple
 ```
 This example states that a realtime signal uses a flow mearurement principle.
 ## ResonantMeasurementPrinciple <!-- NOUN -->
@@ -1120,7 +1120,7 @@ This example states that a realtime signal uses a flow mearurement principle.
 ```dwis ResonantMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 ResonantMeasurementPrinciple:resonantMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple resonantMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple resonantMeasurementPrinciple
 ```
 This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
 ## ConcentricCylindersMeasurementPrinciple <!-- NOUN -->
@@ -1133,7 +1133,7 @@ This example states that a mass density signal uses a resonant tube or fork or c
 ```dwis ConcentricCylindersMeasurementPrincipleExample
 DrillingDataPoint:shearStressSignal
 ConcentricCylindersMeasurementPrinciple:concentricCylindersMeasurementPrinciple
-shearStressSignal UsesFlowMeasurementPrinciple concentricCylindersMeasurementPrinciple
+shearStressSignal UsesMeasurementPrinciple concentricCylindersMeasurementPrinciple
 ```
 This example states that a shear stress signal uses a measurement principle utilizing concentric cylinders.
 ## DifferentialPressureMeasurementPrinciple <!-- NOUN -->
@@ -1146,7 +1146,7 @@ This example states that a shear stress signal uses a measurement principle util
 ```dwis DifferentialPressureMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 DifferentialPressureMeasurementPrinciple:differentialPressureMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple differentialPressureMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple differentialPressureMeasurementPrinciple
 ```
 This example states that a mass density signal uses a differential pressure measurement principle.
 ## RotatingWheelMeasurementPrinciple <!-- NOUN -->
@@ -1159,7 +1159,7 @@ This example states that a mass density signal uses a differential pressure meas
 ```dwis RotatingWheelMeasurementPrincipleExample
 DrillingDataPoint:massFlowRateSignal
 RotatingWheelMeasurementPrinciple:rotatingWheelMeasurementPrinciple
-massFlowRateSignal UsesFlowMeasurementPrinciple rotatingWheelMeasurementPrinciple
+massFlowRateSignal UsesMeasurementPrinciple rotatingWheelMeasurementPrinciple
 ```
 This example states that a mass flowrate signal uses a rotating wheel measurement principle.
 ## MechanicalMomentumMeasurementPrinciple <!-- NOUN -->
@@ -1172,7 +1172,7 @@ This example states that a mass flowrate signal uses a rotating wheel measuremen
 ```dwis MechanicalMomentumMeasurementPrincipleExample
 DrillingDataPoint:volumetricFlowRateSignal
 MechanicalMomentumMeasurementPrinciple:mechanicalMomentumMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple mechanicalMomentumMeasurementPrinciple
+volumetricFlowRateSignal UsesMeasurementPrinciple mechanicalMomentumMeasurementPrinciple
 ```
 This example states that a volumetric flowrate signal uses a mechanical momentum measurement principle.
 ## CalorimetricMeasurementPrinciple <!-- NOUN -->
@@ -1185,35 +1185,11 @@ This example states that a volumetric flowrate signal uses a mechanical momentum
 ```dwis CalorimetricMeasurementPrincipleExample
 DrillingDataPoint:massFlowRateSignal
 CalorimetricMeasurementPrinciple:calorimetricMeasurementPrinciple
-massFlowRateSignal UsesFlowMeasurementPrinciple calorimetricMeasurementPrinciple
+massFlowRateSignal UsesMeasurementPrinciple calorimetricMeasurementPrinciple
 ```
 This example states that a mass flowrate signal uses a calorimetric measurement principle.
-## AcousticMeasurementPrinciple <!-- NOUN -->
-- Display name: Acoustic Measurement Principle
-- Parent class: FlowMeasurementPrinciple
-- Attributes:
-- Specialization:
-- Description: Describes that an acoustic measurement principle is used to perform a measurement.
-- Examples:
-```dwis AcousticMeasurementPrincipleExample
-DrillingDataPoint:volumetricFlowRateSignal
-AcousticMeasurementPrinciple:acousticMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple acousticMeasurementPrinciple
-```
-This example states that a volumetric flowrate signal uses an acoustic measurement principle.
-## ElectromagneticMeasurementPrinciple <!-- NOUN -->
-- Display name: Electromagnetic Measurement Principle
-- Parent class: FlowMeasurementPrinciple
-- Attributes:
-- Specialization:
-- Description: Describes that an electromagnetic measurement principle is used to perform a measurement.
-- Examples:
-```dwis ElectromagneticMeasurementPrincipleExample
-DrillingDataPoint:volumetricFlowRateSignal
-ElectromagneticMeasurementPrinciple:electromagneticMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple electromagneticMeasurementPrinciple
-```
-This example states that a volumetric flowrate signal uses an electromagnetic measurement principle.
+
+
 ## RadiometricMeasurementPrinciple <!-- NOUN -->
 - Display name: Radiometric Measurement Principle
 - Parent class: FlowMeasurementPrinciple
@@ -1224,7 +1200,7 @@ This example states that a volumetric flowrate signal uses an electromagnetic me
 ```dwis RadiometricMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 RadiometricMeasurementPrinciple:radiometricMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple radiometricMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple radiometricMeasurementPrinciple
 ```
 This example states that a mass density signal uses an radiometric measurement principle.
 ## OpticalMeasurementPrinciple <!-- NOUN -->
@@ -1237,7 +1213,7 @@ This example states that a mass density signal uses an radiometric measurement p
 ```dwis OpticalMeasurementPrincipleExample
 DrillingDataPoint:volumetricFlowRateSignal
 OpticalMeasurementPrinciple:opticalMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple radiometricMeasurementPrinciple
+volumetricFlowRateSignal UsesMeasurementPrinciple radiometricMeasurementPrinciple
 ```
 This example states that a volumetric flowrate signal uses an optical measurement principle.
 ## GravimetricMeasurementPrinciple <!-- NOUN -->
@@ -1250,7 +1226,7 @@ This example states that a volumetric flowrate signal uses an optical measuremen
 ```dwis GravimetricMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 GravimetricMeasurementPrinciple:gravimetricMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple gravimetricMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple gravimetricMeasurementPrinciple
 ```
 This example states that a mass density signal uses an gravimetric measurement principle.
 # VERBS
@@ -2088,19 +2064,7 @@ DrillingDataPoint:etha_infinity
 quemada HasQuemadaViscosityAtInfiniteShearRate etha_infinity
 ```
 This example states that a Quemada rheological behavior as a viscosity at infinite shear rate defined by a drilling data point.
-## UsesMeasurementPrinciple <!-- VERB -->
-- Display name: Uses Flow Measurement Principle
-- Parent verb: DWISVerb
-- Subject class: DrillingDataPoint
-- Object class: FlowMeasurementPrinciple
-- Description: Associate a realtime signal to its measurement principle.
-- Examples:
-```dwis UsesMeasurementPrincipleExample
-DrillingDataPoint:densitySignal
-ResonantMeasurementPrinciple:resonantMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple resonantMeasurementPrinciple
-```
-This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
+
 ## ControlsMeasurementPrinciple <!-- VERB -->
 - Display name: Controls Flow Measurement Principle
 - Parent verb: DWISVerb

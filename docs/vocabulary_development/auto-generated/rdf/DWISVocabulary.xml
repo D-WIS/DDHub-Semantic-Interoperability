@@ -66,6 +66,9 @@ function may run immediately or that it is enabled and can trigger if some condi
     <owl:onProperty rdf:resource="http://ddhub.no/TimeStampAtSource" />
     <owl:onClass rdf:resource="http://ddhub.no/DynamicDrillingSignal" />
     <owl:onProperty rdf:resource="http://ddhub.no/TimeStampAcquisition" />
+    <owl:onProperty rdf:resource="http://ddhub.no/SerialNumber" />
+    <owl:onClass rdf:resource="http://ddhub.no/InstrumentInstance" />
+    <owl:onProperty rdf:resource="http://ddhub.no/AssetIdentifier" />
     <owl:onProperty rdf:resource="http://ddhub.no/EndPointDescription" />
     <owl:onClass rdf:resource="http://ddhub.no/DataEndPoint" />
     <owl:onProperty rdf:resource="http://ddhub.no/WellUID" />
@@ -84,6 +87,9 @@ function may run immediately or that it is enabled and can trigger if some condi
     <owl:onProperty rdf:resource="http://ddhub.no/LeftToRight" />
     <owl:onClass rdf:resource="http://ddhub.no/HydraulicJunction" />
     <owl:onProperty rdf:resource="http://ddhub.no/RightToLeft" />
+    <owl:onProperty rdf:resource="http://ddhub.no/ModelIdentifier" />
+    <owl:onClass rdf:resource="http://ddhub.no/InstrumentModel" />
+    <owl:onProperty rdf:resource="http://ddhub.no/ModelName" />
     <owl:onProperty rdf:resource="http://ddhub.no/MeaningfulPrecision" />
     <owl:onClass rdf:resource="http://ddhub.no/MeasurableQuantity" />
     <owl:onClass rdf:resource="http://ddhub.no/MechanicalElementState" />
@@ -493,6 +499,12 @@ and then possibly recover from that incident.
     <rdfs:comment xml:lang="EN">Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Rig">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">Rig is used to describe meta information about a drilling rig, i.e., what is necessary to identify it, like its name, its type and its identifier in the rig catalog. The detailed characteristics of the equipment of a rig are provided by the RigDescription.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Well">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
@@ -627,17 +639,18 @@ encountered along the wellbore.
 of the formation layers that are encountered along the wellbore.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RigDescription">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellBoreData" />
-    <rdfs:comment xml:lang="EN">The rig data structure describes the characteristics of the drilling equipment and any additional equipment
-associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellBoreArchitectureConcept">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
     <rdfs:comment xml:lang="EN">WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RigDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">The rig data structure describes the characteristics of the drilling equipment and any additional equipment
+associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,... It is the detailed
+counterpart of the Rig noun, which only identifies a rig.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RigActionPlanProcessingStatus">
@@ -717,7 +730,7 @@ data that exists from before but that may be associated with uncertainty like th
   <rdf:Description rdf:about="http://ddhub.no/Current">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/WellBoreDataCharateristic" />
-    <rdfs:comment xml:lang="EN">Current characterizes that the wellbore data is the currently selected one as the official one.
+    <rdfs:comment xml:lang="EN">Current characterizes that the contextual data (e.g., a wellbore description, a rig, a rig description) is the currently selected one as the official one.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Extrapolated">
@@ -868,6 +881,24 @@ ComputedState.
     <rdfs:comment xml:lang="EN">Denotes a physical sensor
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ForceSensor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurementDevice" />
+    <rdfs:comment xml:lang="EN">A physical sensor that measures a force, a load or a tension.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/LoadPinSensor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ForceSensor" />
+    <rdfs:comment xml:lang="EN">A force sensor built into a pin that carries the load of a hoisting component, e.g., the load pins at the top of a top drive.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DeadLineTensionSensor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ForceSensor" />
+    <rdfs:comment xml:lang="EN">A force sensor that measures the tension of the dead line of a drawworks, typically a load cell in the dead-line anchor.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Transformation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataFlowNode" />
@@ -1010,6 +1041,12 @@ ComputedState.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Filter" />
     <rdfs:comment xml:lang="EN">Tracks the distribution of a value within a sliding window.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SensorFusionTransformation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Transformation" />
+    <rdfs:comment xml:lang="EN">Combines several redundant or complementary signals, possibly using their history and a model of the process, into a single estimate of a quantity. It is not a direct transformation because its output depends on more than the current value of its inputs.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TimeBasedTransformation">
@@ -1978,6 +2015,24 @@ ComputedState.
     <rdfs:comment xml:lang="EN">Prototype signal for HookVelocity.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DollyRetraction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">Prototype signal for DollyRetraction. Proportion of retraction of the dolly of a top drive: 0 when fully extended, 1 when fully retracted.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DollyFullyExtended">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">Prototype signal for DollyFullyExtended. Boolean signal that is true when the dolly of a top drive is fully extended.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DollyFullyRetracted">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">Prototype signal for DollyFullyRetracted. Boolean signal that is true when the dolly of a top drive is fully retracted.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Inclination">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
@@ -2423,9 +2478,45 @@ torsional stick-slip oscillations.
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RackAndPinionHydraulicDrive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RackAndPinionHoistingSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RackAndPinionElectricDrive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RackAndPinionHoistingSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RamHoistingSystem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/HoistingSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RamRig">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RamHoistingSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HoistingCylinder">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RamHoistingSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HoistingCylinderCapChamber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/HoistingCylinder" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HoistingCylinderRodChamber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/HoistingCylinder" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -2490,12 +2581,6 @@ torsional stick-slip oscillations.
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DieselElectricalDrawworks">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Drawworks" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RamRig">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Drawworks" />
     <rdfs:comment xml:lang="EN">
@@ -4439,6 +4524,12 @@ torsional stick-slip oscillations.
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/InstrumentedSub">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Whipstock">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
@@ -5032,6 +5123,12 @@ torsional stick-slip oscillations.
     <rdfs:subClassOf rdf:resource="http://ddhub.no/GenericEquipment" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/InstrumentInstance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
+    <rdfs:comment xml:lang="EN">An identifiable physical instrument assembly. Its graph URI is the primary identity; optional serial numbers and asset identifiers are not globally unique by themselves. An instance may also be classified using an appropriate existing equipment class, such as InstrumentedSub.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Feature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -6276,9 +6373,15 @@ before the material begins to flow,
 at low and high shear rates that tend to constant viscosity values.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FlowMeasurementPrinciple">
+  <rdf:Description rdf:about="http://ddhub.no/MeasurementPrinciple">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">The physical mechanism used to obtain a measurement. It describes sensing, not transport, aggregation or the commercial instrument model.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FlowMeasurementPrinciple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurementPrinciple" />
     <rdfs:comment xml:lang="EN">Describes the underlying principle used to obtain a measurement about a flowing medium.
 </rdfs:comment>
   </rdf:Description>
@@ -6318,18 +6421,6 @@ at low and high shear rates that tend to constant viscosity values.
     <rdfs:comment xml:lang="EN">Describes that a calorimetric measurement principle is used to perform a measurement.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/AcousticMeasurementPrinciple">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/FlowMeasurementPrinciple" />
-    <rdfs:comment xml:lang="EN">Describes that an acoustic measurement principle is used to perform a measurement.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ElectromagneticMeasurementPrinciple">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/FlowMeasurementPrinciple" />
-    <rdfs:comment xml:lang="EN">Describes that an electromagnetic measurement principle is used to perform a measurement.
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RadiometricMeasurementPrinciple">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/FlowMeasurementPrinciple" />
@@ -6346,6 +6437,36 @@ at low and high shear rates that tend to constant viscosity values.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/FlowMeasurementPrinciple" />
     <rdfs:comment xml:lang="EN">Describes that a gravimetric measurement principle is used to perform a measurement.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AcousticMeasurementPrinciple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurementPrinciple" />
+    <rdfs:comment xml:lang="EN">Describes that an acoustic measurement principle is used to perform a measurement.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/UltrasonicPulseEchoMeasurementPrinciple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AcousticMeasurementPrinciple" />
+    <rdfs:comment xml:lang="EN">An ultrasonic pulse is emitted and its returning echo is measured. Travel time can support distance/radius estimation, while echo amplitude provides reflection information; radius and amplitude are separate outputs. This does not describe acoustic telemetry.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectromagneticMeasurementPrinciple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurementPrinciple" />
+    <rdfs:comment xml:lang="EN">Describes that an electromagnetic measurement principle is used to perform a measurement.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectromagneticPulseEchoMeasurementPrinciple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ElectromagneticMeasurementPrinciple" />
+    <rdfs:comment xml:lang="EN">An electromagnetic pulse is emitted and its returning response is measured. Time-of-flight and echo amplitude support distinct geometric and reflection outputs. This does not describe electromagnetic telemetry or wired-pipe coupling.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/InstrumentModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A manufacturer-defined instrument product or model, independent of individual physical units. Model variants with materially different specifications use distinct model nodes. Model identifiers are catalog data, not vocabulary class names.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MeasurableQuantity">
@@ -26710,6 +26831,22 @@ are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
     <rdfs:comment xml:lang="EN">this is a UTC date-time value at which the value has been acquired by the data acquisition system.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SerialNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/InstrumentInstance" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:comment xml:lang="EN">Optional manufacturer-assigned serial number of this physical unit.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AssetIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/InstrumentInstance" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:comment xml:lang="EN">Optional externally managed asset identifier; its issuing authority is supplied by the deployment catalog.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/EndPointDescription">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
@@ -26812,6 +26949,22 @@ are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
     <rdfs:domain rdf:resource="http://ddhub.no/HydraulicJunction" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
     <rdfs:comment xml:lang="EN">Indicates whether the fluid can flow from the right branch to the left branch though the junction
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ModelIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/InstrumentModel" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:comment xml:lang="EN">Stable manufacturer-qualified product/model identifier, governed by the model catalog.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ModelName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/InstrumentModel" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:comment xml:lang="EN">Human-readable product/model name.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MeaningfulPrecision">
@@ -27441,10 +27594,18 @@ describe the impact of the function on the drilling process. This signal is supp
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsCharacterizedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/WellBoreData" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ContextualData" />
     <rdfs:range rdf:resource="http://ddhub.no/WellBoreDataCharateristic" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
-    <rdfs:comment xml:lang="EN">this Verb is used to state some characteristics of a well bore data.
+    <rdfs:comment xml:lang="EN">this Verb is used to state some characteristics of a contextual data, e.g., a well bore data or a rig.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsDescriptionOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:range rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">this Verb is used to state that a contextual data is the detailed description of the entity that another contextual data identifies, e.g., a rig description of a rig, or a wellbore architecture description of a wellbore.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HasOperationalStep">
@@ -27633,6 +27794,14 @@ to another.
     <rdfs:comment xml:lang="EN">Indicates that a signal or state is processed by a given data flow node.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSensorOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/MeasurementDevice" />
+    <rdfs:range rdf:resource="http://ddhub.no/InstrumentInstance" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">Associates a physical sensor with its containing instrument assembly. Keep distinct sensor instances for distinct sensing elements or locations. This expresses physical ownership, not the location of the measured phenomenon or a data-processing subsystem.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsProvidedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
@@ -27655,6 +27824,14 @@ to another.
     <rdfs:range rdf:resource="http://ddhub.no/Telemetry" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">Expresses that a signal is transmitted by some given telemetry system
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SupportsTelemetry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/InstrumentInstance" />
+    <rdfs:range rdf:resource="http://ddhub.no/Telemetry" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">Identifies a telemetry path available to an instrument in its deployed configuration, including a path supplied through attached MWD equipment. It does not assert that the instrument contains the transmitter or that every signal is actually transmitted on that path. Use IsTransmittedBy on each delivered data point for actual transport. Absence of this fact does not assert that a path is unsupported; complete allowed-path lists require deployment validation.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsConditionedBy">
@@ -28388,7 +28565,7 @@ Transformation when producing its output.
     <rdfs:comment xml:lang="EN">Associate a viscosity at shear rate tending to infinity to a signal for a rheological behavior.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/UsesMeasurementPrinciple">
+  <rdf:Description rdf:about="http://ddhub.no/ControlsMeasurementPrinciple">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:range rdf:resource="http://ddhub.no/FlowMeasurementPrinciple" />
@@ -28396,12 +28573,28 @@ Transformation when producing its output.
     <rdfs:comment xml:lang="EN">Associate a realtime signal to its measurement principle.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ControlsMeasurementPrinciple">
+  <rdf:Description rdf:about="http://ddhub.no/IsOfInstrumentModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/InstrumentInstance" />
+    <rdfs:range rdf:resource="http://ddhub.no/InstrumentModel" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">Associates a physical instrument with its manufacturer-defined model. Assign one model at the chosen assembly granularity; replace an assignment explicitly when correcting catalog data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HasManufacturer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/InstrumentModel" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataEcosystemOrganization" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">Identifies the manufacturer of an instrument model. This is distinct from IsProvidedBy, which identifies the provider of data; a data aggregator need not be the manufacturer.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/UsesMeasurementPrinciple">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/FlowMeasurementPrinciple" />
+    <rdfs:range rdf:resource="http://ddhub.no/MeasurementPrinciple" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
-    <rdfs:comment xml:lang="EN">Associate a realtime signal to its measurement principle.
+    <rdfs:comment xml:lang="EN">Associates a measurement data point with the physical principle by which it is obtained. Retain processing lineage separately and use IsTransmittedBy for transport.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsOfMechanicalStiffnessType">

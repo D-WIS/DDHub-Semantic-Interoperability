@@ -116,6 +116,8 @@
 <http://ddhub.no/TargetGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/Target> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Target> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/Rig> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Rig> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/Well> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Well> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/WellConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -156,10 +158,10 @@
 <http://ddhub.no/FormationStrengthDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
-<http://ddhub.no/RigDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
 <http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/RigDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/JSonDataType> .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -236,6 +238,12 @@
 <http://ddhub.no/RigChokeControlSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ControlSystem> .
 <http://ddhub.no/MeasurementDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MeasurementDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/ForceSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ForceSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MeasurementDevice> .
+<http://ddhub.no/LoadPinSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/LoadPinSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ForceSensor> .
+<http://ddhub.no/DeadLineTensionSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DeadLineTensionSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ForceSensor> .
 <http://ddhub.no/Transformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Transformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataFlowNode> .
 <http://ddhub.no/DirectTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -294,6 +302,8 @@
 <http://ddhub.no/PeakToPeak> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Filter> .
 <http://ddhub.no/MovingDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MovingDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Filter> .
+<http://ddhub.no/SensorFusionTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SensorFusionTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Transformation> .
 <http://ddhub.no/TimeBasedTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/TimeBasedTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Transformation> .
 <http://ddhub.no/Buffering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -633,6 +643,12 @@
 <http://ddhub.no/HookPosition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
 <http://ddhub.no/HookVelocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/HookVelocity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
+<http://ddhub.no/DollyRetraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DollyRetraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
+<http://ddhub.no/DollyFullyExtended> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DollyFullyExtended> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
+<http://ddhub.no/DollyFullyRetracted> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DollyFullyRetracted> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
 <http://ddhub.no/Inclination> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Inclination> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
 <http://ddhub.no/MeasuredDepth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -786,8 +802,20 @@
 <http://ddhub.no/HoistingSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigEquipment> .
 <http://ddhub.no/RackAndPinionHoistingSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RackAndPinionHoistingSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HoistingSystem> .
+<http://ddhub.no/RackAndPinionHydraulicDrive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RackAndPinionHydraulicDrive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RackAndPinionHoistingSystem> .
+<http://ddhub.no/RackAndPinionElectricDrive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RackAndPinionElectricDrive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RackAndPinionHoistingSystem> .
 <http://ddhub.no/RamHoistingSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RamHoistingSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HoistingSystem> .
+<http://ddhub.no/RamRig> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RamRig> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RamHoistingSystem> .
+<http://ddhub.no/HoistingCylinder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HoistingCylinder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RamHoistingSystem> .
+<http://ddhub.no/HoistingCylinderCapChamber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HoistingCylinderCapChamber> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HoistingCylinder> .
+<http://ddhub.no/HoistingCylinderRodChamber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HoistingCylinderRodChamber> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HoistingCylinder> .
 <http://ddhub.no/Derrick> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Derrick> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HoistingSystem> .
 <http://ddhub.no/ConventionalDerrick> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -810,8 +838,6 @@
 <http://ddhub.no/MechanicalDrawworks> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Drawworks> .
 <http://ddhub.no/DieselElectricalDrawworks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DieselElectricalDrawworks> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Drawworks> .
-<http://ddhub.no/RamRig> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/RamRig> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Drawworks> .
 <http://ddhub.no/MechanicalBlock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicalBlock> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HoistingSystem> .
 <http://ddhub.no/TravellingBlock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1458,6 +1484,8 @@
 <http://ddhub.no/SteerableLinerDrilling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/LinerDrilling> .
 <http://ddhub.no/CirculationSub> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/CirculationSub> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingEquipment> .
+<http://ddhub.no/InstrumentedSub> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/InstrumentedSub> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingEquipment> .
 <http://ddhub.no/Whipstock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Whipstock> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingEquipment> .
 <http://ddhub.no/FishingTools> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1656,6 +1684,11 @@
 <http://ddhub.no/ThreeWayManifold> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/GenericEquipment> .
 <http://ddhub.no/ThreeWayValve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ThreeWayValve> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/GenericEquipment> .
+<http://ddhub.no/InstrumentInstance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/InstrumentInstance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Equipment> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/SerialNumber> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/InstrumentInstance> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/AssetIdentifier> .
 <http://ddhub.no/Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DataTransmissionFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -2080,8 +2113,10 @@
 <http://ddhub.no/YieldPowerLaw> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/NonNewtonianFluid> .
 <http://ddhub.no/Quemada> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Quemada> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/NonNewtonianFluid> .
+<http://ddhub.no/MeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/MeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/FlowMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/FlowMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/FlowMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MeasurementPrinciple> .
 <http://ddhub.no/ResonantMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ResonantMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FlowMeasurementPrinciple> .
 <http://ddhub.no/ConcentricCylindersMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -2094,16 +2129,25 @@
 <http://ddhub.no/MechanicalMomentumMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FlowMeasurementPrinciple> .
 <http://ddhub.no/CalorimetricMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/CalorimetricMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FlowMeasurementPrinciple> .
-<http://ddhub.no/AcousticMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/AcousticMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FlowMeasurementPrinciple> .
-<http://ddhub.no/ElectromagneticMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/ElectromagneticMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FlowMeasurementPrinciple> .
 <http://ddhub.no/RadiometricMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RadiometricMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FlowMeasurementPrinciple> .
 <http://ddhub.no/OpticalMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/OpticalMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FlowMeasurementPrinciple> .
 <http://ddhub.no/GravimetricMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/GravimetricMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FlowMeasurementPrinciple> .
+<http://ddhub.no/AcousticMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AcousticMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MeasurementPrinciple> .
+<http://ddhub.no/UltrasonicPulseEchoMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/UltrasonicPulseEchoMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/AcousticMeasurementPrinciple> .
+<http://ddhub.no/ElectromagneticMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ElectromagneticMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MeasurementPrinciple> .
+<http://ddhub.no/ElectromagneticPulseEchoMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ElectromagneticPulseEchoMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ElectromagneticMeasurementPrinciple> .
+<http://ddhub.no/InstrumentModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/InstrumentModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/ModelIdentifier> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/InstrumentModel> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/ModelName> .
 <http://ddhub.no/MeasurableQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MeasurableQuantity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/MeaningfulPrecision> .
@@ -5533,6 +5577,7 @@
 <http://ddhub.no/Cluster> <http://www.w3.org/2000/01/rdf-schema#comment> "Cluster is used to describe a group of slots. Sometime, it is referred as a pad.\n"@EN .
 <http://ddhub.no/TargetGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "TargetGroup is used to describe meta information a group of targets, for instance whether they should be reached in sequence or from multi-laterals.\n"@EN .
 <http://ddhub.no/Target> <http://www.w3.org/2000/01/rdf-schema#comment> "Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.\n"@EN .
+<http://ddhub.no/Rig> <http://www.w3.org/2000/01/rdf-schema#comment> "Rig is used to describe meta information about a drilling rig, i.e., what is necessary to identify it, like its name, its type and its identifier in the rig catalog. The detailed characteristics of the equipment of a rig are provided by the RigDescription.\n"@EN .
 <http://ddhub.no/Well> <http://www.w3.org/2000/01/rdf-schema#comment> "Well is used to describe meta information about the wellbores that connect a specific point at the surface of the earth and the targets in a target group.\n"@EN .
 <http://ddhub.no/WellConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "WellConcept is used to describe meta information about possibilities for a well at the planning stage.\n"@EN .
 <http://ddhub.no/WellBore> <http://www.w3.org/2000/01/rdf-schema#comment> "Wellbore is used to describe meta information about the borehole like its tie in point or which slot it starts from.\n"@EN .
@@ -5553,8 +5598,8 @@
 <http://ddhub.no/GeoThermalDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The geothermal data structure describes the temperature and thermophysical properties of the formation encountered\nalong the wellbore.\n"@EN .
 <http://ddhub.no/FormationStrengthDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The formation strength data structure describes the formation strength and internal friction angle of the formation\nencountered along the wellbore.\n"@EN .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The stratigraphy data structure describes the type of rock, the porosity, permeability and fluid saturations\nof the formation layers that are encountered along the wellbore.\n"@EN .
-<http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The rig data structure describes the characteristics of the drilling equipment and any additional equipment\nassociated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...\n"@EN .
 <http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.\n"@EN .
+<http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The rig data structure describes the characteristics of the drilling equipment and any additional equipment\nassociated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,... It is the detailed\ncounterpart of the Rig noun, which only identifies a rig.\n"@EN .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "The currently executed state of the rig action plan, stored in a JSon string.\n"@EN .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is continuous.\n"@EN .
 <http://ddhub.no/DateDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the data is a date.\n"@EN .
@@ -5567,7 +5612,7 @@
 <http://ddhub.no/Planned> <http://www.w3.org/2000/01/rdf-schema#comment> "Planned characterizes that the wellbore data is described in its planned stage. This applies to wellbore data\nthat is intended to be constructed.\n"@EN .
 <http://ddhub.no/Prognosed> <http://www.w3.org/2000/01/rdf-schema#comment> "Prognosed characterizes that the wellbore data is described in its prognosed stage. This applies to wellbore\ndata that exists from before but that may be associated with uncertainty like the geology.\n"@EN .
 <http://ddhub.no/Measured> <http://www.w3.org/2000/01/rdf-schema#comment> "Measured characterizes that the wellbore data has been measured or observed.\n"@EN .
-<http://ddhub.no/Current> <http://www.w3.org/2000/01/rdf-schema#comment> "Current characterizes that the wellbore data is the currently selected one as the official one.\n"@EN .
+<http://ddhub.no/Current> <http://www.w3.org/2000/01/rdf-schema#comment> "Current characterizes that the contextual data (e.g., a wellbore description, a rig, a rig description) is the currently selected one as the official one.\n"@EN .
 <http://ddhub.no/Extrapolated> <http://www.w3.org/2000/01/rdf-schema#comment> "Extrapolated characterizes that the wellbore data is being partially measured/observed and also extended to\npositions that have not been measured/observed yet.\n"@EN .
 <http://ddhub.no/DataFlowNode> <http://www.w3.org/2000/01/rdf-schema#comment> "A data flow node is a generic term for any node in the data flow graph.\n"@EN .
 <http://ddhub.no/ComputationUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a complex computation unit, typically based on advanced numerical modeling\n"@EN .
@@ -5592,6 +5637,9 @@
 <http://ddhub.no/BOPControlSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "A control system supervising blowout preventer functions such as rams and annulars.\n"@EN .
 <http://ddhub.no/RigChokeControlSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "A control system dedicated to surface choke management for well control operations.\n"@EN .
 <http://ddhub.no/MeasurementDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a physical sensor\n"@EN .
+<http://ddhub.no/ForceSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical sensor that measures a force, a load or a tension.\n"@EN .
+<http://ddhub.no/LoadPinSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A force sensor built into a pin that carries the load of a hoisting component, e.g., the load pins at the top of a top drive.\n"@EN .
+<http://ddhub.no/DeadLineTensionSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A force sensor that measures the tension of the dead line of a drawworks, typically a load cell in the dead-line anchor.\n"@EN .
 <http://ddhub.no/Transformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a transformation applied to some signals that produces other signals\n"@EN .
 <http://ddhub.no/DirectTransformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Direct transformations are performed using only the current value of their inputs, time is not involved\n"@EN .
 <http://ddhub.no/Aggregation> <http://www.w3.org/2000/01/rdf-schema#comment> "Combines several input signals into a single representative value such as an average or sum.\n"@EN .
@@ -5616,6 +5664,7 @@
 <http://ddhub.no/MovingMax> <http://www.w3.org/2000/01/rdf-schema#comment> "Tracks the maximum value within a sliding window.\n"@EN .
 <http://ddhub.no/PeakToPeak> <http://www.w3.org/2000/01/rdf-schema#comment> "Computes the difference between the maximum and minimum values of an input signal over a specified window.\n"@EN .
 <http://ddhub.no/MovingDistribution> <http://www.w3.org/2000/01/rdf-schema#comment> "Tracks the distribution of a value within a sliding window.\n"@EN .
+<http://ddhub.no/SensorFusionTransformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Combines several redundant or complementary signals, possibly using their history and a model of the process, into a single estimate of a quantity. It is not a direct transformation because its output depends on more than the current value of its inputs.\n"@EN .
 <http://ddhub.no/TimeBasedTransformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Transformations that apply only to time series: time derivations, time integration, averaging...\n"@EN .
 <http://ddhub.no/Buffering> <http://www.w3.org/2000/01/rdf-schema#comment> "Stores a time slice of data before forwarding it, often to align or batch records.\n"@EN .
 <http://ddhub.no/Derivation> <http://www.w3.org/2000/01/rdf-schema#comment> "Computes the derivative of a time series.\n"@EN .
@@ -5777,6 +5826,9 @@
 <http://ddhub.no/HookLoad> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for HookLoad.\n"@EN .
 <http://ddhub.no/HookPosition> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for HookPosition.\n"@EN .
 <http://ddhub.no/HookVelocity> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for HookVelocity.\n"@EN .
+<http://ddhub.no/DollyRetraction> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for DollyRetraction. Proportion of retraction of the dolly of a top drive: 0 when fully extended, 1 when fully retracted.\n"@EN .
+<http://ddhub.no/DollyFullyExtended> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for DollyFullyExtended. Boolean signal that is true when the dolly of a top drive is fully extended.\n"@EN .
+<http://ddhub.no/DollyFullyRetracted> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for DollyFullyRetracted. Boolean signal that is true when the dolly of a top drive is fully retracted.\n"@EN .
 <http://ddhub.no/Inclination> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for Inclination.\n"@EN .
 <http://ddhub.no/MeasuredDepth> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for MeasuredDepth.\n"@EN .
 <http://ddhub.no/PumpRate> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for PumpRate.\n"@EN .
@@ -5851,7 +5903,13 @@
 <http://ddhub.no/PowerScrSystem> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/HoistingSystem> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/RackAndPinionHoistingSystem> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/RackAndPinionHydraulicDrive> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/RackAndPinionElectricDrive> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/RamHoistingSystem> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/RamRig> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/HoistingCylinder> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/HoistingCylinderCapChamber> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/HoistingCylinderRodChamber> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Derrick> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ConventionalDerrick> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/SlantDerrick> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -5863,7 +5921,6 @@
 <http://ddhub.no/StandardElectricalDrawworks> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MechanicalDrawworks> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DieselElectricalDrawworks> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/RamRig> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MechanicalBlock> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/TravellingBlock> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/CrownBlock> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -6187,6 +6244,7 @@
 <http://ddhub.no/LinerDrilling> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/SteerableLinerDrilling> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/CirculationSub> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/InstrumentedSub> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Whipstock> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/FishingTools> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Overshot> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -6286,6 +6344,7 @@
 <http://ddhub.no/GenericEquipmentGatevalve> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ThreeWayManifold> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ThreeWayValve> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/InstrumentInstance> <http://www.w3.org/2000/01/rdf-schema#comment> "An identifiable physical instrument assembly. Its graph URI is the primary identity; optional serial numbers and asset identifiers are not globally unique by themselves. An instance may also be classified using an appropriate existing equipment class, such as InstrumentedSub.\n"@EN .
 <http://ddhub.no/Feature> <http://www.w3.org/2000/01/rdf-schema#comment> "A feature is a characteristic of something.\n"@EN .
 <http://ddhub.no/DataTransmissionFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A data transmission feature is a characteristic about how data is transferred from one place to another.\n"@EN .
 <http://ddhub.no/LookupTableFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "Such a feature indicates that something accounts for lookup table.\n"@EN .
@@ -6489,6 +6548,7 @@
 <http://ddhub.no/BinghamPlastic> <http://www.w3.org/2000/01/rdf-schema#comment> "A Bingham plastic rheological behavior is characterized by a yield stress that must be exceeded\nbefore the material begins to flow,\n"@EN .
 <http://ddhub.no/YieldPowerLaw> <http://www.w3.org/2000/01/rdf-schema#comment> "A Yield Power Law rheological behavior is characterized by a yield stress and a shear thinning or shear thickening properties where the viscosity changes with shear rate\nbefore the material begins to flow,\n"@EN .
 <http://ddhub.no/Quemada> <http://www.w3.org/2000/01/rdf-schema#comment> "A Quemada rheological behavior exhibits shear thinning and shear thickening properties, yet with limits\nat low and high shear rates that tend to constant viscosity values.\n"@EN .
+<http://ddhub.no/MeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "The physical mechanism used to obtain a measurement. It describes sensing, not transport, aggregation or the commercial instrument model.\n"@EN .
 <http://ddhub.no/FlowMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the underlying principle used to obtain a measurement about a flowing medium.\n"@EN .
 <http://ddhub.no/ResonantMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that a resonant measurement principle is used to perform a measurement, e.g., vibrating tube or fork or cantilever.\n"@EN .
 <http://ddhub.no/ConcentricCylindersMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that a measurement principle utilizing concentric cylinders is used to perform a measurement, like typically a Couette rheometer.\n"@EN .
@@ -6496,11 +6556,14 @@
 <http://ddhub.no/RotatingWheelMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that a rotating wheel measurement principle is used to perform a measurement.\n"@EN .
 <http://ddhub.no/MechanicalMomentumMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that a mechanical momentum measurement principle is used to perform a measurement.\n"@EN .
 <http://ddhub.no/CalorimetricMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that a calorimetric measurement principle is used to perform a measurement.\n"@EN .
-<http://ddhub.no/AcousticMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that an acoustic measurement principle is used to perform a measurement.\n"@EN .
-<http://ddhub.no/ElectromagneticMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that an electromagnetic measurement principle is used to perform a measurement.\n"@EN .
 <http://ddhub.no/RadiometricMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that an radiometric measurement principle is used to perform a measurement.\n"@EN .
 <http://ddhub.no/OpticalMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that an optical measurement principle is used to perform a measurement.\n"@EN .
 <http://ddhub.no/GravimetricMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that a gravimetric measurement principle is used to perform a measurement.\n"@EN .
+<http://ddhub.no/AcousticMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that an acoustic measurement principle is used to perform a measurement.\n"@EN .
+<http://ddhub.no/UltrasonicPulseEchoMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "An ultrasonic pulse is emitted and its returning echo is measured. Travel time can support distance/radius estimation, while echo amplitude provides reflection information; radius and amplitude are separate outputs. This does not describe acoustic telemetry.\n"@EN .
+<http://ddhub.no/ElectromagneticMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes that an electromagnetic measurement principle is used to perform a measurement.\n"@EN .
+<http://ddhub.no/ElectromagneticPulseEchoMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "An electromagnetic pulse is emitted and its returning response is measured. Time-of-flight and echo amplitude support distinct geometric and reflection outputs. This does not describe electromagnetic telemetry or wired-pipe coupling.\n"@EN .
+<http://ddhub.no/InstrumentModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A manufacturer-defined instrument product or model, independent of individual physical units. Model variants with materially different specifications use distinct model nodes. Model identifiers are catalog data, not vocabulary class names.\n"@EN .
 <http://ddhub.no/MeasurableQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a quantity that allows meaningful comparisons.\nA `MeasurableQuantity` is related to a Quantity using the `HasMeasurableQuantity` relation and its reciprocal\nrelation called `IsOfBaseQuantity`.\nContext dependence: for example, Fluid density and Equivalent Circulating Density are represented \nas two different \"Measurable quantities\", although they both refer to the same base SI quantities. \nTypical sub-types of `MeasurableQuantity` are provided in MeasurableQuantityTypes. These types\ncan be used in a sort of singleton pattern, i.e., it is not necessary to create an individual to use them\nin a relation. Also, if individuals are created with the same characteristics, they are considered as being \nmultiple representations of the same `Noun`. The list of `MeasurableQuantity` in MeasurableQuantityTypes is automatically generated\nfrom the `PhysicalQuantities` defined in the Open Source Drilling Community ([OSDC](https://opensourcedrilling.org/)) project called `UnitConversion` \n(see [`OSDC UnitConversion`](https://github.com/Open-Source-Drilling-Community/UnitConversion)). Only the\nphysical quantities for which a `MeaningfulPrecision` has beed defined are used to generate MeasurableQuantityTypes. \nIt is possible to look at all the physical quantities defined in the `OSDC UnitConversion` project by\nusing the web application hosted here: [`OSDC Physical Quantity Web App`](https://dev.digiwells.no/UnitConversion/webapp/PhysicalQuantity).\n"@EN .
 <http://ddhub.no/ConsistencyIndexRheologyQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.\nThe dimension of dynamic viscosity is:\n$$[ML^{-1}T^{-1}]$$.\nThe SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \\cdot s$\nThe consistency index in rheology measures a fluid's resistance to flow; it quantifies the fluid's viscosity and how it changes with shear rate.\nThe meaningful precision of a consistency index in rheology is typically: 0.0001 Pa\u2022s\n"@EN .
 <http://ddhub.no/ElectricTensionQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "Electric tension is the difference in electric potential between two points.In a static electric field, it corresponds to the work needed per unit of charge to move a positive test charge from the first point to the second point.\nThe dimension of electric tension is:\n$$[L^{2}MI^{-1}T^{-3}]$$.\nThe SI unit for **electric tension** is: volt with the associated unit label $V$\n"@EN .
@@ -8250,6 +8313,14 @@
 <http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DynamicDrillingSignal> .
 <http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#datetime> .
+<http://ddhub.no/SerialNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/SerialNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/SerialNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/InstrumentInstance> .
+<http://ddhub.no/SerialNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://ddhub.no/AssetIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/AssetIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/AssetIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/InstrumentInstance> .
+<http://ddhub.no/AssetIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://ddhub.no/EndPointDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/EndPointDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/EndPointDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DataEndPoint> .
@@ -8304,6 +8375,14 @@
 <http://ddhub.no/RightToLeft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/RightToLeft> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicJunction> .
 <http://ddhub.no/RightToLeft> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#bool> .
+<http://ddhub.no/ModelIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/ModelIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/ModelIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/InstrumentModel> .
+<http://ddhub.no/ModelIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://ddhub.no/ModelName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/ModelName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/ModelName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/InstrumentModel> .
+<http://ddhub.no/ModelName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://ddhub.no/MeaningfulPrecision> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/MeaningfulPrecision> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/MeaningfulPrecision> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/MeasurableQuantity> .
@@ -8597,9 +8676,13 @@
 <http://ddhub.no/HasControlLimit> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingLimit> .
 <http://ddhub.no/HasControlLimit> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsRelatedToDrillingLimit> .
 <http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/WellBoreData> .
+<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/WellBoreDataCharateristic> .
 <http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsDescriptionOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsDescriptionOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/IsDescriptionOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/IsDescriptionOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/HasOperationalStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/OperationalStep> .
 <http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/OperationalStep> .
@@ -8692,6 +8775,10 @@
 <http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsSensorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSensorOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/MeasurementDevice> .
+<http://ddhub.no/IsSensorOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/InstrumentInstance> .
+<http://ddhub.no/IsSensorOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsProvidedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataProvider> .
@@ -8704,6 +8791,10 @@
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Telemetry> .
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/SupportsTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/SupportsTelemetry> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/InstrumentInstance> .
+<http://ddhub.no/SupportsTelemetry> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Telemetry> .
+<http://ddhub.no/SupportsTelemetry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsConditionedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ValidityCondition> .
@@ -9068,14 +9159,22 @@
 <http://ddhub.no/HasQuemadaViscosityAtInfiniteShearRate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/RheologicalBehavior> .
 <http://ddhub.no/HasQuemadaViscosityAtInfiniteShearRate> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/HasQuemadaViscosityAtInfiniteShearRate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
-<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FlowMeasurementPrinciple> .
-<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/ControlsMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/ControlsMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/ControlsMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FlowMeasurementPrinciple> .
 <http://ddhub.no/ControlsMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsOfInstrumentModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsOfInstrumentModel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/InstrumentInstance> .
+<http://ddhub.no/IsOfInstrumentModel> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/InstrumentModel> .
+<http://ddhub.no/IsOfInstrumentModel> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasManufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasManufacturer> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/InstrumentModel> .
+<http://ddhub.no/HasManufacturer> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataEcosystemOrganization> .
+<http://ddhub.no/HasManufacturer> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/MeasurementPrinciple> .
+<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsOfMechanicalStiffnessType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsOfMechanicalStiffnessType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillStemMechanicalModel> .
 <http://ddhub.no/IsOfMechanicalStiffnessType> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/MechanicalStiffnessType> .
@@ -9268,6 +9367,8 @@
 <http://ddhub.no/Value> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/TimeStampAtSource> <http://www.w3.org/2000/01/rdf-schema#comment> "this is a UTC date-time value corresponding to the time at which the value has been taken.\n"@EN .
 <http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> "this is a UTC date-time value at which the value has been acquired by the data acquisition system.\n"@EN .
+<http://ddhub.no/SerialNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "Optional manufacturer-assigned serial number of this physical unit.\n"@EN .
+<http://ddhub.no/AssetIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Optional externally managed asset identifier; its issuing authority is supplied by the deployment catalog.\n"@EN .
 <http://ddhub.no/EndPointDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/WellUID> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/WellName> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
@@ -9281,6 +9382,8 @@
 <http://ddhub.no/MeasurementIndex> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/LeftToRight> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the fluid can flow from the left branch to the right branch though the junction\n"@EN .
 <http://ddhub.no/RightToLeft> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the fluid can flow from the right branch to the left branch though the junction\n"@EN .
+<http://ddhub.no/ModelIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Stable manufacturer-qualified product/model identifier, governed by the model catalog.\n"@EN .
+<http://ddhub.no/ModelName> <http://www.w3.org/2000/01/rdf-schema#comment> "Human-readable product/model name.\n"@EN .
 <http://ddhub.no/MeaningfulPrecision> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/PostiveUpward> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/L> <http://www.w3.org/2000/01/rdf-schema#comment> "Length exponent.\nSI Unit: metre (m)\n"@EN .
@@ -9354,7 +9457,8 @@
 <http://ddhub.no/IsRecommendedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the AdvisorySystemAdvice is recommended for an ADCS Activable Function\n"@EN .
 <http://ddhub.no/IsRelatedToDrillingLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point is related to a drilling incident.\n"@EN .
 <http://ddhub.no/HasControlLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point has a control limit.\n"@EN .
-<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to state some characteristics of a well bore data.\n"@EN .
+<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to state some characteristics of a contextual data, e.g., a well bore data or a rig.\n"@EN .
+<http://ddhub.no/IsDescriptionOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to state that a contextual data is the detailed description of the entity that another contextual data identifies, e.g., a rig description of a rig, or a wellbore architecture description of a wellbore.\n"@EN .
 <http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an operational step to a rig action plan.\n"@EN .
 <http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an action step to its parent phase step.\n"@EN .
 <http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an task step to its parent action step.\n"@EN .
@@ -9378,9 +9482,11 @@
 <http://ddhub.no/IsResampledBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a resampled signal to the resampling node that produced it.\n"@EN .
 <http://ddhub.no/IsTransmissionOutput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares a signal as the output of a transmission line.\n"@EN .
 <http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a signal or state is processed by a given data flow node.\n"@EN .
+<http://ddhub.no/IsSensorOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a physical sensor with its containing instrument assembly. Keep distinct sensor instances for distinct sensing elements or locations. This expresses physical ownership, not the location of the measured phenomenon or a data-processing subsystem.\n"@EN .
 <http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to stipulate that something is provided by a data provider.\n"@EN .
 <http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to stipulate that something is provided to a data provider.\n"@EN .
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Expresses that a signal is transmitted by some given telemetry system\n"@EN .
+<http://ddhub.no/SupportsTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a telemetry path available to an instrument in its deployed configuration, including a path supplied through attached MWD equipment. It does not assert that the instrument contains the transmitter or that every signal is actually transmitted on that path. Use IsTransmittedBy on each delivered data point for actual transport. Absence of this fact does not assert that a path is unsupported; complete allowed-path lists require deployment validation.\n"@EN .
 <http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a data point is valid only when the referenced condition is satisfied.\n"@EN .
 <http://ddhub.no/IsConditionInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal feeds a validity condition evaluation.\n"@EN .
 <http://ddhub.no/IsConditionLeft> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the left-hand operand of a binary validity condition.\n"@EN .
@@ -9472,8 +9578,10 @@
 <http://ddhub.no/HasQuemadaReferenceShearRate> <http://www.w3.org/2000/01/rdf-schema#comment> "Associate a reference shear rate signal with a rheological behavior.\n"@EN .
 <http://ddhub.no/HasQuemadaViscosityAtZeroShearRate> <http://www.w3.org/2000/01/rdf-schema#comment> "Associate a viscosity at shear rate tending to zero to a signal for a rheological behavior.\n"@EN .
 <http://ddhub.no/HasQuemadaViscosityAtInfiniteShearRate> <http://www.w3.org/2000/01/rdf-schema#comment> "Associate a viscosity at shear rate tending to infinity to a signal for a rheological behavior.\n"@EN .
-<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Associate a realtime signal to its measurement principle.\n"@EN .
 <http://ddhub.no/ControlsMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Associate a realtime signal to its measurement principle.\n"@EN .
+<http://ddhub.no/IsOfInstrumentModel> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a physical instrument with its manufacturer-defined model. Assign one model at the chosen assembly granularity; replace an assignment explicitly when correcting catalog data.\n"@EN .
+<http://ddhub.no/HasManufacturer> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the manufacturer of an instrument model. This is distinct from IsProvidedBy, which identifies the provider of data; a data aggregator need not be the manufacturer.\n"@EN .
+<http://ddhub.no/UsesMeasurementPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a measurement data point with the physical principle by which it is obtained. Retain processing lineage separately and use IsTransmittedBy for transport.\n"@EN .
 <http://ddhub.no/IsOfMechanicalStiffnessType> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to describe how the drill-stem mechanical model manage stiffness.\n"@EN .
 <http://ddhub.no/IsAMechanicalRepresentationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a mechanical logical element to the equipment it represents.\n"@EN .
 <http://ddhub.no/HasMechanicalState> <http://www.w3.org/2000/01/rdf-schema#comment> "Assigns a mechanical state to an element.\n"@EN .

@@ -75,7 +75,15 @@ specialized vocabulary for the hydraulic modelling
 - Description: 
 Describes abstract hydraulic concepts used to model drilling circulation systems and fluids.
 
+## InstrumentIdentity<!-- DEFINITION SET HEADER -->
+- Description: 
+Product-model identity, physical instrument instances and manufacturer relationships. Equipment taxonomy remains in DrillingEquipment; sensor ownership is in DataFlow.
+
 ## MeasurableQuantityTypes<!-- DEFINITION SET HEADER -->
+## MeasurementPrinciples<!-- DEFINITION SET HEADER -->
+- Description: 
+Physical principles used to acquire measurements, independent of instrument identity, signal processing and data telemetry. Flow-specific principles remain in Hydraulics.
+
 ## MechanicalModel<!-- DEFINITION SET HEADER -->
 - Description: 
 specialized vocabulary for the modelling of the drilling mechanics. Covers in particular torque and drag models
@@ -4650,6 +4658,93 @@ WHERE {
 }
 ```
 This example describes a signal that contains a json string that represent a target.
+## Rig <!-- NOUN -->
+- Display name: Rig
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+Rig is used to describe meta information about a drilling rig, i.e., what is necessary to identify it, like its name, its type and its identifier in the rig catalog. The detailed characteristics of the equipment of a rig are provided by the RigDescription.
+- Definition set: ContextualData
+- Examples:
+``` dwis rig_0
+DynamicDrillingSignal:rig_0
+DrillingDataPoint: rig_1
+rig_1 BelongsToClass Rig
+rig_1 BelongsToClass JSonDataType
+rig_1 HasDynamicValue rig_0
+DrillingContractor:drillingContractor_1
+rig_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+rig_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rig_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rig_1] -->|BelongsToClass| N0003(Rig) 
+	N0002[rig_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[rig_1] -->|HasDynamicValue| N0000((rig_0)) 
+	N0005[drillingContractor_1] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0002[rig_1] -->|IsProvidedBy| N0005((drillingContractor_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0002[rig_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rig_0
+WHERE {
+	?rig_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rig_1 rdf:type ddhub:Rig .
+	?rig_1 rdf:type ddhub:JSonDataType .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = rig_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a rig.
+``` dwis selectedRig_0
+DynamicDrillingSignal:selectedRig_0
+DrillingDataPoint: selectedRig_1
+selectedRig_1 BelongsToClass Rig
+selectedRig_1 BelongsToClass StringDataType
+selectedRig_1 HasDynamicValue selectedRig_0
+Current:current_1
+selectedRig_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[selectedRig_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[selectedRig_1] -->|BelongsToClass| N0003(Rig) 
+	N0002[selectedRig_1] -->|BelongsToClass| N0004(StringDataType) 
+	N0002[selectedRig_1] -->|HasDynamicValue| N0000((selectedRig_0)) 
+	N0005[current_1] -->|BelongsToClass| N0006(Current) 
+	N0002[selectedRig_1] -->|IsCharacterizedBy| N0005((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?selectedRig_0
+WHERE {
+	?selectedRig_0 rdf:type ddhub:DynamicDrillingSignal .
+	?selectedRig_1 rdf:type ddhub:Rig .
+	?selectedRig_1 rdf:type ddhub:StringDataType .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = selectedRig_0
+	&& 	?Attribute001 = current_1
+  )
+}
+```
+This example describes a signal that identifies the rig that is currently selected as the official one, e.g., by a user in a web application.
 ## Well <!-- NOUN -->
 - Display name: Well
 - Parent class: [ContextualData](#ContextualData)
@@ -5720,10 +5815,11 @@ WHERE {
 ```
 ## RigDescription <!-- NOUN -->
 - Display name: Rig Description
-- Parent class: [WellBoreData](#WellBoreData)
+- Parent class: [ContextualData](#ContextualData)
 - Description: 
 The rig data structure describes the characteristics of the drilling equipment and any additional equipment
-associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
+associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,... It is the detailed
+counterpart of the Rig noun, which only identifies a rig.
 - Definition set: ContextualData
 - Examples:
 ``` dwis rigDescription_0
@@ -5958,7 +6054,7 @@ WHERE {
 - Display name: Current
 - Parent class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
 - Description: 
-Current characterizes that the wellbore data is the currently selected one as the official one.
+Current characterizes that the contextual data (e.g., a wellbore description, a rig, a rig description) is the currently selected one as the official one.
 - Definition set: ContextualData
 - Examples:
 ``` dwis rigDescription_0
@@ -6967,6 +7063,117 @@ WHERE {
 }
 ```
 This example shows a standpipe pressure sensor producing a raw signal.
+## ForceSensor <!-- NOUN -->
+- Display name: Force Sensor
+- Parent class: [MeasurementDevice](#MeasurementDevice)
+- Description: 
+A physical sensor that measures a force, a load or a tension.
+- Definition set: DataFlow
+- Examples:
+```dwis forceSensorExample
+ForceSensor:forceSensor
+DrillingDataPoint:forceRaw
+forceRaw IsMeasuredBy forceSensor
+forceRaw IsGeneratedBy forceSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[forceSensor] -->|BelongsToClass| N0001(ForceSensor) 
+	N0002[forceRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[forceRaw] -->|IsMeasuredBy| N0000((forceSensor)) 
+	N0002[forceRaw] -->|IsGeneratedBy| N0000((forceSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?forceSensorExample
+WHERE {
+	?forceSensor rdf:type ddhub:ForceSensor .
+	?forceRaw rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = forceSensor
+	&& 	?Attribute001 = forceSensor
+  )
+}
+```
+This example shows a force sensor producing a raw signal.
+## LoadPinSensor <!-- NOUN -->
+- Display name: Load Pin Sensor
+- Parent class: [ForceSensor](#ForceSensor)
+- Description: 
+A force sensor built into a pin that carries the load of a hoisting component, e.g., the load pins at the top of a top drive.
+- Definition set: DataFlow
+- Examples:
+```dwis loadPinSensorExample
+LoadPinSensor:topDriveLoadPins
+DrillingDataPoint:hookloadRaw
+hookloadRaw IsMeasuredBy topDriveLoadPins
+hookloadRaw IsGeneratedBy topDriveLoadPins
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topDriveLoadPins] -->|BelongsToClass| N0001(LoadPinSensor) 
+	N0002[hookloadRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadRaw] -->|IsMeasuredBy| N0000((topDriveLoadPins)) 
+	N0002[hookloadRaw] -->|IsGeneratedBy| N0000((topDriveLoadPins)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?loadPinSensorExample
+WHERE {
+	?topDriveLoadPins rdf:type ddhub:LoadPinSensor .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = topDriveLoadPins
+	&& 	?Attribute001 = topDriveLoadPins
+  )
+}
+```
+This example shows the hookload measured by the load pins of a top drive.
+## DeadLineTensionSensor <!-- NOUN -->
+- Display name: Dead Line Tension Sensor
+- Parent class: [ForceSensor](#ForceSensor)
+- Description: 
+A force sensor that measures the tension of the dead line of a drawworks, typically a load cell in the dead-line anchor.
+- Definition set: DataFlow
+- Examples:
+```dwis deadLineTensionSensorExample
+DeadLineTensionSensor:deadLineSensor
+DrillingDataPoint:deadLineTensionRaw
+deadLineTensionRaw IsMeasuredBy deadLineSensor
+deadLineTensionRaw IsGeneratedBy deadLineSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[deadLineSensor] -->|BelongsToClass| N0001(DeadLineTensionSensor) 
+	N0002[deadLineTensionRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[deadLineTensionRaw] -->|IsMeasuredBy| N0000((deadLineSensor)) 
+	N0002[deadLineTensionRaw] -->|IsGeneratedBy| N0000((deadLineSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?deadLineTensionSensorExample
+WHERE {
+	?deadLineSensor rdf:type ddhub:DeadLineTensionSensor .
+	?deadLineTensionRaw rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = deadLineSensor
+	&& 	?Attribute001 = deadLineSensor
+  )
+}
+```
+This example shows the dead-line tension measured by a load cell of the dead-line anchor.
 ## Transformation <!-- NOUN -->
 - Display name: Transformation
 - Parent class: [DataFlowNode](#DataFlowNode)
@@ -8149,6 +8356,58 @@ WHERE {
 }
 ```
 This example averages hookload over the last ten seconds.
+## SensorFusionTransformation <!-- NOUN -->
+- Display name: Sensor Fusion Transformation
+- Parent class: [Transformation](#Transformation)
+- Description: 
+Combines several redundant or complementary signals, possibly using their history and a model of the process, into a single estimate of a quantity. It is not a direct transformation because its output depends on more than the current value of its inputs.
+- Definition set: DataFlow
+- Examples:
+```dwis hookloadFusion
+SensorFusionTransformation:hookloadFusion
+DrillingDataPoint:hookloadFromLoadPins
+DrillingDataPoint:hookloadFromDeadLine
+DrillingDataPoint:blockPosition
+DrillingDataPoint:correctedHookload
+hookloadFromLoadPins IsTransformationInput hookloadFusion
+hookloadFromDeadLine IsTransformationInput hookloadFusion
+blockPosition IsTransformationInput hookloadFusion
+correctedHookload IsTransformationOutput hookloadFusion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadFusion] -->|BelongsToClass| N0001(SensorFusionTransformation) 
+	N0002[hookloadFromLoadPins] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadFromDeadLine] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0005[blockPosition] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0006[correctedHookload] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadFromLoadPins] -->|IsTransformationInput| N0000((hookloadFusion)) 
+	N0004[hookloadFromDeadLine] -->|IsTransformationInput| N0000((hookloadFusion)) 
+	N0005[blockPosition] -->|IsTransformationInput| N0000((hookloadFusion)) 
+	N0006[correctedHookload] -->|IsTransformationOutput| N0000((hookloadFusion)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadFusion
+WHERE {
+	?hookloadFusion rdf:type ddhub:SensorFusionTransformation .
+	?hookloadFromLoadPins rdf:type ddhub:DrillingDataPoint .
+	?hookloadFromDeadLine rdf:type ddhub:DrillingDataPoint .
+	?blockPosition rdf:type ddhub:DrillingDataPoint .
+	?correctedHookload rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hookloadFusion
+	&& 	?Attribute001 = hookloadFusion
+	&& 	?Attribute002 = hookloadFusion
+	&& 	?Attribute003 = hookloadFusion
+  )
+}
+```
+This example fuses hookload estimates from load pins and from the dead line, using the block motion, into a corrected hookload.
 ## TimeBasedTransformation <!-- NOUN -->
 - Display name: Time Based Transformation
 - Parent class: [Transformation](#Transformation)
@@ -11697,9 +11956,33 @@ This example stores time-stamped weight-on-bit samples.
 - Display name: Rack and Pinion Hoisting System
 - Parent class: [HoistingSystem](#HoistingSystem)
 - Definition set: DrillingEquipment
+## RackAndPinionHydraulicDrive <!-- NOUN -->
+- Display name: Rack and Pinion Hydraulic Drive
+- Parent class: [RackAndPinionHoistingSystem](#RackAndPinionHoistingSystem)
+- Definition set: DrillingEquipment
+## RackAndPinionElectricDrive <!-- NOUN -->
+- Display name: Rack and Pinion Electric Drive
+- Parent class: [RackAndPinionHoistingSystem](#RackAndPinionHoistingSystem)
+- Definition set: DrillingEquipment
 ## RamHoistingSystem <!-- NOUN -->
 - Display name: Ram Hoisting System
 - Parent class: [HoistingSystem](#HoistingSystem)
+- Definition set: DrillingEquipment
+## RamRig <!-- NOUN -->
+- Display name: Ram Rig
+- Parent class: [RamHoistingSystem](#RamHoistingSystem)
+- Definition set: DrillingEquipment
+## HoistingCylinder <!-- NOUN -->
+- Display name: Hoisting Cylinder
+- Parent class: [RamHoistingSystem](#RamHoistingSystem)
+- Definition set: DrillingEquipment
+## HoistingCylinderCapChamber <!-- NOUN -->
+- Display name: Hoisting Cylinder Cap Chamber
+- Parent class: [HoistingCylinder](#HoistingCylinder)
+- Definition set: DrillingEquipment
+## HoistingCylinderRodChamber <!-- NOUN -->
+- Display name: Hoisting Cylinder Rod Chamber
+- Parent class: [HoistingCylinder](#HoistingCylinder)
 - Definition set: DrillingEquipment
 ## Derrick <!-- NOUN -->
 - Display name: Derrick
@@ -11743,10 +12026,6 @@ This example stores time-stamped weight-on-bit samples.
 - Definition set: DrillingEquipment
 ## DieselElectricalDrawworks <!-- NOUN -->
 - Display name: Diesel Electrical Drawworks
-- Parent class: [Drawworks](#Drawworks)
-- Definition set: DrillingEquipment
-## RamRig <!-- NOUN -->
-- Display name: Ram Rig
 - Parent class: [Drawworks](#Drawworks)
 - Definition set: DrillingEquipment
 ## MechanicalBlock <!-- NOUN -->
@@ -13039,6 +13318,10 @@ This example stores time-stamped weight-on-bit samples.
 - Definition set: DrillingEquipment
 ## CirculationSub <!-- NOUN -->
 - Display name: Circulation Sub
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Definition set: DrillingEquipment
+## InstrumentedSub <!-- NOUN -->
+- Display name: Instrumented Sub
 - Parent class: [DrillingEquipment](#DrillingEquipment)
 - Definition set: DrillingEquipment
 ## Whipstock <!-- NOUN -->
@@ -22501,7 +22784,7 @@ WHERE {
 This example states that a drilling liquid has a Quemada rheological behavior.
 ## FlowMeasurementPrinciple <!-- NOUN -->
 - Display name: Flow Measurement Principle
-- Parent class: [DWISNoun](#DWISNoun)
+- Parent class: [MeasurementPrinciple](#MeasurementPrinciple)
 - Description: 
 Describes the underlying principle used to obtain a measurement about a flowing medium.
 - Definition set: Hydraulics
@@ -22509,14 +22792,14 @@ Describes the underlying principle used to obtain a measurement about a flowing 
 ```dwis FlowMeasurementPrincipleExample
 DrillingDataPoint:realtimeSignal
 FlowMeasurementPrinciple:flowMeasurementPrinciple
-realtimeSignal UsesFlowMeasurementPrinciple flowMeasurementPrinciple
+realtimeSignal UsesMeasurementPrinciple flowMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[realtimeSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[flowMeasurementPrinciple] -->|BelongsToClass| N0003(FlowMeasurementPrinciple) 
-	N0000[realtimeSignal] -->|UsesFlowMeasurementPrinciple| N0002((flowMeasurementPrinciple)) 
+	N0000[realtimeSignal] -->|UsesMeasurementPrinciple| N0002((flowMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22543,14 +22826,14 @@ Describes that a resonant measurement principle is used to perform a measurement
 ```dwis ResonantMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 ResonantMeasurementPrinciple:resonantMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple resonantMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple resonantMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[resonantMeasurementPrinciple] -->|BelongsToClass| N0003(ResonantMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((resonantMeasurementPrinciple)) 
+	N0000[densitySignal] -->|UsesMeasurementPrinciple| N0002((resonantMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22577,14 +22860,14 @@ Describes that a measurement principle utilizing concentric cylinders is used to
 ```dwis ConcentricCylindersMeasurementPrincipleExample
 DrillingDataPoint:shearStressSignal
 ConcentricCylindersMeasurementPrinciple:concentricCylindersMeasurementPrinciple
-shearStressSignal UsesFlowMeasurementPrinciple concentricCylindersMeasurementPrinciple
+shearStressSignal UsesMeasurementPrinciple concentricCylindersMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[shearStressSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[concentricCylindersMeasurementPrinciple] -->|BelongsToClass| N0003(ConcentricCylindersMeasurementPrinciple) 
-	N0000[shearStressSignal] -->|UsesFlowMeasurementPrinciple| N0002((concentricCylindersMeasurementPrinciple)) 
+	N0000[shearStressSignal] -->|UsesMeasurementPrinciple| N0002((concentricCylindersMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22611,14 +22894,14 @@ Describes that a differential pressure measurement principle is used to perform 
 ```dwis DifferentialPressureMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 DifferentialPressureMeasurementPrinciple:differentialPressureMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple differentialPressureMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple differentialPressureMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[differentialPressureMeasurementPrinciple] -->|BelongsToClass| N0003(DifferentialPressureMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((differentialPressureMeasurementPrinciple)) 
+	N0000[densitySignal] -->|UsesMeasurementPrinciple| N0002((differentialPressureMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22645,14 +22928,14 @@ Describes that a rotating wheel measurement principle is used to perform a measu
 ```dwis RotatingWheelMeasurementPrincipleExample
 DrillingDataPoint:massFlowRateSignal
 RotatingWheelMeasurementPrinciple:rotatingWheelMeasurementPrinciple
-massFlowRateSignal UsesFlowMeasurementPrinciple rotatingWheelMeasurementPrinciple
+massFlowRateSignal UsesMeasurementPrinciple rotatingWheelMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[massFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[rotatingWheelMeasurementPrinciple] -->|BelongsToClass| N0003(RotatingWheelMeasurementPrinciple) 
-	N0000[massFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((rotatingWheelMeasurementPrinciple)) 
+	N0000[massFlowRateSignal] -->|UsesMeasurementPrinciple| N0002((rotatingWheelMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22679,14 +22962,14 @@ Describes that a mechanical momentum measurement principle is used to perform a 
 ```dwis MechanicalMomentumMeasurementPrincipleExample
 DrillingDataPoint:volumetricFlowRateSignal
 MechanicalMomentumMeasurementPrinciple:mechanicalMomentumMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple mechanicalMomentumMeasurementPrinciple
+volumetricFlowRateSignal UsesMeasurementPrinciple mechanicalMomentumMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[mechanicalMomentumMeasurementPrinciple] -->|BelongsToClass| N0003(MechanicalMomentumMeasurementPrinciple) 
-	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((mechanicalMomentumMeasurementPrinciple)) 
+	N0000[volumetricFlowRateSignal] -->|UsesMeasurementPrinciple| N0002((mechanicalMomentumMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22713,14 +22996,14 @@ Describes that a calorimetric measurement principle is used to perform a measure
 ```dwis CalorimetricMeasurementPrincipleExample
 DrillingDataPoint:massFlowRateSignal
 CalorimetricMeasurementPrinciple:calorimetricMeasurementPrinciple
-massFlowRateSignal UsesFlowMeasurementPrinciple calorimetricMeasurementPrinciple
+massFlowRateSignal UsesMeasurementPrinciple calorimetricMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[massFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[calorimetricMeasurementPrinciple] -->|BelongsToClass| N0003(CalorimetricMeasurementPrinciple) 
-	N0000[massFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((calorimetricMeasurementPrinciple)) 
+	N0000[massFlowRateSignal] -->|UsesMeasurementPrinciple| N0002((calorimetricMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22737,74 +23020,6 @@ WHERE {
 }
 ```
 This example states that a mass flowrate signal uses a calorimetric measurement principle.
-## AcousticMeasurementPrinciple <!-- NOUN -->
-- Display name: Acoustic Measurement Principle
-- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
-- Description: 
-Describes that an acoustic measurement principle is used to perform a measurement.
-- Definition set: Hydraulics
-- Examples:
-```dwis AcousticMeasurementPrincipleExample
-DrillingDataPoint:volumetricFlowRateSignal
-AcousticMeasurementPrinciple:acousticMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple acousticMeasurementPrinciple
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
-	N0002[acousticMeasurementPrinciple] -->|BelongsToClass| N0003(AcousticMeasurementPrinciple) 
-	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((acousticMeasurementPrinciple)) 
-```
-An example SparQL query looks like this:
-```sparql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ddhub: <http://ddhub.no/>
-PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?AcousticMeasurementPrincipleExample
-WHERE {
-	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
-	?acousticMeasurementPrinciple rdf:type ddhub:AcousticMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = acousticMeasurementPrinciple
-  )
-}
-```
-This example states that a volumetric flowrate signal uses an acoustic measurement principle.
-## ElectromagneticMeasurementPrinciple <!-- NOUN -->
-- Display name: Electromagnetic Measurement Principle
-- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
-- Description: 
-Describes that an electromagnetic measurement principle is used to perform a measurement.
-- Definition set: Hydraulics
-- Examples:
-```dwis ElectromagneticMeasurementPrincipleExample
-DrillingDataPoint:volumetricFlowRateSignal
-ElectromagneticMeasurementPrinciple:electromagneticMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple electromagneticMeasurementPrinciple
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
-	N0002[electromagneticMeasurementPrinciple] -->|BelongsToClass| N0003(ElectromagneticMeasurementPrinciple) 
-	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((electromagneticMeasurementPrinciple)) 
-```
-An example SparQL query looks like this:
-```sparql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ddhub: <http://ddhub.no/>
-PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?ElectromagneticMeasurementPrincipleExample
-WHERE {
-	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
-	?electromagneticMeasurementPrinciple rdf:type ddhub:ElectromagneticMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = electromagneticMeasurementPrinciple
-  )
-}
-```
-This example states that a volumetric flowrate signal uses an electromagnetic measurement principle.
 ## RadiometricMeasurementPrinciple <!-- NOUN -->
 - Display name: Radiometric Measurement Principle
 - Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
@@ -22815,14 +23030,14 @@ Describes that an radiometric measurement principle is used to perform a measure
 ```dwis RadiometricMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 RadiometricMeasurementPrinciple:radiometricMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple radiometricMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple radiometricMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[radiometricMeasurementPrinciple] -->|BelongsToClass| N0003(RadiometricMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((radiometricMeasurementPrinciple)) 
+	N0000[densitySignal] -->|UsesMeasurementPrinciple| N0002((radiometricMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22849,14 +23064,14 @@ Describes that an optical measurement principle is used to perform a measurement
 ```dwis OpticalMeasurementPrincipleExample
 DrillingDataPoint:volumetricFlowRateSignal
 OpticalMeasurementPrinciple:opticalMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple radiometricMeasurementPrinciple
+volumetricFlowRateSignal UsesMeasurementPrinciple radiometricMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[opticalMeasurementPrinciple] -->|BelongsToClass| N0003(OpticalMeasurementPrinciple) 
-	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0004((radiometricMeasurementPrinciple)) 
+	N0000[volumetricFlowRateSignal] -->|UsesMeasurementPrinciple| N0004((radiometricMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22883,14 +23098,14 @@ Describes that a gravimetric measurement principle is used to perform a measurem
 ```dwis GravimetricMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 GravimetricMeasurementPrinciple:gravimetricMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple gravimetricMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple gravimetricMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[gravimetricMeasurementPrinciple] -->|BelongsToClass| N0003(GravimetricMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((gravimetricMeasurementPrinciple)) 
+	N0000[densitySignal] -->|UsesMeasurementPrinciple| N0002((gravimetricMeasurementPrinciple)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -22907,6 +23122,91 @@ WHERE {
 }
 ```
 This example states that a mass density signal uses an gravimetric measurement principle.
+## InstrumentModel <!-- NOUN -->
+- Display name: InstrumentModel
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - ModelIdentifier
+    - Type: string
+    - Description: Stable manufacturer-qualified product/model identifier, governed by the model catalog.
+  - ModelName
+    - Type: string
+    - Description: Human-readable product/model name.
+- Description: 
+A manufacturer-defined instrument product or model, independent of individual physical units. Model variants with materially different specifications use distinct model nodes. Model identifiers are catalog data, not vocabulary class names.
+- Definition set: InstrumentIdentity
+- Examples:
+```dwis InstrumentModelExample
+InstrumentModel:baseStarModel
+baseStarModel.ModelIdentifier = "Halliburton/BaseStar"
+baseStarModel.ModelName = "BaseStar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseStarModel] -->|BelongsToClass| N0001(InstrumentModel) 
+	N0000[baseStarModel] -->|ModelIdentifier| N0002(("Halliburton/BaseStar")) 
+	N0000[baseStarModel] -->|ModelName| N0003(("BaseStar")) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?InstrumentModelExample
+WHERE {
+	?baseStarModel rdf:type ddhub:InstrumentModel .
+	?baseStarModel ddhub:ModelIdentifier ?Attribute000 .
+	?baseStarModel ddhub:ModelName ?Attribute001 .
+  FILTER (
+	?Attribute000 = "Halliburton/BaseStar"
+	&& 	?Attribute001 = "BaseStar"
+  )
+}
+```
+## InstrumentInstance <!-- NOUN -->
+- Display name: InstrumentInstance
+- Parent class: [Equipment](#Equipment)
+- Attributes:
+  - SerialNumber
+    - Type: string
+    - Description: Optional manufacturer-assigned serial number of this physical unit.
+  - AssetIdentifier
+    - Type: string
+    - Description: Optional externally managed asset identifier; its issuing authority is supplied by the deployment catalog.
+- Description: 
+An identifiable physical instrument assembly. Its graph URI is the primary identity; optional serial numbers and asset identifiers are not globally unique by themselves. An instance may also be classified using an appropriate existing equipment class, such as InstrumentedSub.
+- Definition set: InstrumentIdentity
+- Examples:
+```dwis InstrumentInstanceExample
+InstrumentInstance:baseStarUnit
+baseStarUnit BelongsToClass InstrumentedSub
+InstrumentModel:baseStarModel
+baseStarUnit IsOfInstrumentModel baseStarModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseStarUnit] -->|BelongsToClass| N0001(InstrumentInstance) 
+	N0000[baseStarUnit] -->|BelongsToClass| N0002(InstrumentedSub) 
+	N0003[baseStarModel] -->|BelongsToClass| N0004(InstrumentModel) 
+	N0000[baseStarUnit] -->|IsOfInstrumentModel| N0003((baseStarModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?InstrumentInstanceExample
+WHERE {
+	?baseStarUnit rdf:type ddhub:InstrumentInstance .
+	?baseStarUnit rdf:type ddhub:InstrumentedSub .
+	?baseStarModel rdf:type ddhub:InstrumentModel .
+  FILTER (
+	?Attribute000 = baseStarModel
+  )
+}
+```
 ## ConsistencyIndexRheologyQuantity <!-- NOUN -->
 - Display name: ConsistencyIndexRheology
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
@@ -25913,6 +26213,173 @@ graph LR
 	N0002[SpecificVolumeSquaredDrilling_DataPoint] -->|HasValue| N0000((SpecificVolumeSquaredDrilling_Signal)) 
 	N0002[SpecificVolumeSquaredDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((SpecificVolumeSquaredDrillingQuantity)) 
 	N0000[SpecificVolumeSquaredDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetreSquaredPerKilogramSquared)) 
+```
+## MeasurementPrinciple <!-- NOUN -->
+- Display name: MeasurementPrinciple
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+The physical mechanism used to obtain a measurement. It describes sensing, not transport, aggregation or the commercial instrument model.
+- Definition set: MeasurementPrinciples
+- Examples:
+```dwis MeasurementPrincipleExample
+DrillingDataPoint:boreholeRadius
+MeasurementPrinciple:radiusMeasurementPrinciple
+boreholeRadius UsesMeasurementPrinciple radiusMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[boreholeRadius] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[radiusMeasurementPrinciple] -->|BelongsToClass| N0003(MeasurementPrinciple) 
+	N0000[boreholeRadius] -->|UsesMeasurementPrinciple| N0002((radiusMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasurementPrincipleExample
+WHERE {
+	?boreholeRadius rdf:type ddhub:DrillingDataPoint .
+	?radiusMeasurementPrinciple rdf:type ddhub:MeasurementPrinciple .
+  FILTER (
+	?Attribute000 = radiusMeasurementPrinciple
+  )
+}
+```
+## AcousticMeasurementPrinciple <!-- NOUN -->
+- Display name: Acoustic Measurement Principle
+- Parent class: [MeasurementPrinciple](#MeasurementPrinciple)
+- Description: 
+Describes that an acoustic measurement principle is used to perform a measurement.
+- Definition set: MeasurementPrinciples
+- Examples:
+```dwis AcousticMeasurementPrincipleExample
+DrillingDataPoint:volumetricFlowRateSignal
+AcousticMeasurementPrinciple:acousticMeasurementPrinciple
+volumetricFlowRateSignal UsesMeasurementPrinciple acousticMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[acousticMeasurementPrinciple] -->|BelongsToClass| N0003(AcousticMeasurementPrinciple) 
+	N0000[volumetricFlowRateSignal] -->|UsesMeasurementPrinciple| N0002((acousticMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?AcousticMeasurementPrincipleExample
+WHERE {
+	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
+	?acousticMeasurementPrinciple rdf:type ddhub:AcousticMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = acousticMeasurementPrinciple
+  )
+}
+```
+This example states that a volumetric flowrate signal uses an acoustic measurement principle.
+## ElectromagneticMeasurementPrinciple <!-- NOUN -->
+- Display name: Electromagnetic Measurement Principle
+- Parent class: [MeasurementPrinciple](#MeasurementPrinciple)
+- Description: 
+Describes that an electromagnetic measurement principle is used to perform a measurement.
+- Definition set: MeasurementPrinciples
+- Examples:
+```dwis ElectromagneticMeasurementPrincipleExample
+DrillingDataPoint:volumetricFlowRateSignal
+ElectromagneticMeasurementPrinciple:electromagneticMeasurementPrinciple
+volumetricFlowRateSignal UsesMeasurementPrinciple electromagneticMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[electromagneticMeasurementPrinciple] -->|BelongsToClass| N0003(ElectromagneticMeasurementPrinciple) 
+	N0000[volumetricFlowRateSignal] -->|UsesMeasurementPrinciple| N0002((electromagneticMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ElectromagneticMeasurementPrincipleExample
+WHERE {
+	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
+	?electromagneticMeasurementPrinciple rdf:type ddhub:ElectromagneticMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = electromagneticMeasurementPrinciple
+  )
+}
+```
+This example states that a volumetric flowrate signal uses an electromagnetic measurement principle.
+## UltrasonicPulseEchoMeasurementPrinciple <!-- NOUN -->
+- Display name: UltrasonicPulseEchoMeasurementPrinciple
+- Parent class: [AcousticMeasurementPrinciple](#AcousticMeasurementPrinciple)
+- Description: 
+An ultrasonic pulse is emitted and its returning echo is measured. Travel time can support distance/radius estimation, while echo amplitude provides reflection information; radius and amplitude are separate outputs. This does not describe acoustic telemetry.
+- Definition set: MeasurementPrinciples
+- Examples:
+```dwis UltrasonicPulseEchoMeasurementPrincipleExample
+DerivedMeasurement:boreholeRadius
+UltrasonicPulseEchoMeasurementPrinciple:ultrasonicPulseEcho
+boreholeRadius UsesMeasurementPrinciple ultrasonicPulseEcho
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[boreholeRadius] -->|BelongsToClass| N0001(DerivedMeasurement) 
+	N0002[ultrasonicPulseEcho] -->|BelongsToClass| N0003(UltrasonicPulseEchoMeasurementPrinciple) 
+	N0000[boreholeRadius] -->|UsesMeasurementPrinciple| N0002((ultrasonicPulseEcho)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?UltrasonicPulseEchoMeasurementPrincipleExample
+WHERE {
+	?boreholeRadius rdf:type ddhub:DerivedMeasurement .
+	?ultrasonicPulseEcho rdf:type ddhub:UltrasonicPulseEchoMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = ultrasonicPulseEcho
+  )
+}
+```
+## ElectromagneticPulseEchoMeasurementPrinciple <!-- NOUN -->
+- Display name: ElectromagneticPulseEchoMeasurementPrinciple
+- Parent class: [ElectromagneticMeasurementPrinciple](#ElectromagneticMeasurementPrinciple)
+- Description: 
+An electromagnetic pulse is emitted and its returning response is measured. Time-of-flight and echo amplitude support distinct geometric and reflection outputs. This does not describe electromagnetic telemetry or wired-pipe coupling.
+- Definition set: MeasurementPrinciples
+- Examples:
+```dwis ElectromagneticPulseEchoMeasurementPrincipleExample
+DerivedMeasurement:boreholeRadius
+ElectromagneticPulseEchoMeasurementPrinciple:electromagneticPulseEcho
+boreholeRadius UsesMeasurementPrinciple electromagneticPulseEcho
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[boreholeRadius] -->|BelongsToClass| N0001(DerivedMeasurement) 
+	N0002[electromagneticPulseEcho] -->|BelongsToClass| N0003(ElectromagneticPulseEchoMeasurementPrinciple) 
+	N0000[boreholeRadius] -->|UsesMeasurementPrinciple| N0002((electromagneticPulseEcho)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ElectromagneticPulseEchoMeasurementPrincipleExample
+WHERE {
+	?boreholeRadius rdf:type ddhub:DerivedMeasurement .
+	?electromagneticPulseEcho rdf:type ddhub:ElectromagneticPulseEchoMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = electromagneticPulseEcho
+  )
+}
 ```
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: Drill-stem mechanical model
@@ -51385,6 +51852,93 @@ WHERE {
 }
 ```
 This example assigns a drilling data point to the HookVelocity prototype.
+## DollyRetraction <!-- NOUN -->
+- Display name: DollyRetraction
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DollyRetraction. Proportion of retraction of the dolly of a top drive: 0 when fully extended, 1 when fully retracted.
+- Definition set: SignalPrototypes
+- Examples:
+```dwis dollyRetraction
+DrillingDataPoint:dollyRetraction
+dollyRetraction BelongsToClass DollyRetraction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dollyRetraction] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dollyRetraction] -->|BelongsToClass| N0002(DollyRetraction) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dollyRetraction
+WHERE {
+	?dollyRetraction rdf:type ddhub:DrillingDataPoint .
+	?dollyRetraction rdf:type ddhub:DollyRetraction .
+}
+```
+This example assigns a drilling data point to the DollyRetraction prototype.
+## DollyFullyExtended <!-- NOUN -->
+- Display name: DollyFullyExtended
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DollyFullyExtended. Boolean signal that is true when the dolly of a top drive is fully extended.
+- Definition set: SignalPrototypes
+- Examples:
+```dwis dollyFullyExtended
+DrillingDataPoint:dollyFullyExtended
+dollyFullyExtended BelongsToClass DollyFullyExtended
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dollyFullyExtended] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dollyFullyExtended] -->|BelongsToClass| N0002(DollyFullyExtended) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dollyFullyExtended
+WHERE {
+	?dollyFullyExtended rdf:type ddhub:DrillingDataPoint .
+	?dollyFullyExtended rdf:type ddhub:DollyFullyExtended .
+}
+```
+This example assigns a drilling data point to the DollyFullyExtended prototype.
+## DollyFullyRetracted <!-- NOUN -->
+- Display name: DollyFullyRetracted
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DollyFullyRetracted. Boolean signal that is true when the dolly of a top drive is fully retracted.
+- Definition set: SignalPrototypes
+- Examples:
+```dwis dollyFullyRetracted
+DrillingDataPoint:dollyFullyRetracted
+dollyFullyRetracted BelongsToClass DollyFullyRetracted
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dollyFullyRetracted] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dollyFullyRetracted] -->|BelongsToClass| N0002(DollyFullyRetracted) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dollyFullyRetracted
+WHERE {
+	?dollyFullyRetracted rdf:type ddhub:DrillingDataPoint .
+	?dollyFullyRetracted rdf:type ddhub:DollyFullyRetracted .
+}
+```
+This example assigns a drilling data point to the DollyFullyRetracted prototype.
 ## Inclination <!-- NOUN -->
 - Display name: Inclination
 - Parent class: [PrototypeData](#PrototypeData)
@@ -90811,11 +91365,11 @@ WHERE {
 ## IsCharacterizedBy <!-- VERB -->
 - Display name: Is Characterized By
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [WellBoreData](#WellBoreData)
+- Subject class: [ContextualData](#ContextualData)
 - Object class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
 - Definition set: ContextualData
 - Description: 
-this Verb is used to state some characteristics of a well bore data.
+this Verb is used to state some characteristics of a contextual data, e.g., a well bore data or a rig.
 - Examples:
 ``` dwis trajectoryDescription_0
 DynamicDrillingSignal:trajectoryDescription_0
@@ -90868,6 +91422,53 @@ WHERE {
 	&& 	?Attribute003 = current_1
 	&& 	?Attribute004 = extrapolated_1
 	&& 	?Attribute005 = measured_1
+  )
+}
+```
+## IsDescriptionOf <!-- VERB -->
+- Display name: Is Description Of
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [ContextualData](#ContextualData)
+- Object class: [ContextualData](#ContextualData)
+- Definition set: ContextualData
+- Description: 
+this Verb is used to state that a contextual data is the detailed description of the entity that another contextual data identifies, e.g., a rig description of a rig, or a wellbore architecture description of a wellbore.
+- Examples:
+``` dwis rigDescription_0
+DynamicDrillingSignal:rig_0
+Rig:rig_1
+rig_1 HasDynamicValue rig_0
+DynamicDrillingSignal:rigDescription_0
+RigDescription:rigDescription_1
+rigDescription_1 HasDynamicValue rigDescription_0
+rigDescription_1 IsDescriptionOf rig_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rig_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rig_1] -->|BelongsToClass| N0003(Rig) 
+	N0002[rig_1] -->|HasDynamicValue| N0000((rig_0)) 
+	N0004[rigDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[rigDescription_1] -->|BelongsToClass| N0006(RigDescription) 
+	N0005[rigDescription_1] -->|HasDynamicValue| N0004((rigDescription_0)) 
+	N0005[rigDescription_1] -->|IsDescriptionOf| N0002((rig_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigDescription_0
+WHERE {
+	?rig_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rig_1 rdf:type ddhub:Rig .
+	?rigDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigDescription_1 rdf:type ddhub:RigDescription .
+  FILTER (
+	?Attribute000 = rig_0
+	&& 	?Attribute001 = rigDescription_0
+	&& 	?Attribute002 = rig_1
   )
 }
 ```
@@ -93239,6 +93840,47 @@ WHERE {
 }
 ```
 This example shows standpipe pressure processed by a low-pass filter.
+## IsSensorOf <!-- VERB -->
+- Display name: IsSensorOf
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MeasurementDevice](#MeasurementDevice)
+- Object class: [InstrumentInstance](#InstrumentInstance)
+- Definition set: DataFlow
+- Description: 
+Associates a physical sensor with its containing instrument assembly. Keep distinct sensor instances for distinct sensing elements or locations. This expresses physical ownership, not the location of the measured phenomenon or a data-processing subsystem.
+- Examples:
+```dwis IsSensorOfExample
+MeasurementDevice:baseStarAnnularPressureSensor
+InstrumentInstance:baseStarUnit
+baseStarAnnularPressureSensor IsSensorOf baseStarUnit
+DirectMeasurement:annularPressureAtSensor
+annularPressureAtSensor IsMeasuredBy baseStarAnnularPressureSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseStarAnnularPressureSensor] -->|BelongsToClass| N0001(MeasurementDevice) 
+	N0002[baseStarUnit] -->|BelongsToClass| N0003(InstrumentInstance) 
+	N0000[baseStarAnnularPressureSensor] -->|IsSensorOf| N0002((baseStarUnit)) 
+	N0004[annularPressureAtSensor] -->|BelongsToClass| N0005(DirectMeasurement) 
+	N0004[annularPressureAtSensor] -->|IsMeasuredBy| N0000((baseStarAnnularPressureSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsSensorOfExample
+WHERE {
+	?baseStarAnnularPressureSensor rdf:type ddhub:MeasurementDevice .
+	?baseStarUnit rdf:type ddhub:InstrumentInstance .
+	?annularPressureAtSensor rdf:type ddhub:DirectMeasurement .
+  FILTER (
+	?Attribute000 = baseStarUnit
+	&& 	?Attribute001 = baseStarAnnularPressureSensor
+  )
+}
+```
 ## IsProvidedBy <!-- VERB -->
 - Display name: IsProvidedBy
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -93379,6 +94021,47 @@ WHERE {
   FILTER (
 	?Attribute000 = ForceQuantity
 	&& 	?Attribute001 = inductionCouplingTelemetry
+  )
+}
+```
+## SupportsTelemetry <!-- VERB -->
+- Display name: SupportsTelemetry
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [InstrumentInstance](#InstrumentInstance)
+- Object class: [Telemetry](#Telemetry)
+- Definition set: DataTransmission
+- Description: 
+Identifies a telemetry path available to an instrument in its deployed configuration, including a path supplied through attached MWD equipment. It does not assert that the instrument contains the transmitter or that every signal is actually transmitted on that path. Use IsTransmittedBy on each delivered data point for actual transport. Absence of this fact does not assert that a path is unsupported; complete allowed-path lists require deployment validation.
+- Examples:
+```dwis SupportsTelemetryExample
+InstrumentInstance:baseStarUnit
+MudPulseTelemetry:mwdMudPulsePath
+WiredPipeTelemetry:wiredPipePath
+baseStarUnit SupportsTelemetry mwdMudPulsePath
+baseStarUnit SupportsTelemetry wiredPipePath
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseStarUnit] -->|BelongsToClass| N0001(InstrumentInstance) 
+	N0002[mwdMudPulsePath] -->|BelongsToClass| N0003(MudPulseTelemetry) 
+	N0004[wiredPipePath] -->|BelongsToClass| N0005(WiredPipeTelemetry) 
+	N0000[baseStarUnit] -->|SupportsTelemetry| N0002((mwdMudPulsePath)) 
+	N0000[baseStarUnit] -->|SupportsTelemetry| N0004((wiredPipePath)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?SupportsTelemetryExample
+WHERE {
+	?baseStarUnit rdf:type ddhub:InstrumentInstance .
+	?mwdMudPulsePath rdf:type ddhub:MudPulseTelemetry .
+	?wiredPipePath rdf:type ddhub:WiredPipeTelemetry .
+  FILTER (
+	?Attribute000 = mwdMudPulsePath
+	&& 	?Attribute001 = wiredPipePath
   )
 }
 ```
@@ -97513,42 +98196,6 @@ WHERE {
 }
 ```
 This example states that a Quemada rheological behavior as a viscosity at infinite shear rate defined by a drilling data point.
-## UsesMeasurementPrinciple <!-- VERB -->
-- Display name: Uses Flow Measurement Principle
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingDataPoint](#DrillingDataPoint)
-- Object class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
-- Definition set: Hydraulics
-- Description: 
-Associate a realtime signal to its measurement principle.
-- Examples:
-```dwis UsesMeasurementPrincipleExample
-DrillingDataPoint:densitySignal
-ResonantMeasurementPrinciple:resonantMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple resonantMeasurementPrinciple
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
-	N0002[resonantMeasurementPrinciple] -->|BelongsToClass| N0003(ResonantMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((resonantMeasurementPrinciple)) 
-```
-An example SparQL query looks like this:
-```sparql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ddhub: <http://ddhub.no/>
-PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?UsesMeasurementPrincipleExample
-WHERE {
-	?densitySignal rdf:type ddhub:DrillingDataPoint .
-	?resonantMeasurementPrinciple rdf:type ddhub:ResonantMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = resonantMeasurementPrinciple
-  )
-}
-```
-This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
 ## ControlsMeasurementPrinciple <!-- VERB -->
 - Display name: Controls Flow Measurement Principle
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -97585,6 +98232,114 @@ WHERE {
 }
 ```
 This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
+## IsOfInstrumentModel <!-- VERB -->
+- Display name: IsOfInstrumentModel
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [InstrumentInstance](#InstrumentInstance)
+- Object class: [InstrumentModel](#InstrumentModel)
+- Definition set: InstrumentIdentity
+- Description: 
+Associates a physical instrument with its manufacturer-defined model. Assign one model at the chosen assembly granularity; replace an assignment explicitly when correcting catalog data.
+- Examples:
+```dwis IsOfInstrumentModelExample
+InstrumentInstance:baseStarUnit
+InstrumentModel:baseStarModel
+baseStarUnit IsOfInstrumentModel baseStarModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseStarUnit] -->|BelongsToClass| N0001(InstrumentInstance) 
+	N0002[baseStarModel] -->|BelongsToClass| N0003(InstrumentModel) 
+	N0000[baseStarUnit] -->|IsOfInstrumentModel| N0002((baseStarModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsOfInstrumentModelExample
+WHERE {
+	?baseStarUnit rdf:type ddhub:InstrumentInstance .
+	?baseStarModel rdf:type ddhub:InstrumentModel .
+  FILTER (
+	?Attribute000 = baseStarModel
+  )
+}
+```
+## HasManufacturer <!-- VERB -->
+- Display name: HasManufacturer
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [InstrumentModel](#InstrumentModel)
+- Object class: [DrillingDataEcosystemOrganization](#DrillingDataEcosystemOrganization)
+- Definition set: InstrumentIdentity
+- Description: 
+Identifies the manufacturer of an instrument model. This is distinct from IsProvidedBy, which identifies the provider of data; a data aggregator need not be the manufacturer.
+- Examples:
+```dwis HasManufacturerExample
+InstrumentModel:baseStarModel
+Halliburton:halliburton
+halliburton BelongsToClass DrillingDataEcosystemOrganization
+baseStarModel HasManufacturer halliburton
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseStarModel] -->|BelongsToClass| N0001(InstrumentModel) 
+	N0002[halliburton] -->|BelongsToClass| N0003(Halliburton) 
+	N0002[halliburton] -->|BelongsToClass| N0004(DrillingDataEcosystemOrganization) 
+	N0000[baseStarModel] -->|HasManufacturer| N0002((halliburton)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasManufacturerExample
+WHERE {
+	?baseStarModel rdf:type ddhub:InstrumentModel .
+	?halliburton rdf:type ddhub:Halliburton .
+	?halliburton rdf:type ddhub:DrillingDataEcosystemOrganization .
+  FILTER (
+	?Attribute000 = halliburton
+  )
+}
+```
+## UsesMeasurementPrinciple <!-- VERB -->
+- Display name: UsesMeasurementPrinciple
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [MeasurementPrinciple](#MeasurementPrinciple)
+- Definition set: MeasurementPrinciples
+- Description: 
+Associates a measurement data point with the physical principle by which it is obtained. Retain processing lineage separately and use IsTransmittedBy for transport.
+- Examples:
+```dwis UsesMeasurementPrincipleExample
+DerivedMeasurement:boreholeRadius
+UltrasonicPulseEchoMeasurementPrinciple:ultrasonicPulseEcho
+boreholeRadius UsesMeasurementPrinciple ultrasonicPulseEcho
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[boreholeRadius] -->|BelongsToClass| N0001(DerivedMeasurement) 
+	N0002[ultrasonicPulseEcho] -->|BelongsToClass| N0003(UltrasonicPulseEchoMeasurementPrinciple) 
+	N0000[boreholeRadius] -->|UsesMeasurementPrinciple| N0002((ultrasonicPulseEcho)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?UsesMeasurementPrincipleExample
+WHERE {
+	?boreholeRadius rdf:type ddhub:DerivedMeasurement .
+	?ultrasonicPulseEcho rdf:type ddhub:UltrasonicPulseEchoMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = ultrasonicPulseEcho
+  )
+}
+```
 ## IsOfMechanicalStiffnessType <!-- VERB -->
 - Display name: Is of mechanical stiffness type
 - Parent verb: [DWISVerb](#DWISVerb)

@@ -14,3 +14,50 @@ Work Package 1 (DSID): ontology, vocabulary, and examples for DDHub semantic int
 - See example patterns: browse `examples/` for OWL instances of signals and circuits.
 - Build vocabulary tools: `dotnet build src/DWIS-Vocabulary/DWIS-Vocabulary.sln` (use `LocalPackages/` if offline).
 - Read background: `docs/DDHub_semantic_model.md`, `docs/use_cases/Use_cases.md`, `docs/drilling_signals/home.md`, `docs/architecture/DDHub_architecture.md`.
+
+## Downhole instrument identity and sensing
+
+The vocabulary definition sources under `docs/vocabulary_development/definitions`
+now distinguish instrument models, physical units, sensors, measurement principles
+and deployed telemetry capability. See
+[the six-tool example](docs/vocabulary_development/examples-new/DownholeInstrumentIdentityAndTelemetry.md)
+for BlackStream EMS/ASM, BaseStar, 4D Caliper, DrillView and FracView, including
+BaseStar's separate wired-pipe and MWD mud-pulse streams. General sensing principles
+are in `MeasurementPrinciples.md`; flow-specific principles remain in `Hydraulics.md`.
+Instrument identity is in `InstrumentIdentity.md`, separate from the spreadsheet-generated
+`DrillingEquipment.md` taxonomy.
+The source definitions, generated vocabulary and C# schemas are checked in together. Review the
+example's ancestry compatibility notes before regenerating downstream artifacts.
+
+
+## Regeneration and verification
+
+`DWISVocabularyDevelopment.Actions` is the generation entry point. It rebuilds the
+equipment definitions from `DrillingEquipment.xlsx`, regenerates quantity definitions,
+and writes the combined/individual Markdown, JSON, ontology exports, embedded Standard
+resource and C# schemas. It uses invariant culture for reproducible numeric text.
+For a local run, build the Actions project and execute its DLL from a working folder
+containing `appsettings.json` with an `ActionsConfig` section. Set `SourceFolder`,
+`DestinationFolder`, `SchemaFolder`, `ExamplesSourceFolder` and `StandardResourceFolder`
+to this checkout's corresponding paths (see the workflow); set `ProjectsToPack` to
+an empty string and `IncrementVersion` to false. Keep that local configuration out
+of the repository. Generation failure returns a nonzero exit code.
+
+Verify source/generated JSON agreement, local compiled C# schemas and the six-tool
+examples with:
+
+```powershell
+dotnet run --project src/DWIS-Vocabulary/DWIS-Vocabulary/VocabularyParseTest/DWIS.Vocabulary.Parse.Test.csproj
+```
+
+An explicit repository path may be supplied after `--`. This command extracts and
+parses the `dwis` fenced example bodies because the legacy instance Markdown reader
+skips fenced blocks. It does not depend on a previously published vocabulary package.
+
+The vocabulary-generation workflow runs verification before committing generated
+files and publishing packages. NuGet authentication uses `NuGet/login@v1`, GitHub OIDC
+(`id-token: write`) and the repository variable `nuget_user`. Configure the NuGet.org
+Trusted Publishing policy for this repository and `vocabulary-generation.yml`, plus
+any environment restriction configured there. The username is the NuGet profile name,
+not an email address. No long-lived NuGet API-key secret is used. The generated-file
+commit grants `contents: write` and skips committing when there are no changes.

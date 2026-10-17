@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DWIS.Vocabulary.Schemas\DWIS.Vocabulary.Schemas.csproj" />
     <ProjectReference Include="..\DWISVocabulary.OWL\DWIS.Vocabulary.OWL.csproj" />
     <ProjectReference Include="..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
     <ProjectReference Include="..\VocabularyUtils\DWIS.Vocabulary.Utils.csproj" />

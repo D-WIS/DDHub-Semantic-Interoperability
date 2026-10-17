@@ -79,15 +79,13 @@ RheologicalBehavior <|-- NonNewtonianFluid
 NonNewtonianFluid <|-- BinghamPlastic
 NonNewtonianFluid <|-- YieldPowerLaw
 NonNewtonianFluid <|-- Quemada
-DWISNoun <|-- FlowMeasurementPrinciple
+MeasurementPrinciple <|-- FlowMeasurementPrinciple
 FlowMeasurementPrinciple <|-- ResonantMeasurementPrinciple
 FlowMeasurementPrinciple <|-- ConcentricCylindersMeasurementPrinciple
 FlowMeasurementPrinciple <|-- DifferentialPressureMeasurementPrinciple
 FlowMeasurementPrinciple <|-- RotatingWheelMeasurementPrinciple
 FlowMeasurementPrinciple <|-- MechanicalMomentumMeasurementPrinciple
 FlowMeasurementPrinciple <|-- CalorimetricMeasurementPrinciple
-FlowMeasurementPrinciple <|-- AcousticMeasurementPrinciple
-FlowMeasurementPrinciple <|-- ElectromagneticMeasurementPrinciple
 FlowMeasurementPrinciple <|-- RadiometricMeasurementPrinciple
 FlowMeasurementPrinciple <|-- OpticalMeasurementPrinciple
 FlowMeasurementPrinciple <|-- GravimetricMeasurementPrinciple
@@ -2888,7 +2886,7 @@ WHERE {
 This example states that a drilling liquid has a Quemada rheological behavior.
 ## FlowMeasurementPrinciple <!-- NOUN -->
 - Display name: Flow Measurement Principle
-- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Parent class: [MeasurementPrinciple](./MeasurementPrinciples.md#MeasurementPrinciple)
 - Description: 
 Describes the underlying principle used to obtain a measurement about a flowing medium.
 - Definition set: Hydraulics
@@ -2896,14 +2894,14 @@ Describes the underlying principle used to obtain a measurement about a flowing 
 ```dwis FlowMeasurementPrincipleExample
 DrillingDataPoint:realtimeSignal
 FlowMeasurementPrinciple:flowMeasurementPrinciple
-realtimeSignal UsesFlowMeasurementPrinciple flowMeasurementPrinciple
+realtimeSignal UsesMeasurementPrinciple flowMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[realtimeSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[flowMeasurementPrinciple] -->|BelongsToClass| N0003(FlowMeasurementPrinciple) 
-	N0000[realtimeSignal] -->|UsesFlowMeasurementPrinciple| N0002((flowMeasurementPrinciple)) 
+	N0000[realtimeSignal] -->|UsesMeasurementPrinciple| N0002[flowMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -2914,9 +2912,7 @@ SELECT ?FlowMeasurementPrincipleExample
 WHERE {
 	?realtimeSignal rdf:type ddhub:DrillingDataPoint .
 	?flowMeasurementPrinciple rdf:type ddhub:FlowMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = flowMeasurementPrinciple
-  )
+	?realtimeSignal ddhub:UsesMeasurementPrinciple ?flowMeasurementPrinciple .
 }
 ```
 This example states that a realtime signal uses a flow mearurement principle.
@@ -2930,14 +2926,14 @@ Describes that a resonant measurement principle is used to perform a measurement
 ```dwis ResonantMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 ResonantMeasurementPrinciple:resonantMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple resonantMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple resonantMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[resonantMeasurementPrinciple] -->|BelongsToClass| N0003(ResonantMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((resonantMeasurementPrinciple)) 
+	N0000[densitySignal] -->|UsesMeasurementPrinciple| N0002[resonantMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -2948,9 +2944,7 @@ SELECT ?ResonantMeasurementPrincipleExample
 WHERE {
 	?densitySignal rdf:type ddhub:DrillingDataPoint .
 	?resonantMeasurementPrinciple rdf:type ddhub:ResonantMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = resonantMeasurementPrinciple
-  )
+	?densitySignal ddhub:UsesMeasurementPrinciple ?resonantMeasurementPrinciple .
 }
 ```
 This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
@@ -2964,14 +2958,14 @@ Describes that a measurement principle utilizing concentric cylinders is used to
 ```dwis ConcentricCylindersMeasurementPrincipleExample
 DrillingDataPoint:shearStressSignal
 ConcentricCylindersMeasurementPrinciple:concentricCylindersMeasurementPrinciple
-shearStressSignal UsesFlowMeasurementPrinciple concentricCylindersMeasurementPrinciple
+shearStressSignal UsesMeasurementPrinciple concentricCylindersMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[shearStressSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[concentricCylindersMeasurementPrinciple] -->|BelongsToClass| N0003(ConcentricCylindersMeasurementPrinciple) 
-	N0000[shearStressSignal] -->|UsesFlowMeasurementPrinciple| N0002((concentricCylindersMeasurementPrinciple)) 
+	N0000[shearStressSignal] -->|UsesMeasurementPrinciple| N0002[concentricCylindersMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -2982,9 +2976,7 @@ SELECT ?ConcentricCylindersMeasurementPrincipleExample
 WHERE {
 	?shearStressSignal rdf:type ddhub:DrillingDataPoint .
 	?concentricCylindersMeasurementPrinciple rdf:type ddhub:ConcentricCylindersMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = concentricCylindersMeasurementPrinciple
-  )
+	?shearStressSignal ddhub:UsesMeasurementPrinciple ?concentricCylindersMeasurementPrinciple .
 }
 ```
 This example states that a shear stress signal uses a measurement principle utilizing concentric cylinders.
@@ -2998,14 +2990,14 @@ Describes that a differential pressure measurement principle is used to perform 
 ```dwis DifferentialPressureMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 DifferentialPressureMeasurementPrinciple:differentialPressureMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple differentialPressureMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple differentialPressureMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[differentialPressureMeasurementPrinciple] -->|BelongsToClass| N0003(DifferentialPressureMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((differentialPressureMeasurementPrinciple)) 
+	N0000[densitySignal] -->|UsesMeasurementPrinciple| N0002[differentialPressureMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3016,9 +3008,7 @@ SELECT ?DifferentialPressureMeasurementPrincipleExample
 WHERE {
 	?densitySignal rdf:type ddhub:DrillingDataPoint .
 	?differentialPressureMeasurementPrinciple rdf:type ddhub:DifferentialPressureMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = differentialPressureMeasurementPrinciple
-  )
+	?densitySignal ddhub:UsesMeasurementPrinciple ?differentialPressureMeasurementPrinciple .
 }
 ```
 This example states that a mass density signal uses a differential pressure measurement principle.
@@ -3032,14 +3022,14 @@ Describes that a rotating wheel measurement principle is used to perform a measu
 ```dwis RotatingWheelMeasurementPrincipleExample
 DrillingDataPoint:massFlowRateSignal
 RotatingWheelMeasurementPrinciple:rotatingWheelMeasurementPrinciple
-massFlowRateSignal UsesFlowMeasurementPrinciple rotatingWheelMeasurementPrinciple
+massFlowRateSignal UsesMeasurementPrinciple rotatingWheelMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[massFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[rotatingWheelMeasurementPrinciple] -->|BelongsToClass| N0003(RotatingWheelMeasurementPrinciple) 
-	N0000[massFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((rotatingWheelMeasurementPrinciple)) 
+	N0000[massFlowRateSignal] -->|UsesMeasurementPrinciple| N0002[rotatingWheelMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3050,9 +3040,7 @@ SELECT ?RotatingWheelMeasurementPrincipleExample
 WHERE {
 	?massFlowRateSignal rdf:type ddhub:DrillingDataPoint .
 	?rotatingWheelMeasurementPrinciple rdf:type ddhub:RotatingWheelMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = rotatingWheelMeasurementPrinciple
-  )
+	?massFlowRateSignal ddhub:UsesMeasurementPrinciple ?rotatingWheelMeasurementPrinciple .
 }
 ```
 This example states that a mass flowrate signal uses a rotating wheel measurement principle.
@@ -3066,14 +3054,14 @@ Describes that a mechanical momentum measurement principle is used to perform a 
 ```dwis MechanicalMomentumMeasurementPrincipleExample
 DrillingDataPoint:volumetricFlowRateSignal
 MechanicalMomentumMeasurementPrinciple:mechanicalMomentumMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple mechanicalMomentumMeasurementPrinciple
+volumetricFlowRateSignal UsesMeasurementPrinciple mechanicalMomentumMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[mechanicalMomentumMeasurementPrinciple] -->|BelongsToClass| N0003(MechanicalMomentumMeasurementPrinciple) 
-	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((mechanicalMomentumMeasurementPrinciple)) 
+	N0000[volumetricFlowRateSignal] -->|UsesMeasurementPrinciple| N0002[mechanicalMomentumMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3084,9 +3072,7 @@ SELECT ?MechanicalMomentumMeasurementPrincipleExample
 WHERE {
 	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
 	?mechanicalMomentumMeasurementPrinciple rdf:type ddhub:MechanicalMomentumMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = mechanicalMomentumMeasurementPrinciple
-  )
+	?volumetricFlowRateSignal ddhub:UsesMeasurementPrinciple ?mechanicalMomentumMeasurementPrinciple .
 }
 ```
 This example states that a volumetric flowrate signal uses a mechanical momentum measurement principle.
@@ -3100,14 +3086,14 @@ Describes that a calorimetric measurement principle is used to perform a measure
 ```dwis CalorimetricMeasurementPrincipleExample
 DrillingDataPoint:massFlowRateSignal
 CalorimetricMeasurementPrinciple:calorimetricMeasurementPrinciple
-massFlowRateSignal UsesFlowMeasurementPrinciple calorimetricMeasurementPrinciple
+massFlowRateSignal UsesMeasurementPrinciple calorimetricMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[massFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[calorimetricMeasurementPrinciple] -->|BelongsToClass| N0003(CalorimetricMeasurementPrinciple) 
-	N0000[massFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((calorimetricMeasurementPrinciple)) 
+	N0000[massFlowRateSignal] -->|UsesMeasurementPrinciple| N0002[calorimetricMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3118,80 +3104,10 @@ SELECT ?CalorimetricMeasurementPrincipleExample
 WHERE {
 	?massFlowRateSignal rdf:type ddhub:DrillingDataPoint .
 	?calorimetricMeasurementPrinciple rdf:type ddhub:CalorimetricMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = calorimetricMeasurementPrinciple
-  )
+	?massFlowRateSignal ddhub:UsesMeasurementPrinciple ?calorimetricMeasurementPrinciple .
 }
 ```
 This example states that a mass flowrate signal uses a calorimetric measurement principle.
-## AcousticMeasurementPrinciple <!-- NOUN -->
-- Display name: Acoustic Measurement Principle
-- Parent class: [FlowMeasurementPrinciple](./Hydraulics.md#FlowMeasurementPrinciple)
-- Description: 
-Describes that an acoustic measurement principle is used to perform a measurement.
-- Definition set: Hydraulics
-- Examples:
-```dwis AcousticMeasurementPrincipleExample
-DrillingDataPoint:volumetricFlowRateSignal
-AcousticMeasurementPrinciple:acousticMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple acousticMeasurementPrinciple
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
-	N0002[acousticMeasurementPrinciple] -->|BelongsToClass| N0003(AcousticMeasurementPrinciple) 
-	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((acousticMeasurementPrinciple)) 
-```
-An example SparQL query looks like this:
-```sparql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ddhub: <http://ddhub.no/>
-PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?AcousticMeasurementPrincipleExample
-WHERE {
-	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
-	?acousticMeasurementPrinciple rdf:type ddhub:AcousticMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = acousticMeasurementPrinciple
-  )
-}
-```
-This example states that a volumetric flowrate signal uses an acoustic measurement principle.
-## ElectromagneticMeasurementPrinciple <!-- NOUN -->
-- Display name: Electromagnetic Measurement Principle
-- Parent class: [FlowMeasurementPrinciple](./Hydraulics.md#FlowMeasurementPrinciple)
-- Description: 
-Describes that an electromagnetic measurement principle is used to perform a measurement.
-- Definition set: Hydraulics
-- Examples:
-```dwis ElectromagneticMeasurementPrincipleExample
-DrillingDataPoint:volumetricFlowRateSignal
-ElectromagneticMeasurementPrinciple:electromagneticMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple electromagneticMeasurementPrinciple
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
-	N0002[electromagneticMeasurementPrinciple] -->|BelongsToClass| N0003(ElectromagneticMeasurementPrinciple) 
-	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((electromagneticMeasurementPrinciple)) 
-```
-An example SparQL query looks like this:
-```sparql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ddhub: <http://ddhub.no/>
-PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?ElectromagneticMeasurementPrincipleExample
-WHERE {
-	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
-	?electromagneticMeasurementPrinciple rdf:type ddhub:ElectromagneticMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = electromagneticMeasurementPrinciple
-  )
-}
-```
-This example states that a volumetric flowrate signal uses an electromagnetic measurement principle.
 ## RadiometricMeasurementPrinciple <!-- NOUN -->
 - Display name: Radiometric Measurement Principle
 - Parent class: [FlowMeasurementPrinciple](./Hydraulics.md#FlowMeasurementPrinciple)
@@ -3202,14 +3118,14 @@ Describes that an radiometric measurement principle is used to perform a measure
 ```dwis RadiometricMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 RadiometricMeasurementPrinciple:radiometricMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple radiometricMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple radiometricMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[radiometricMeasurementPrinciple] -->|BelongsToClass| N0003(RadiometricMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((radiometricMeasurementPrinciple)) 
+	N0000[densitySignal] -->|UsesMeasurementPrinciple| N0002[radiometricMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3220,9 +3136,7 @@ SELECT ?RadiometricMeasurementPrincipleExample
 WHERE {
 	?densitySignal rdf:type ddhub:DrillingDataPoint .
 	?radiometricMeasurementPrinciple rdf:type ddhub:RadiometricMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = radiometricMeasurementPrinciple
-  )
+	?densitySignal ddhub:UsesMeasurementPrinciple ?radiometricMeasurementPrinciple .
 }
 ```
 This example states that a mass density signal uses an radiometric measurement principle.
@@ -3236,14 +3150,14 @@ Describes that an optical measurement principle is used to perform a measurement
 ```dwis OpticalMeasurementPrincipleExample
 DrillingDataPoint:volumetricFlowRateSignal
 OpticalMeasurementPrinciple:opticalMeasurementPrinciple
-volumetricFlowRateSignal UsesFlowMeasurementPrinciple radiometricMeasurementPrinciple
+volumetricFlowRateSignal UsesMeasurementPrinciple radiometricMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[opticalMeasurementPrinciple] -->|BelongsToClass| N0003(OpticalMeasurementPrinciple) 
-	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0004((radiometricMeasurementPrinciple)) 
+	N0000[volumetricFlowRateSignal] -->|UsesMeasurementPrinciple| N0004[radiometricMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3254,9 +3168,7 @@ SELECT ?OpticalMeasurementPrincipleExample
 WHERE {
 	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
 	?opticalMeasurementPrinciple rdf:type ddhub:OpticalMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = radiometricMeasurementPrinciple
-  )
+	?volumetricFlowRateSignal ddhub:UsesMeasurementPrinciple ?radiometricMeasurementPrinciple .
 }
 ```
 This example states that a volumetric flowrate signal uses an optical measurement principle.
@@ -3270,14 +3182,14 @@ Describes that a gravimetric measurement principle is used to perform a measurem
 ```dwis GravimetricMeasurementPrincipleExample
 DrillingDataPoint:densitySignal
 GravimetricMeasurementPrinciple:gravimetricMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple gravimetricMeasurementPrinciple
+densitySignal UsesMeasurementPrinciple gravimetricMeasurementPrinciple
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[gravimetricMeasurementPrinciple] -->|BelongsToClass| N0003(GravimetricMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((gravimetricMeasurementPrinciple)) 
+	N0000[densitySignal] -->|UsesMeasurementPrinciple| N0002[gravimetricMeasurementPrinciple] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3288,9 +3200,7 @@ SELECT ?GravimetricMeasurementPrincipleExample
 WHERE {
 	?densitySignal rdf:type ddhub:DrillingDataPoint .
 	?gravimetricMeasurementPrinciple rdf:type ddhub:GravimetricMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = gravimetricMeasurementPrinciple
-  )
+	?densitySignal ddhub:UsesMeasurementPrinciple ?gravimetricMeasurementPrinciple .
 }
 ```
 This example states that a mass density signal uses an gravimetric measurement principle.
@@ -3355,7 +3265,6 @@ DWISVerb <|-- HasYieldStress
 DWISVerb <|-- HasQuemadaReferenceShearRate
 DWISVerb <|-- HasQuemadaViscosityAtZeroShearRate
 DWISVerb <|-- HasQuemadaViscosityAtInfiniteShearRate
-DWISVerb <|-- UsesMeasurementPrinciple
 DWISVerb <|-- ControlsMeasurementPrinciple
 ```
 ## Relations
@@ -3418,7 +3327,6 @@ RheologicalBehavior ||--o{ DrillingDataPoint : HasYieldStress
 RheologicalBehavior ||--o{ DrillingDataPoint : HasQuemadaReferenceShearRate
 RheologicalBehavior ||--o{ DrillingDataPoint : HasQuemadaViscosityAtZeroShearRate
 RheologicalBehavior ||--o{ DrillingDataPoint : HasQuemadaViscosityAtInfiniteShearRate
-DrillingDataPoint ||--o{ FlowMeasurementPrinciple : UsesMeasurementPrinciple
 DrillingDataPoint ||--o{ FlowMeasurementPrinciple : ControlsMeasurementPrinciple
 ```
 ## HasPressureReferenceType <!-- VERB -->
@@ -5678,42 +5586,6 @@ WHERE {
 }
 ```
 This example states that a Quemada rheological behavior as a viscosity at infinite shear rate defined by a drilling data point.
-## UsesMeasurementPrinciple <!-- VERB -->
-- Display name: Uses Flow Measurement Principle
-- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Object class: [FlowMeasurementPrinciple](./Hydraulics.md#FlowMeasurementPrinciple)
-- Definition set: Hydraulics
-- Description: 
-Associate a realtime signal to its measurement principle.
-- Examples:
-```dwis UsesMeasurementPrincipleExample
-DrillingDataPoint:densitySignal
-ResonantMeasurementPrinciple:resonantMeasurementPrinciple
-densitySignal UsesFlowMeasurementPrinciple resonantMeasurementPrinciple
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
-	N0002[resonantMeasurementPrinciple] -->|BelongsToClass| N0003(ResonantMeasurementPrinciple) 
-	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((resonantMeasurementPrinciple)) 
-```
-An example SparQL query looks like this:
-```sparql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ddhub: <http://ddhub.no/>
-PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?UsesMeasurementPrincipleExample
-WHERE {
-	?densitySignal rdf:type ddhub:DrillingDataPoint .
-	?resonantMeasurementPrinciple rdf:type ddhub:ResonantMeasurementPrinciple .
-  FILTER (
-	?Attribute000 = resonantMeasurementPrinciple
-  )
-}
-```
-This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
 ## ControlsMeasurementPrinciple <!-- VERB -->
 - Display name: Controls Flow Measurement Principle
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)

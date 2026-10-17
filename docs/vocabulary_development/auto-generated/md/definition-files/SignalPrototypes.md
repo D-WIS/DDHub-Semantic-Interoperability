@@ -23,6 +23,9 @@ PrototypeData <|-- HoleDepth
 PrototypeData <|-- HookLoad
 PrototypeData <|-- HookPosition
 PrototypeData <|-- HookVelocity
+PrototypeData <|-- DollyRetraction
+PrototypeData <|-- DollyFullyExtended
+PrototypeData <|-- DollyFullyRetracted
 PrototypeData <|-- Inclination
 PrototypeData <|-- MeasuredDepth
 PrototypeData <|-- PumpRate
@@ -531,6 +534,93 @@ WHERE {
 }
 ```
 This example assigns a drilling data point to the HookVelocity prototype.
+## DollyRetraction <!-- NOUN -->
+- Display name: DollyRetraction
+- Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
+- Description: 
+Prototype signal for DollyRetraction. Proportion of retraction of the dolly of a top drive: 0 when fully extended, 1 when fully retracted.
+- Definition set: SignalPrototypes
+- Examples:
+```dwis dollyRetraction
+DrillingDataPoint:dollyRetraction
+dollyRetraction BelongsToClass DollyRetraction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dollyRetraction] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dollyRetraction] -->|BelongsToClass| N0002(DollyRetraction) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dollyRetraction
+WHERE {
+	?dollyRetraction rdf:type ddhub:DrillingDataPoint .
+	?dollyRetraction rdf:type ddhub:DollyRetraction .
+}
+```
+This example assigns a drilling data point to the DollyRetraction prototype.
+## DollyFullyExtended <!-- NOUN -->
+- Display name: DollyFullyExtended
+- Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
+- Description: 
+Prototype signal for DollyFullyExtended. Boolean signal that is true when the dolly of a top drive is fully extended.
+- Definition set: SignalPrototypes
+- Examples:
+```dwis dollyFullyExtended
+DrillingDataPoint:dollyFullyExtended
+dollyFullyExtended BelongsToClass DollyFullyExtended
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dollyFullyExtended] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dollyFullyExtended] -->|BelongsToClass| N0002(DollyFullyExtended) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dollyFullyExtended
+WHERE {
+	?dollyFullyExtended rdf:type ddhub:DrillingDataPoint .
+	?dollyFullyExtended rdf:type ddhub:DollyFullyExtended .
+}
+```
+This example assigns a drilling data point to the DollyFullyExtended prototype.
+## DollyFullyRetracted <!-- NOUN -->
+- Display name: DollyFullyRetracted
+- Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
+- Description: 
+Prototype signal for DollyFullyRetracted. Boolean signal that is true when the dolly of a top drive is fully retracted.
+- Definition set: SignalPrototypes
+- Examples:
+```dwis dollyFullyRetracted
+DrillingDataPoint:dollyFullyRetracted
+dollyFullyRetracted BelongsToClass DollyFullyRetracted
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dollyFullyRetracted] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dollyFullyRetracted] -->|BelongsToClass| N0002(DollyFullyRetracted) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dollyFullyRetracted
+WHERE {
+	?dollyFullyRetracted rdf:type ddhub:DrillingDataPoint .
+	?dollyFullyRetracted rdf:type ddhub:DollyFullyRetracted .
+}
+```
+This example assigns a drilling data point to the DollyFullyRetracted prototype.
 ## Inclination <!-- NOUN -->
 - Display name: Inclination
 - Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)

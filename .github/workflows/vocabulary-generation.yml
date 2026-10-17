@@ -8,6 +8,9 @@ on:
 jobs:
   generate_vocabulary:
     runs-on: windows-latest
+    permissions:
+      contents: write
+      id-token: write
     env:
       SOURCE_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\definitions"
       SCRIPT_PATH: "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWISVocabularyDevelopment.Actions"
@@ -19,11 +22,13 @@ jobs:
       PACKAGE_OUTPUT_FOLDER: "${{ github.workspace }}\\packages"
       INCREMENT_VERSION: "true"
       STANDARD_RESOURCE_FOLDER: "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWIS.Vocabulary.Standard\\Properties"
-      NUGET_SECRET_API: ${{ secrets.NUGET_SECRET_API }}
 
     
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
       - name: Overwrite appsettings.json
         run: |
           cd $Env:SCRIPT_PATH
@@ -36,7 +41,8 @@ jobs:
           $a.ActionsConfig.DestinationFolder="$Env:DESTINATION_FOLDER"
           $a.ActionsConfig.SchemaFolder="$Env:SCHEMA_FOLDER"
           $a.ActionsConfig.ExamplesSourceFolder="$Env:EXAMPLES_SOURCE_FOLDER"
-          $a.ActionsConfig.IncrementVersion="$Env:INCREMENT_VERSION"
+          $a.ActionsConfig.IncrementVersion=$false
+          $a.ActionsConfig.ProjectsToPack=""
           $a.ActionsConfig.StandardResourceFolder="$Env:STANDARD_RESOURCE_FOLDER"
           $a | ConvertTo-Json -depth 32| set-content 'appsettings.json'
           echo ""
@@ -53,14 +59,24 @@ jobs:
           dotnet restore
           dotnet run
 
+      - name: Verify vocabulary, schemas and downhole examples
+        run: dotnet run --project "${{ github.workspace }}/src/DWIS-Vocabulary/DWIS-Vocabulary/VocabularyParseTest/DWIS.Vocabulary.Parse.Test.csproj" -- "${{ github.workspace }}"
+
       - name: Git Update
         run: |
           git config --global user.email "beda@norceresearch.no"
           git config --global user.name "benoitdaireaux"
           git add -A
           git status
-          git commit -m "Automatically generated files" -a
-          git push
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 1) {
+            git commit -m "Automatically generated files"
+            if ($LASTEXITCODE -ne 0) { throw "Generated-file commit failed" }
+            git push
+            if ($LASTEXITCODE -ne 0) { throw "Generated-file push failed" }
+          } elseif ($LASTEXITCODE -ne 0) {
+            throw "Could not inspect generated-file changes"
+          }
 
       - name: 'Upload the generated files as artifacts'
         uses: actions/upload-artifact@v4
@@ -89,7 +105,14 @@ jobs:
           name: generated-nuget-packages
           path: "${{ github.workspace }}/packages"
 
+      - name: Authenticate to NuGet.org with Trusted Publishing
+        uses: NuGet/login@v1
+        id: nuget-login
+        with:
+          user: ${{ vars.nuget_user }}
       - name: 'Push to NuGet.org'
+        env:
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
         run: |
           cd $Env:PACKAGE_OUTPUT_FOLDER
-          dotnet nuget push "*.nupkg" -k "$env:NUGET_SECRET_API" -s https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push "*.nupkg" -k "$env:NUGET_API_KEY" -s https://api.nuget.org/v3/index.json --skip-duplicate

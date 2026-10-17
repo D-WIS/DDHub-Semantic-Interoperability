@@ -343,6 +343,48 @@ standpipePressureRaw IsMeasuredBy standpipePressureSensor
 standpipePressureRaw IsGeneratedBy standpipePressureSensor
 ```
 This example shows a standpipe pressure sensor producing a raw signal.
+## ForceSensor <!-- NOUN -->
+- Display name: Force Sensor
+- Parent class: MeasurementDevice
+- Attributes:
+- Specialization:
+- Description: A physical sensor that measures a force, a load or a tension.
+- Examples:
+```dwis forceSensorExample
+ForceSensor:forceSensor
+DrillingDataPoint:forceRaw
+forceRaw IsMeasuredBy forceSensor
+forceRaw IsGeneratedBy forceSensor
+```
+This example shows a force sensor producing a raw signal.
+## LoadPinSensor <!-- NOUN -->
+- Display name: Load Pin Sensor
+- Parent class: ForceSensor
+- Attributes:
+- Specialization:
+- Description: A force sensor built into a pin that carries the load of a hoisting component, e.g., the load pins at the top of a top drive.
+- Examples:
+```dwis loadPinSensorExample
+LoadPinSensor:topDriveLoadPins
+DrillingDataPoint:hookloadRaw
+hookloadRaw IsMeasuredBy topDriveLoadPins
+hookloadRaw IsGeneratedBy topDriveLoadPins
+```
+This example shows the hookload measured by the load pins of a top drive.
+## DeadLineTensionSensor <!-- NOUN -->
+- Display name: Dead Line Tension Sensor
+- Parent class: ForceSensor
+- Attributes:
+- Specialization:
+- Description: A force sensor that measures the tension of the dead line of a drawworks, typically a load cell in the dead-line anchor.
+- Examples:
+```dwis deadLineTensionSensorExample
+DeadLineTensionSensor:deadLineSensor
+DrillingDataPoint:deadLineTensionRaw
+deadLineTensionRaw IsMeasuredBy deadLineSensor
+deadLineTensionRaw IsGeneratedBy deadLineSensor
+```
+This example shows the dead-line tension measured by a load cell of the dead-line anchor.
 ## Transformation <!-- NOUN -->
 - Display name: Transformation
 - Parent class: DataFlowNode
@@ -779,6 +821,25 @@ hookloadRaw IsTransformationInput hookloadTimeAverage
 hookloadMean10s IsTransformationOutput hookloadTimeAverage
 ```
 This example averages hookload over the last ten seconds.
+## SensorFusionTransformation <!-- NOUN -->
+- Display name: Sensor Fusion Transformation
+- Parent class: Transformation
+- Attributes:
+- Specialization:
+- Description: Combines several redundant or complementary signals, possibly using their history and a model of the process, into a single estimate of a quantity. It is not a direct transformation because its output depends on more than the current value of its inputs.
+- Examples:
+```dwis hookloadFusion
+SensorFusionTransformation:hookloadFusion
+DrillingDataPoint:hookloadFromLoadPins
+DrillingDataPoint:hookloadFromDeadLine
+DrillingDataPoint:blockPosition
+DrillingDataPoint:correctedHookload
+hookloadFromLoadPins IsTransformationInput hookloadFusion
+hookloadFromDeadLine IsTransformationInput hookloadFusion
+blockPosition IsTransformationInput hookloadFusion
+correctedHookload IsTransformationOutput hookloadFusion
+```
+This example fuses hookload estimates from load pins and from the dead line, using the block motion, into a corrected hookload.
 ## TimeBasedTransformation <!-- NOUN -->
 - Display name: Time Based Transformation
 - Parent class: Transformation
@@ -1479,3 +1540,18 @@ Filter:standpipeLowPass
 standpipePressureRaw IsProcessedBy standpipeLowPass
 ```
 This example shows standpipe pressure processed by a low-pass filter.
+
+## IsSensorOf <!-- VERB -->
+- Display name: IsSensorOf
+- Parent verb: DWISVerb
+- Subject class: MeasurementDevice
+- Object class: InstrumentInstance
+- Description: Associates a physical sensor with its containing instrument assembly. Keep distinct sensor instances for distinct sensing elements or locations. This expresses physical ownership, not the location of the measured phenomenon or a data-processing subsystem.
+- Examples:
+```dwis IsSensorOfExample
+MeasurementDevice:baseStarAnnularPressureSensor
+InstrumentInstance:baseStarUnit
+baseStarAnnularPressureSensor IsSensorOf baseStarUnit
+DirectMeasurement:annularPressureAtSensor
+annularPressureAtSensor IsMeasuredBy baseStarAnnularPressureSensor
+```

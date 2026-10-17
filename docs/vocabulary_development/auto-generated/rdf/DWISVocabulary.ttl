@@ -103,7 +103,7 @@ ddhub:Acoustic a owl:Class;
 ddhub:AcousticMeasurementPrinciple a owl:Class; 
                                    rdfs:comment """Describes that an acoustic measurement principle is used to perform a measurement.
 """@EN; 
-                                   rdfs:subClassOf ddhub:FlowMeasurementPrinciple. 
+                                   rdfs:subClassOf ddhub:MeasurementPrinciple. 
 ddhub:AcousticTelemetry a owl:Class; 
                         rdfs:comment """A method that allows transfer of downhole data to the surface via acoustic waves along the drill-string.
 """@EN; 
@@ -407,6 +407,11 @@ ddhub:AspenTech a owl:Class;
                 rdfs:comment """An industrial software company active in industrial analytics and operational data platforms relevant to drilling and upstream operational data.
 """@EN; 
                 rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
+ddhub:AssetIdentifier a owl:DatatypeProperty, owl:FunctionalProperty; 
+                      rdfs:comment """Optional externally managed asset identifier; its issuing authority is supplied by the deployment catalog.
+"""@EN; 
+                      rdfs:domain ddhub:InstrumentInstance; 
+                      rdfs:range xsd:string. 
 ddhub:AssociatesMeasurableQuantity a owl:ObjectProperty; 
                                    rdfs:comment """This `Verb` is typically used when defining a `UnitSystem`. It allows to associate a
 `MeasurableQuantityUnitAssociation` with a `MeasurableQuantity`.
@@ -2569,7 +2574,7 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                                       rdfs:subClassOf ddhub:Unit. 
 ddhub:Current a owl:Class; 
-              rdfs:comment """Current characterizes that the wellbore data is the currently selected one as the official one.
+              rdfs:comment """Current characterizes that the contextual data (e.g., a wellbore description, a rig, a rig description) is the currently selected one as the official one.
 """@EN; 
               rdfs:subClassOf ddhub:WellBoreDataCharateristic. 
 ddhub:CurvatureDrillingQuantity a owl:Class; 
@@ -2686,6 +2691,10 @@ ddhub:DeadLine a owl:Class;
 ddhub:DeadLineAnchor a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:DrillLineFastener. 
+ddhub:DeadLineTensionSensor a owl:Class; 
+                            rdfs:comment """A force sensor that measures the tension of the dead line of a drawworks, typically a load cell in the dead-line anchor.
+"""@EN; 
+                            rdfs:subClassOf ddhub:ForceSensor. 
 ddhub:Decade a owl:Class; 
              rdfs:comment """[v] = a * [SI]
 where
@@ -3916,9 +3925,21 @@ ddhub:DogHouse a owl:Class;
 ddhub:Dolly a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:DrillFloorEquipment. 
+ddhub:DollyFullyExtended a owl:Class; 
+                         rdfs:comment """Prototype signal for DollyFullyExtended. Boolean signal that is true when the dolly of a top drive is fully extended.
+"""@EN; 
+                         rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:DollyFullyRetracted a owl:Class; 
+                          rdfs:comment """Prototype signal for DollyFullyRetracted. Boolean signal that is true when the dolly of a top drive is fully retracted.
+"""@EN; 
+                          rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:DollyRail a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:DrillFloorEquipment. 
+ddhub:DollyRetraction a owl:Class; 
+                      rdfs:comment """Prototype signal for DollyRetraction. Proportion of retraction of the dolly of a top drive: 0 when fully extended, 1 when fully retracted.
+"""@EN; 
+                      rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:DotPerInch a owl:Class; 
                  rdfs:comment """[v] = a * [SI]
 where
@@ -4380,8 +4401,8 @@ ddhub:DWISAdviceComposer a owl:Class;
 """@EN; 
                          rdfs:subClassOf ddhub:DWISInternalService. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:TimeWindow, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
-                                          owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Duration, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:InstrumentInstance, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:InstrumentModel, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:TimeWindow, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
+                                          owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:SerialNumber, ddhub:AssetIdentifier, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:ModelIdentifier, ddhub:ModelName, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Duration, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
 ddhub:DWISBlackboard a owl:Class; 
                      rdfs:comment """The DWIS blackboard is a shared data structure that allows different DWIS components to share information and coordinate their activities.
@@ -4588,7 +4609,11 @@ ddhub:ElectromagneticCouplingDownholeTelemetry a owl:Class;
 ddhub:ElectromagneticMeasurementPrinciple a owl:Class; 
                                           rdfs:comment """Describes that an electromagnetic measurement principle is used to perform a measurement.
 """@EN; 
-                                          rdfs:subClassOf ddhub:FlowMeasurementPrinciple. 
+                                          rdfs:subClassOf ddhub:MeasurementPrinciple. 
+ddhub:ElectromagneticPulseEchoMeasurementPrinciple a owl:Class; 
+                                                   rdfs:comment """An electromagnetic pulse is emitted and its returning response is measured. Time-of-flight and echo amplitude support distinct geometric and reflection outputs. This does not describe electromagnetic telemetry or wired-pipe coupling.
+"""@EN; 
+                                                   rdfs:subClassOf ddhub:ElectromagneticMeasurementPrinciple. 
 ddhub:ElectromagneticTelemetry a owl:Class; 
                                rdfs:comment """A method that allows transfer of downhole data to the surface via electromagnetic waves sent through the drilling formation.
 """@EN; 
@@ -4916,7 +4941,7 @@ ddhub:FlowLineLogical a owl:Class;
 ddhub:FlowMeasurementPrinciple a owl:Class; 
                                rdfs:comment """Describes the underlying principle used to obtain a measurement about a flowing medium.
 """@EN; 
-                               rdfs:subClassOf ddhub:DWISNoun. 
+                               rdfs:subClassOf ddhub:MeasurementPrinciple. 
 ddhub:FlowmeterTools a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:WirelineLoggingTools. 
@@ -5359,6 +5384,10 @@ $$[LMT^{-3}]$$.
 The SI unit for **force rate of change** is: Newton per second with the associated unit label $\\frac{N}{s}$
 """@EN; 
                                 rdfs:subClassOf ddhub:Quantity. 
+ddhub:ForceSensor a owl:Class; 
+                  rdfs:comment """A physical sensor that measures a force, a load or a tension.
+"""@EN; 
+                  rdfs:subClassOf ddhub:MeasurementDevice. 
 ddhub:ForceToLoadTransformation a owl:Class; 
                                 rdfs:comment """Converts a force signal into a load expressed for another context (e.g., block load).
 """@EN; 
@@ -6790,6 +6819,12 @@ ddhub:HasLogicalElementComponent a owl:ObjectProperty;
                                  rdfs:domain ddhub:HydraulicNetwork; 
                                  rdfs:range ddhub:HydraulicLogicalElement; 
                                  rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasManufacturer a owl:ObjectProperty; 
+                      rdfs:comment """Identifies the manufacturer of an instrument model. This is distinct from IsProvidedBy, which identifies the provider of data; a data aggregator need not be the manufacturer.
+"""@EN; 
+                      rdfs:domain ddhub:InstrumentModel; 
+                      rdfs:range ddhub:DrillingDataEcosystemOrganization; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasMeasurableQuantity a owl:ObjectProperty; 
                             rdfs:comment """This `Verb` is used to define the reciprocal relationship of `IsOfBaseQuantity`, i.e., to relate
 a `Quantity` with a `MeasureableQuantity`.
@@ -7241,6 +7276,15 @@ ddhub:HoistingControlSystem a owl:Class;
                             rdfs:comment """A control system focused on hoisting equipment such as the drawworks and blocks.
 """@EN; 
                             rdfs:subClassOf ddhub:ControlSystem. 
+ddhub:HoistingCylinder a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:RamHoistingSystem. 
+ddhub:HoistingCylinderCapChamber a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:HoistingCylinder. 
+ddhub:HoistingCylinderRodChamber a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:HoistingCylinder. 
 ddhub:HoistingSystem a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:RigEquipment. 
@@ -7919,6 +7963,17 @@ ddhub:InstrumentationCompany a owl:Class;
 ddhub:InstrumentedMotor a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:DownholeMotor. 
+ddhub:InstrumentedSub a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:InstrumentInstance a owl:Class; 
+                         rdfs:comment """An identifiable physical instrument assembly. Its graph URI is the primary identity; optional serial numbers and asset identifiers are not globally unique by themselves. An instance may also be classified using an appropriate existing equipment class, such as InstrumentedSub.
+"""@EN; 
+                         rdfs:subClassOf ddhub:Equipment. 
+ddhub:InstrumentModel a owl:Class; 
+                      rdfs:comment """A manufacturer-defined instrument product or model, independent of individual physical units. Model variants with materially different specifications use distinct model nodes. Model identifiers are catalog data, not vocabulary class names.
+"""@EN; 
+                      rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:Integral a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:BladeType. 
@@ -8136,9 +8191,9 @@ ddhub:IsCalculatedUsingRheologicalHypothesis a owl:ObjectProperty;
                                              rdfs:range ddhub:RheologicalBehavior; 
                                              rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsCharacterizedBy a owl:ObjectProperty; 
-                        rdfs:comment """this Verb is used to state some characteristics of a well bore data.
+                        rdfs:comment """this Verb is used to state some characteristics of a contextual data, e.g., a well bore data or a rig.
 """@EN; 
-                        rdfs:domain ddhub:WellBoreData; 
+                        rdfs:domain ddhub:ContextualData; 
                         rdfs:range ddhub:WellBoreDataCharateristic; 
                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsCommandFor a owl:ObjectProperty; 
@@ -8219,6 +8274,12 @@ ddhub:IsDerivedFrom a owl:ObjectProperty;
                     rdfs:domain ddhub:DWISNoun; 
                     rdfs:range ddhub:DWISNoun; 
                     rdfs:subPropertyOf ddhub:IsTransformationOutput. 
+ddhub:IsDescriptionOf a owl:ObjectProperty; 
+                      rdfs:comment """this Verb is used to state that a contextual data is the detailed description of the entity that another contextual data identifies, e.g., a rig description of a rig, or a wellbore architecture description of a wellbore.
+"""@EN; 
+                      rdfs:domain ddhub:ContextualData; 
+                      rdfs:range ddhub:ContextualData; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsDownstreamOf a owl:ObjectProperty; 
                      rdfs:comment """Identifies a fluid type located downstream of an interface.
 """@EN; 
@@ -8472,6 +8533,12 @@ relationship to `HasMeasurableQuantity`.
                        rdfs:domain ddhub:MeasurableQuantity; 
                        rdfs:range ddhub:Quantity; 
                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsOfInstrumentModel a owl:ObjectProperty; 
+                          rdfs:comment """Associates a physical instrument with its manufacturer-defined model. Assign one model at the chosen assembly granularity; replace an assignment explicitly when correcting catalog data.
+"""@EN; 
+                          rdfs:domain ddhub:InstrumentInstance; 
+                          rdfs:range ddhub:InstrumentModel; 
+                          rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsOfMeasurableQuantity a owl:ObjectProperty; 
                              rdfs:comment """This `verb` is used to relate a `MeasureableQuantity` to a `DrillingDataPoint`.
 """@EN; 
@@ -8583,6 +8650,12 @@ ddhub:IsResamplingInput a owl:ObjectProperty;
                         rdfs:domain ddhub:DrillingDataPoint; 
                         rdfs:range ddhub:Resampling; 
                         rdfs:subPropertyOf ddhub:IsTransformationInput. 
+ddhub:IsSensorOf a owl:ObjectProperty; 
+                 rdfs:comment """Associates a physical sensor with its containing instrument assembly. Keep distinct sensor instances for distinct sensing elements or locations. This expresses physical ownership, not the location of the measured phenomenon or a data-processing subsystem.
+"""@EN; 
+                 rdfs:domain ddhub:MeasurementDevice; 
+                 rdfs:range ddhub:InstrumentInstance; 
+                 rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsSetPointAdviceFor a owl:ObjectProperty; 
                           rdfs:comment """Indicates an advisory set-point that may be reviewed before being applied to a control system.
 """@EN; 
@@ -11115,6 +11188,10 @@ Litre = 0.001
 ddhub:LoadNut a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:TopDrive. 
+ddhub:LoadPinSensor a owl:Class; 
+                    rdfs:comment """A force sensor built into a pin that carries the load of a hoisting component, e.g., the load pins at the top of a top drive.
+"""@EN; 
+                    rdfs:subClassOf ddhub:ForceSensor. 
 ddhub:LocalTimeReference a owl:Class; 
                          rdfs:comment """Time reference with respect to local clock or time zone.
 """@EN; 
@@ -11586,6 +11663,10 @@ ddhub:MeasurementIndex a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                        rdfs:domain ddhub:EndPointMapping; 
                        rdfs:range xsd:int. 
+ddhub:MeasurementPrinciple a owl:Class; 
+                           rdfs:comment """The physical mechanism used to obtain a measurement. It describes sensing, not transport, aggregation or the commercial instrument model.
+"""@EN; 
+                           rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:MeasurementWhileDrillingTools a owl:Class; 
                                     rdfs:comment ""@EN; 
                                     rdfs:subClassOf ddhub:LoggingEquipment. 
@@ -13086,6 +13167,11 @@ ddhub:ModelFitter a owl:Class;
                   rdfs:comment """A model fitter is a computation unit that fits a model to observed data in order to estimate unmeasured variables of a process. Its output is typically a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
 """@EN; 
                   rdfs:subClassOf ddhub:Estimator. 
+ddhub:ModelIdentifier a owl:DatatypeProperty, owl:FunctionalProperty; 
+                      rdfs:comment """Stable manufacturer-qualified product/model identifier, governed by the model catalog.
+"""@EN; 
+                      rdfs:domain ddhub:InstrumentModel; 
+                      rdfs:range xsd:string. 
 ddhub:ModelingApproach a owl:Class; 
                        rdfs:comment """A classification of the modeling direction of a model.
 """@EN; 
@@ -13114,6 +13200,11 @@ ddhub:ModellingFeature a owl:Class;
                        rdfs:comment """A modelling feature is a characteristic about how system is modelled.
 """@EN; 
                        rdfs:subClassOf ddhub:Feature. 
+ddhub:ModelName a owl:DatatypeProperty, owl:FunctionalProperty; 
+                rdfs:comment """Human-readable product/model name.
+"""@EN; 
+                rdfs:domain ddhub:InstrumentModel; 
+                rdfs:range xsd:string. 
 ddhub:ModelScope a owl:Class; 
                  rdfs:comment """A classification of a model with regards to its range of applicability.
 """@EN; 
@@ -18023,9 +18114,15 @@ ddhub:QuorumSoftware a owl:Class;
                      rdfs:comment """A software company active in upstream operations data, reporting, well operations, planning data management, and production data workflows.
 """@EN; 
                      rdfs:subClassOf ddhub:WellPlanningReportingSoftwareCompany. 
+ddhub:RackAndPinionElectricDrive a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:RackAndPinionHoistingSystem. 
 ddhub:RackAndPinionHoistingSystem a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:HoistingSystem. 
+ddhub:RackAndPinionHydraulicDrive a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:RackAndPinionHoistingSystem. 
 ddhub:RadialModelling a owl:Class; 
                       rdfs:comment """The model accounts for the radial movement of some parts of the physical system.
 """@EN; 
@@ -18532,7 +18629,7 @@ ddhub:RamHoistingSystem a owl:Class;
                         rdfs:subClassOf ddhub:HoistingSystem. 
 ddhub:RamRig a owl:Class; 
              rdfs:comment ""@EN; 
-             rdfs:subClassOf ddhub:Drawworks. 
+             rdfs:subClassOf ddhub:RamHoistingSystem. 
 ddhub:RandomWalkDrillingQuantity a owl:Class; 
                                  rdfs:comment """A random walk is a mathematical concept describing a path consisting of a series of random steps or movements, where each step's direction or magnitude is determined probabilistically. It is used to model various phenomena in fields like physics, finance, and computer science.
 The dimension of random walk is:
@@ -19068,6 +19165,10 @@ ddhub:RiemannianManifoldTwoDimensionalReferenceFrame a owl:Class;
                                                      rdfs:comment """Reference location for RiemannianManifoldTwoDimensionalReferenceFrame.
 """@EN; 
                                                      rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
+ddhub:Rig a owl:Class; 
+          rdfs:comment """Rig is used to describe meta information about a drilling rig, i.e., what is necessary to identify it, like its name, its type and its identifier in the rig catalog. The detailed characteristics of the equipment of a rig are provided by the RigDescription.
+"""@EN; 
+          rdfs:subClassOf ddhub:ContextualData. 
 ddhub:RigActionPlan a owl:Class; 
                     rdfs:comment """A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
 """@EN; 
@@ -19090,9 +19191,10 @@ ddhub:RigControlSystemProvider a owl:Class;
                                rdfs:subClassOf ddhub:RigEquipmentOEM. 
 ddhub:RigDescription a owl:Class; 
                      rdfs:comment """The rig data structure describes the characteristics of the drilling equipment and any additional equipment
-associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
+associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,... It is the detailed
+counterpart of the Rig noun, which only identifies a rig.
 """@EN; 
-                     rdfs:subClassOf ddhub:WellBoreData. 
+                     rdfs:subClassOf ddhub:ContextualData. 
 ddhub:RigEquipment a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Equipment. 
@@ -19348,6 +19450,10 @@ ddhub:SemiCircularChannel a owl:Class;
                           rdfs:comment """An open channel with a semi-circular cross-section.
 """@EN; 
                           rdfs:subClassOf ddhub:OpenChannel. 
+ddhub:SensorFusionTransformation a owl:Class; 
+                                 rdfs:comment """Combines several redundant or complementary signals, possibly using their history and a model of the process, into a single estimate of a quantity. It is not a direct transformation because its output depends on more than the current value of its inputs.
+"""@EN; 
+                                 rdfs:subClassOf ddhub:Transformation. 
 ddhub:SensorUncertainty a owl:Class; 
                         rdfs:comment """The uncertainty of the sensor is described by a systematic bias and repetitive error. The systematic bias is referred to as the `Accuracy` while the repetitive error is referred to as the `Precision`. The standard deviation of the overall Gaussian distribution is $\\sqrt{\\sigma^2{_a}+\\sigma^2{_p}}$ where $\\sigma_a$ is the accuracy and $\\sigma_p$ is the precision. The `Accuracy` or the `Precision` can either be defined as attribute values, for example when they have fixed values, or using another facts utilizing the verbs `HasAccuracy` or respectively `HasPrecision` when these values may change through time.
 """@EN; 
@@ -19355,6 +19461,11 @@ ddhub:SensorUncertainty a owl:Class;
 ddhub:Seperator a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:WellTestingEquipment. 
+ddhub:SerialNumber a owl:DatatypeProperty, owl:FunctionalProperty; 
+                   rdfs:comment """Optional manufacturer-assigned serial number of this physical unit.
+"""@EN; 
+                   rdfs:domain ddhub:InstrumentInstance; 
+                   rdfs:range xsd:string. 
 ddhub:ServiceCompany a owl:Class; 
                      rdfs:comment """A service company is an entity that provides services during the well construction.
 """@EN; 
@@ -20649,6 +20760,12 @@ ddhub:SummationTransformation a owl:Class;
 ddhub:SupportLine a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillLine. 
+ddhub:SupportsTelemetry a owl:ObjectProperty; 
+                        rdfs:comment """Identifies a telemetry path available to an instrument in its deployed configuration, including a path supplied through attached MWD equipment. It does not assert that the instrument contains the transmitter or that every signal is actually transmitted on that path. Use IsTransmittedBy on each delivered data point for actual transport. Absence of this fact does not assert that a path is unsupported; complete allowed-path lists require deployment validation.
+"""@EN; 
+                        rdfs:domain ddhub:InstrumentInstance; 
+                        rdfs:range ddhub:Telemetry; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:SurfaceBop a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:BopStack. 
@@ -21535,6 +21652,10 @@ Foot = 12.0 * Inch
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                      rdfs:subClassOf ddhub:Unit. 
+ddhub:UltrasonicPulseEchoMeasurementPrinciple a owl:Class; 
+                                              rdfs:comment """An ultrasonic pulse is emitted and its returning echo is measured. Travel time can support distance/radius estimation, while echo amplitude provides reflection information; radius and amplitude are separate outputs. This does not describe acoustic telemetry.
+"""@EN; 
+                                              rdfs:subClassOf ddhub:AcousticMeasurementPrinciple. 
 ddhub:UnderBalanceFeature a owl:Class; 
                           rdfs:comment """An under-balance feature indicates that something accounts for under-balance conditions.
 """@EN; 
@@ -21586,10 +21707,10 @@ ddhub:UserInterface a owl:Class;
 """@EN; 
                     rdfs:subClassOf ddhub:DataFlowNode. 
 ddhub:UsesMeasurementPrinciple a owl:ObjectProperty; 
-                               rdfs:comment """Associate a realtime signal to its measurement principle.
+                               rdfs:comment """Associates a measurement data point with the physical principle by which it is obtained. Retain processing lineage separately and use IsTransmittedBy for transport.
 """@EN; 
                                rdfs:domain ddhub:DrillingDataPoint; 
-                               rdfs:range ddhub:FlowMeasurementPrinciple; 
+                               rdfs:range ddhub:MeasurementPrinciple; 
                                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:UsGallon a owl:Class; 
                rdfs:comment """[v] = a * [SI]

@@ -30,6 +30,9 @@ ControlSystem <|-- RotationControlSystem
 ControlSystem <|-- BOPControlSystem
 ControlSystem <|-- RigChokeControlSystem
 DataFlowNode <|-- MeasurementDevice
+MeasurementDevice <|-- ForceSensor
+ForceSensor <|-- LoadPinSensor
+ForceSensor <|-- DeadLineTensionSensor
 DataFlowNode <|-- Transformation
 Transformation <|-- DirectTransformation
 DirectTransformation <|-- Aggregation
@@ -54,6 +57,7 @@ Filter <|-- PeakToPeak
 Filter <|-- MovingDistribution
 MovingAverage <|-- NumberOfSampleMovingAverage
 MovingAverage <|-- TimeWindowMovingAverage
+Transformation <|-- SensorFusionTransformation
 Transformation <|-- TimeBasedTransformation
 TimeBasedTransformation <|-- Buffering
 TimeBasedTransformation <|-- Derivation
@@ -919,6 +923,111 @@ WHERE {
 }
 ```
 This example shows a standpipe pressure sensor producing a raw signal.
+## ForceSensor <!-- NOUN -->
+- Display name: Force Sensor
+- Parent class: [MeasurementDevice](./DataFlow.md#MeasurementDevice)
+- Description: 
+A physical sensor that measures a force, a load or a tension.
+- Definition set: DataFlow
+- Examples:
+```dwis forceSensorExample
+ForceSensor:forceSensor
+DrillingDataPoint:forceRaw
+forceRaw IsMeasuredBy forceSensor
+forceRaw IsGeneratedBy forceSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[forceSensor] -->|BelongsToClass| N0001(ForceSensor) 
+	N0002[forceRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[forceRaw] -->|IsMeasuredBy| N0000[forceSensor] 
+	N0002[forceRaw] -->|IsGeneratedBy| N0000[forceSensor] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?forceSensorExample
+WHERE {
+	?forceSensor rdf:type ddhub:ForceSensor .
+	?forceRaw rdf:type ddhub:DrillingDataPoint .
+	?forceRaw ddhub:IsMeasuredBy ?forceSensor .
+	?forceRaw ddhub:IsGeneratedBy ?forceSensor .
+}
+```
+This example shows a force sensor producing a raw signal.
+## LoadPinSensor <!-- NOUN -->
+- Display name: Load Pin Sensor
+- Parent class: [ForceSensor](./DataFlow.md#ForceSensor)
+- Description: 
+A force sensor built into a pin that carries the load of a hoisting component, e.g., the load pins at the top of a top drive.
+- Definition set: DataFlow
+- Examples:
+```dwis loadPinSensorExample
+LoadPinSensor:topDriveLoadPins
+DrillingDataPoint:hookloadRaw
+hookloadRaw IsMeasuredBy topDriveLoadPins
+hookloadRaw IsGeneratedBy topDriveLoadPins
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topDriveLoadPins] -->|BelongsToClass| N0001(LoadPinSensor) 
+	N0002[hookloadRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadRaw] -->|IsMeasuredBy| N0000[topDriveLoadPins] 
+	N0002[hookloadRaw] -->|IsGeneratedBy| N0000[topDriveLoadPins] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?loadPinSensorExample
+WHERE {
+	?topDriveLoadPins rdf:type ddhub:LoadPinSensor .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadRaw ddhub:IsMeasuredBy ?topDriveLoadPins .
+	?hookloadRaw ddhub:IsGeneratedBy ?topDriveLoadPins .
+}
+```
+This example shows the hookload measured by the load pins of a top drive.
+## DeadLineTensionSensor <!-- NOUN -->
+- Display name: Dead Line Tension Sensor
+- Parent class: [ForceSensor](./DataFlow.md#ForceSensor)
+- Description: 
+A force sensor that measures the tension of the dead line of a drawworks, typically a load cell in the dead-line anchor.
+- Definition set: DataFlow
+- Examples:
+```dwis deadLineTensionSensorExample
+DeadLineTensionSensor:deadLineSensor
+DrillingDataPoint:deadLineTensionRaw
+deadLineTensionRaw IsMeasuredBy deadLineSensor
+deadLineTensionRaw IsGeneratedBy deadLineSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[deadLineSensor] -->|BelongsToClass| N0001(DeadLineTensionSensor) 
+	N0002[deadLineTensionRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[deadLineTensionRaw] -->|IsMeasuredBy| N0000[deadLineSensor] 
+	N0002[deadLineTensionRaw] -->|IsGeneratedBy| N0000[deadLineSensor] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?deadLineTensionSensorExample
+WHERE {
+	?deadLineSensor rdf:type ddhub:DeadLineTensionSensor .
+	?deadLineTensionRaw rdf:type ddhub:DrillingDataPoint .
+	?deadLineTensionRaw ddhub:IsMeasuredBy ?deadLineSensor .
+	?deadLineTensionRaw ddhub:IsGeneratedBy ?deadLineSensor .
+}
+```
+This example shows the dead-line tension measured by a load cell of the dead-line anchor.
 ## Transformation <!-- NOUN -->
 - Display name: Transformation
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
@@ -2061,6 +2170,56 @@ WHERE {
 }
 ```
 This example averages hookload over the last ten seconds.
+## SensorFusionTransformation <!-- NOUN -->
+- Display name: Sensor Fusion Transformation
+- Parent class: [Transformation](./DataFlow.md#Transformation)
+- Description: 
+Combines several redundant or complementary signals, possibly using their history and a model of the process, into a single estimate of a quantity. It is not a direct transformation because its output depends on more than the current value of its inputs.
+- Definition set: DataFlow
+- Examples:
+```dwis hookloadFusion
+SensorFusionTransformation:hookloadFusion
+DrillingDataPoint:hookloadFromLoadPins
+DrillingDataPoint:hookloadFromDeadLine
+DrillingDataPoint:blockPosition
+DrillingDataPoint:correctedHookload
+hookloadFromLoadPins IsTransformationInput hookloadFusion
+hookloadFromDeadLine IsTransformationInput hookloadFusion
+blockPosition IsTransformationInput hookloadFusion
+correctedHookload IsTransformationOutput hookloadFusion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadFusion] -->|BelongsToClass| N0001(SensorFusionTransformation) 
+	N0002[hookloadFromLoadPins] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadFromDeadLine] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0005[blockPosition] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0006[correctedHookload] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadFromLoadPins] -->|IsTransformationInput| N0000[hookloadFusion] 
+	N0004[hookloadFromDeadLine] -->|IsTransformationInput| N0000[hookloadFusion] 
+	N0005[blockPosition] -->|IsTransformationInput| N0000[hookloadFusion] 
+	N0006[correctedHookload] -->|IsTransformationOutput| N0000[hookloadFusion] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadFusion
+WHERE {
+	?hookloadFusion rdf:type ddhub:SensorFusionTransformation .
+	?hookloadFromLoadPins rdf:type ddhub:DrillingDataPoint .
+	?hookloadFromDeadLine rdf:type ddhub:DrillingDataPoint .
+	?blockPosition rdf:type ddhub:DrillingDataPoint .
+	?correctedHookload rdf:type ddhub:DrillingDataPoint .
+	?hookloadFromLoadPins ddhub:IsTransformationInput ?hookloadFusion .
+	?hookloadFromDeadLine ddhub:IsTransformationInput ?hookloadFusion .
+	?blockPosition ddhub:IsTransformationInput ?hookloadFusion .
+	?correctedHookload ddhub:IsTransformationOutput ?hookloadFusion .
+}
+```
+This example fuses hookload estimates from load pins and from the dead line, using the block motion, into a corrected hookload.
 ## TimeBasedTransformation <!-- NOUN -->
 - Display name: Time Based Transformation
 - Parent class: [Transformation](./DataFlow.md#Transformation)
@@ -2534,6 +2693,7 @@ IsTransformationOutput <|-- IsIntegratedFrom
 IsTransformationOutput <|-- IsResampledBy
 IsGeneratedBy <|-- IsTransmissionOutput
 DWISVerb <|-- IsProcessedBy
+DWISVerb <|-- IsSensorOf
 ```
 ## Relations
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
@@ -2577,6 +2737,7 @@ DWISNoun ||--o{ DWISNoun : IsIntegratedFrom
 DrillingDataPoint ||--o{ Resampling : IsResampledBy
 DrillingDataPoint ||--o{ TransmissionLine : IsTransmissionOutput
 DWISNoun ||--o{ DWISNoun : IsProcessedBy
+MeasurementDevice ||--o{ InstrumentInstance : IsSensorOf
 ```
 ## IsSubSystemOf <!-- VERB -->
 - Display name: IsSubSystemOf
@@ -3970,3 +4131,42 @@ WHERE {
 }
 ```
 This example shows standpipe pressure processed by a low-pass filter.
+## IsSensorOf <!-- VERB -->
+- Display name: IsSensorOf
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [MeasurementDevice](./DataFlow.md#MeasurementDevice)
+- Object class: [InstrumentInstance](./InstrumentIdentity.md#InstrumentInstance)
+- Definition set: DataFlow
+- Description: 
+Associates a physical sensor with its containing instrument assembly. Keep distinct sensor instances for distinct sensing elements or locations. This expresses physical ownership, not the location of the measured phenomenon or a data-processing subsystem.
+- Examples:
+```dwis IsSensorOfExample
+MeasurementDevice:baseStarAnnularPressureSensor
+InstrumentInstance:baseStarUnit
+baseStarAnnularPressureSensor IsSensorOf baseStarUnit
+DirectMeasurement:annularPressureAtSensor
+annularPressureAtSensor IsMeasuredBy baseStarAnnularPressureSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseStarAnnularPressureSensor] -->|BelongsToClass| N0001(MeasurementDevice) 
+	N0002[baseStarUnit] -->|BelongsToClass| N0003(InstrumentInstance) 
+	N0000[baseStarAnnularPressureSensor] -->|IsSensorOf| N0002[baseStarUnit] 
+	N0004[annularPressureAtSensor] -->|BelongsToClass| N0005(DirectMeasurement) 
+	N0004[annularPressureAtSensor] -->|IsMeasuredBy| N0000[baseStarAnnularPressureSensor] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsSensorOfExample
+WHERE {
+	?baseStarAnnularPressureSensor rdf:type ddhub:MeasurementDevice .
+	?baseStarUnit rdf:type ddhub:InstrumentInstance .
+	?baseStarAnnularPressureSensor ddhub:IsSensorOf ?baseStarUnit .
+	?annularPressureAtSensor rdf:type ddhub:DirectMeasurement .
+	?annularPressureAtSensor ddhub:IsMeasuredBy ?baseStarAnnularPressureSensor .
+}
+```

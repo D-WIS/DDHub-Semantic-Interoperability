@@ -193,6 +193,42 @@ DrillingDataPoint:hookVelocity
 hookVelocity BelongsToClass HookVelocity
 ```
 This example assigns a drilling data point to the HookVelocity prototype.
+## DollyRetraction <!-- NOUN -->
+- Display name: DollyRetraction
+- Parent class: PrototypeData
+- Attributes:
+- Specialization:
+- Description: Prototype signal for DollyRetraction. Proportion of retraction of the dolly of a top drive: 0 when fully extended, 1 when fully retracted.
+- Examples:
+```dwis dollyRetraction
+DrillingDataPoint:dollyRetraction
+dollyRetraction BelongsToClass DollyRetraction
+```
+This example assigns a drilling data point to the DollyRetraction prototype.
+## DollyFullyExtended <!-- NOUN -->
+- Display name: DollyFullyExtended
+- Parent class: PrototypeData
+- Attributes:
+- Specialization:
+- Description: Prototype signal for DollyFullyExtended. Boolean signal that is true when the dolly of a top drive is fully extended.
+- Examples:
+```dwis dollyFullyExtended
+DrillingDataPoint:dollyFullyExtended
+dollyFullyExtended BelongsToClass DollyFullyExtended
+```
+This example assigns a drilling data point to the DollyFullyExtended prototype.
+## DollyFullyRetracted <!-- NOUN -->
+- Display name: DollyFullyRetracted
+- Parent class: PrototypeData
+- Attributes:
+- Specialization:
+- Description: Prototype signal for DollyFullyRetracted. Boolean signal that is true when the dolly of a top drive is fully retracted.
+- Examples:
+```dwis dollyFullyRetracted
+DrillingDataPoint:dollyFullyRetracted
+dollyFullyRetracted BelongsToClass DollyFullyRetracted
+```
+This example assigns a drilling data point to the DollyFullyRetracted prototype.
 ## Inclination <!-- NOUN -->
 - Display name: Inclination
 - Parent class: PrototypeData
