@@ -1,78 +1,60 @@
 name: Publish Vocabulary to D-WIS webpage
-on: 
+on:
   workflow_dispatch:
     inputs:
       force_updates:
-        description: 'Force updates of terms, even without changes to them'
-        required: true
-        default: 'false'
-      force_deletion:
-        decription: 'Force deletion of existing terms before updates'
-        required: true
-        default: 'false'
-  # push: # push must be changed to trigger after md's have been generated (workflow trigger?)
-  # paths:
-  #  - 'docs/vocabulary_developement/definitions/**.md' 
+        description: 'Update all terms even when their descriptions are unchanged'
+        type: boolean
+        default: false
   workflow_run:
     workflows: [Generate cleaned vocabulary and packages]
+    branches: [main]
     types: [completed]
+
+concurrency:
+  group: wordpress-vocabulary-publisher
+  cancel-in-progress: false
+
+permissions:
+  contents: read
 
 jobs:
   publish_vocabulary:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    # Run if the previous workflow succeeded, or if manually dispatched
-    #if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name=='workflow_dispatch'}}
+    timeout-minutes: 45
     env:
       SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
       SOURCE_PATH: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
       WORDPRESS_USER: "cicd"
-      WORDPRESS_APPLICATION_PASSWORD: "${{ secrets.WORDPRESS_APPLICATION_PASSWORD }}"
       WORDPRESS_URL: "https://d-wis.org/"
       WORDPRESS_USE_REST_ROUTE: "true"
-      FORCE_UPDATE: "false"
-      FORCE_DELETION: "false"
-      RUN: "true"
-    
+      WORDPRESS_WORKERS: "2"
+      FORCE_UPDATE: ${{ github.event_name == 'workflow_dispatch' && inputs.force_updates || false }}
+      REPORT_PATH: "${{ runner.temp }}/publication-report.json"
+      PYTHONUNBUFFERED: "1"
     steps:
-        # Override env variables with content from the Workflow Dispatch dialog
-      - name: override-dispatch-variables
-        if: ${{ github.event_name=='workflow_dispatch' }}
-        run: |
-          echo "FORCE_UPDATE=${{ github.event.inputs.force_updates }}" >> $GITHUB_ENV
-          echo "FORCE_DELETION=${{ github.event.inputs.force_deletion }}" >> $GITHUB_ENV
-
-      - name: early-abort-on-vocabulary-generation-failure
-        if: ${{ github.event_name=='workflow_run' && github.event.workflow_run.conclusion == 'failure'}}
-        run: |
-          echo "Vocabulary generation workflow failed... Abort this workflow without failure..."
-          echo "RUN=false" >> $GITHUB_ENV
-
-      - uses: actions/checkout@v2
-
-      # use the md file in the repo
-      # - name: 'Download the generated files from artifacts'
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: generated-md-files
-      #     path: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
-
-      # - name: Extract Artifact
-      #   run: |
-      #     ls
-      #     ls $SOURCE_PATH
-      #     git status
-
-      - name: Run publish script
-        run: |
-          cd $SCRIPT_PATH
-          if [ -z "$WORDPRESS_APPLICATION_PASSWORD" ]
-          then
-            echo Application password not set, aborting without failure
-            exit 0
-          else
-            pip install -r requirements.txt
-            python update_web_vocabulary.py
-          fi
-
-
-      
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install publisher dependencies
+        run: python -m pip install -r "$SCRIPT_PATH/requirements.txt"
+      - name: Test publisher
+        working-directory: docs/vocabulary_development/scripts
+        run: python -m unittest -v test_update_web_vocabulary.py
+      - name: Publish and verify vocabulary
+        working-directory: docs/vocabulary_development/scripts
+        env:
+          WORDPRESS_APPLICATION_PASSWORD: ${{ secrets.WORDPRESS_APPLICATION_PASSWORD }}
+        run: python -u update_web_vocabulary.py
+      - name: Upload publication report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wordpress-publication-report
+          path: ${{ env.REPORT_PATH }}
+          if-no-files-found: warn

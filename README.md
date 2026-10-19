@@ -61,3 +61,11 @@ Trusted Publishing policy for this repository and `vocabulary-generation.yml`, p
 any environment restriction configured there. The username is the NuGet profile name,
 not an email address. No long-lived NuGet API-key secret is used. The generated-file
 commit grants `contents: write` and skips committing when there are no changes.
+
+## WordPress glossary publication
+
+The glossary workflow publishes complete noun and verb descriptions from generated JSON,
+updates only changed content, and verifies every source entry by reading the site back.
+See [publisher setup and verification](docs/vocabulary_development/scripts/README.md).
+Concurrent glossary runs are serialized; failed writes and mismatches fail the workflow.
+Existing glossary URLs and unrelated entries are retained.
