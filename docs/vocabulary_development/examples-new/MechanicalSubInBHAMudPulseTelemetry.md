@@ -108,7 +108,7 @@ BaseStarStickSlipIndicator#01 IsProvidedBy Halliburton#01
 BaseStarRotationalSpeed#01 IsProvidedBy Halliburton#01
 Sigma_BaseStarStickSlipIndicator#01 IsProvidedBy Halliburton#01
 ```
-Represents a dimensionless indicator quantifying the severity of stick–slip torsional vibration. It is a continuous computed dynamic drilling signal produced by an estimator that uses rotational speed as input. The indicator is associated with a Gaussian uncertainty and is explicitly related to a stick–slip drilling incident. The value is transmitted via mud pulse telemetry, mechanically located at the BHA, and provided by an instrumentation company.
+Represents a dimensionless indicator quantifying the severity of stickâ€“slip torsional vibration. It is a continuous computed dynamic drilling signal produced by an estimator that uses rotational speed as input. The indicator is associated with a Gaussian uncertainty and is explicitly related to a stickâ€“slip drilling incident. The value is transmitted via mud pulse telemetry, mechanically located at the BHA, and provided by an instrumentation company.
 ## PeakRadialAcceleration
 ```dwis PeakRadialAccelerationExample
 DynamicDrillingSignal:BaseStarMeasuredPeakRadialAcceleration
