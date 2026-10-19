@@ -31,7 +31,7 @@ jobs:
       WORDPRESS_USE_REST_ROUTE: "true"
       WORDPRESS_WORKERS: "2"
       FORCE_UPDATE: ${{ github.event_name == 'workflow_dispatch' && inputs.force_updates || false }}
-      REPORT_PATH: "${{ runner.temp }}/publication-report.json"
+      REPORT_PATH: "${{ github.workspace }}/publication-report.json"
       PYTHONUNBUFFERED: "1"
     steps:
       - uses: actions/checkout@v4
