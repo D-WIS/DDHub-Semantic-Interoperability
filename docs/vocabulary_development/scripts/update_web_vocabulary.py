@@ -46,7 +46,8 @@ def load_terms(path):
 def normalized(text):
     # WordPress wptexturize changes straight quotation marks in rendered prose.
     # Compare content while ignoring that presentation-only transformation.
-    text = text.translate(str.maketrans({"\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"', "\u2026": "..."}))
+    text = text.translate(str.maketrans({"\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"', "\u2026": "...", "\u2013": "-", "\u2014": "-"}))
+    text = re.sub(r"(?<=\s)-{2,3}(?=\s)", "-", text)
     return " ".join(text.split())
 
 
@@ -91,9 +92,17 @@ class WordPress:
                 expected = (200, 201) if method == "POST" else (200,)
                 if response.status_code not in expected:
                     if response.status_code in (429, 500, 502, 503, 504) and attempt + 1 < attempts:
-                        time.sleep(2 ** attempt)
+                        time.sleep(5 * 2 ** attempt)
                         continue
-                    raise RuntimeError(f"{method} {endpoint}: HTTP {response.status_code}")
+                    detail = ""
+                    try:
+                        body = response.json()
+                        detail = " " + str(body.get("code", "")) + ": " + str(body.get("message", ""))[:160]
+                    except ValueError:
+                        title = BeautifulSoup(response.text, "html.parser").find("title")
+                        if title:
+                            detail = " " + title.get_text()[:120]
+                    raise RuntimeError(f"{method} {endpoint}: HTTP {response.status_code}{detail}")
                 try:
                     return response.json()
                 except ValueError as error:
@@ -103,7 +112,7 @@ class WordPress:
             except (requests.Timeout, requests.ConnectionError) as error:
                 if attempt + 1 == attempts:
                     raise RuntimeError(f"{method} {endpoint}: request timed out or connection failed") from error
-                time.sleep(2 ** attempt)
+                time.sleep(5 * 2 ** attempt)
 
     def category(self):
         categories = self.request("GET", "/wp/v2/glossary-categories", params={"per_page": 100})

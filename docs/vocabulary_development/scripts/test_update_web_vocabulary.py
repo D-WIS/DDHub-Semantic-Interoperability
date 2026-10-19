@@ -23,6 +23,12 @@ class PublisherTests(unittest.TestCase):
         item["content"]["rendered"] = item["content"]["rendered"].replace("&#x27;", "&#8216;", 1).replace("&#x27;", "&#8217;", 1)
         self.assertTrue(publisher.matches(item, term, 46))
 
+    def test_wordpress_typographic_dashes_preserve_description_equivalence(self):
+        term = publisher.Term("Location", "Noun", "A location\n - some coordinates")
+        item = self.item(term)
+        item["content"]["rendered"] = item["content"]["rendered"].replace(" - some", " &#8211; some")
+        self.assertTrue(publisher.matches(item, term, 46))
+
     def test_duplicate_source_names_fail(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "source.json"
@@ -103,7 +109,7 @@ class PublisherTests(unittest.TestCase):
             publisher.WordPress("https://example.test").request("POST", "/wp/v2/glossary", data={})
         self.assertEqual(request.call_count, 1)
 
-    @patch.object(publisher.requests, "request", return_value=Mock(status_code=202))
+    @patch.object(publisher.requests, "request", return_value=Mock(status_code=202, json=lambda: {"code": "unexpected_status", "message": "not completed"}))
     def test_accepted_or_challenge_response_is_not_success(self, request):
         with self.assertRaises(RuntimeError):
             publisher.WordPress("https://example.test").request("POST", "/wp/v2/glossary", data={})

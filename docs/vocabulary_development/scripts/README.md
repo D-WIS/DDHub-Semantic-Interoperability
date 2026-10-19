@@ -14,7 +14,7 @@ TLS verification is enabled; local installations behind an enterprise proxy must
 an approved CA bundle or the operating system's existing trusted certificate store.
 
 Requests have a 10-second connection timeout and a 45-second read timeout. GET requests
-and replacement writes to known IDs retry transient failures at most three times.
+and replacement writes to known IDs retry transient failures at most three times, with 5- and 10-second backoff delays.
 Creation requests are never blindly retried after an ambiguous failure: the publisher
 looks up the exact existing title first, avoiding duplicate creation. HTTP 202 or an
 HTML challenge response is not treated as a successful WordPress write.
@@ -24,7 +24,8 @@ all their descriptions are repaired in place; their URLs are retained. Unrelated
 obsolete entries are retained. Bulk deletion is not supported. Changes are incremental,
 so an interrupted run can be repeated safely; publication is not one site-wide transaction.
 `FORCE_UPDATE=true` deliberately rewrites all current source terms. `WORDPRESS_WORKERS`
-controls concurrent independent term updates (default 2, allowed range 1 through 4).
+controls concurrent independent term updates (library default 2, allowed range 1 through 4).
+The live workflow uses one writer to reduce load on the WordPress backend.
 
 Every run reads the glossary back and checks every source term, including duplicate
 copies, for matching description, publication state and category. Failed writes or

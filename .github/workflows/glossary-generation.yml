@@ -29,7 +29,7 @@ jobs:
       WORDPRESS_USER: "cicd"
       WORDPRESS_URL: "https://d-wis.org/"
       WORDPRESS_USE_REST_ROUTE: "true"
-      WORDPRESS_WORKERS: "2"
+      WORDPRESS_WORKERS: "1"
       FORCE_UPDATE: ${{ github.event_name == 'workflow_dispatch' && inputs.force_updates || false }}
       REPORT_PATH: "${{ github.workspace }}/publication-report.json"
       PYTHONUNBUFFERED: "1"
