@@ -286,7 +286,17 @@ namespace DWIS.Vocabulary.Utils
                     {
                         if (!string.IsNullOrEmpty(l))
                         {
-                            if (l.Contains(':'))
+                            int assignment = l.IndexOf('=');
+                            if (assignment > 0)
+                            {
+                                string subject = l.Substring(0, assignment).Trim();
+                                string value = l.Substring(assignment + 1).Trim();
+                                if (!string.IsNullOrEmpty(subject) && !string.IsNullOrEmpty(value))
+                                {
+                                    ddhub.Add(new Tuple<string, string, string>(subject, "=", value));
+                                }
+                            }
+                            else if (l.Contains(':'))
                             {
                                 string[] tokens = l.Split(':', ' ', '\t');
                                 if (tokens != null && tokens.Length >= 2 && !string.IsNullOrEmpty(tokens[0]) && !string.IsNullOrEmpty(tokens[1]))

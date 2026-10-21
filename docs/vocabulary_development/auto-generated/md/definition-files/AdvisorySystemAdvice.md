@@ -19,7 +19,7 @@ AdvisorySystemAdvice <|-- DrillingFaultDetectionIsolationAndRecoveryAdvice
 - Parent class: [JSonDataType](./DrillingDataSemantics.md#JSonDataType)
 - Description: 
 An advisory system provides one or several advices. These advices are structured data that are stored as a JSon
-string. 
+string. SchemaURL and MetaDataURL are inherited from JSonDataType.
 - Definition set: AdvisorySystemAdvice
 - Examples:
 ``` dwis adviceInfo

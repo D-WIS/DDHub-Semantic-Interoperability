@@ -1,0 +1,75 @@
+# BaseStar along-string measurement collections
+
+This example describes two physical BaseStar units in one bottom-hole assembly.
+Each Blackboard signal is a JSON measurement collection. Its entries identify the
+instrument, distance from the bit, source timestamp, quality and the applicable
+statistical values. The payload schema defines distance in SI metres, positive from
+the bit toward surface. The URLs below are illustrative until the BaseStar payload
+schemas are published.
+
+Mud-pulse and wired-pipe values remain separate signals because they have different
+telemetry provenance, refresh rates and freshness. Repeated `IsMeasuredBy` facts state
+that each aggregate can contain measurements from both configured sensors.
+
+```dwis BaseStarUnitsAndSensors
+Halliburton:halliburton
+halliburton BelongsToClass DrillingDataEcosystemOrganization
+InstrumentModel:baseStarModel
+baseStarModel.ModelIdentifier = "Halliburton/BaseStar"
+baseStarModel.ModelName = "BaseStar"
+baseStarModel HasManufacturer halliburton
+InstrumentInstance:baseStarLowerUnit
+baseStarLowerUnit.SerialNumber = "illustrative-lower-unit"
+baseStarLowerUnit BelongsToClass InstrumentedSub
+baseStarLowerUnit IsOfInstrumentModel baseStarModel
+InstrumentInstance:baseStarUpperUnit
+baseStarUpperUnit.SerialNumber = "illustrative-upper-unit"
+baseStarUpperUnit BelongsToClass InstrumentedSub
+baseStarUpperUnit IsOfInstrumentModel baseStarModel
+ForceSensor:baseStarLowerWeightSensor
+baseStarLowerWeightSensor IsSensorOf baseStarLowerUnit
+ForceSensor:baseStarUpperWeightSensor
+baseStarUpperWeightSensor IsSensorOf baseStarUpperUnit
+MudPulseTelemetry:baseStarMudPulsePath
+WiredPipeTelemetry:baseStarWiredPipePath
+baseStarLowerUnit SupportsTelemetry baseStarMudPulsePath
+baseStarLowerUnit SupportsTelemetry baseStarWiredPipePath
+baseStarUpperUnit SupportsTelemetry baseStarMudPulsePath
+baseStarUpperUnit SupportsTelemetry baseStarWiredPipePath
+```
+
+```dwis BaseStarMudPulseRawWeightCollection
+DynamicDrillingSignal:baseStarRawWeightMudPulseSignal
+AlongStringMeasurementCollection:baseStarRawWeightMudPulse
+baseStarRawWeightMudPulse BelongsToClass DerivedMeasurement
+baseStarRawWeightMudPulse.SchemaURL = "https://example.org/schemas/basestar-statistical-measurements-v1.json"
+baseStarRawWeightMudPulse.MetaDataURL = "https://example.org/metadata/basestar-statistical-measurements-v1.json"
+baseStarRawWeightMudPulse HasDynamicValue baseStarRawWeightMudPulseSignal
+baseStarRawWeightMudPulse IsOfMeasurableQuantity WeightOnBitDrilling
+MudPulseTelemetry:baseStarMudPulsePath
+baseStarRawWeightMudPulse IsTransmittedBy baseStarMudPulsePath
+ForceSensor:baseStarLowerWeightSensor
+ForceSensor:baseStarUpperWeightSensor
+baseStarRawWeightMudPulse IsMeasuredBy baseStarLowerWeightSensor
+baseStarRawWeightMudPulse IsMeasuredBy baseStarUpperWeightSensor
+```
+
+```dwis BaseStarWiredPipeRawWeightCollection
+DynamicDrillingSignal:baseStarRawWeightWiredPipeSignal
+AlongStringMeasurementCollection:baseStarRawWeightWiredPipe
+baseStarRawWeightWiredPipe BelongsToClass DerivedMeasurement
+baseStarRawWeightWiredPipe.SchemaURL = "https://example.org/schemas/basestar-statistical-measurements-v1.json"
+baseStarRawWeightWiredPipe.MetaDataURL = "https://example.org/metadata/basestar-statistical-measurements-v1.json"
+baseStarRawWeightWiredPipe HasDynamicValue baseStarRawWeightWiredPipeSignal
+baseStarRawWeightWiredPipe IsOfMeasurableQuantity WeightOnBitDrilling
+WiredPipeTelemetry:baseStarWiredPipePath
+baseStarRawWeightWiredPipe IsTransmittedBy baseStarWiredPipePath
+ForceSensor:baseStarLowerWeightSensor
+ForceSensor:baseStarUpperWeightSensor
+baseStarRawWeightWiredPipe IsMeasuredBy baseStarLowerWeightSensor
+baseStarRawWeightWiredPipe IsMeasuredBy baseStarUpperWeightSensor
+```
+
+The two collection signals can contain the same two instruments while remaining
+distinguishable by telemetry path. A deployment generates instrument and sensor nodes
+from its configuration; an empty configuration publishes no collection entries.

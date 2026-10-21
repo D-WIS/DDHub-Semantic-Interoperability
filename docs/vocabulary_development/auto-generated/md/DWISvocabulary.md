@@ -1291,7 +1291,7 @@ This example describes differential-pressure gain tuning parameters for the auto
 - Parent class: [JSonDataType](#JSonDataType)
 - Description: 
 An advisory system provides one or several advices. These advices are structured data that are stored as a JSon
-string. 
+string. SchemaURL and MetaDataURL are inherited from JSonDataType.
 - Definition set: AdvisorySystemAdvice
 - Examples:
 ``` dwis adviceInfo
@@ -10715,12 +10715,21 @@ This example marks a job identifier as string data.
 ## JSonDataType <!-- NOUN -->
 - Display name: JSon Data Type
 - Parent class: [StringDataType](#StringDataType)
+- Attributes:
+  - SchemaURL
+    - Type: string
+    - Description: URL of the JSON Schema that defines the serialized value. The referenced schema defines the payload structure and validation rules; it does not replace the semantic graph.
+  - MetaDataURL
+    - Type: string
+    - Description: URL of machine-readable metadata that gives semantic meaning to the JSON Schema fields, including quantities, units, identifiers and reference conventions where applicable.
 - Description: 
-Specifies that the data is a string that contains the serialization in Json of an object.
+Specifies that the data is a string containing the JSON serialization of an object. SchemaURL and MetaDataURL can make the structure and field-level meaning discoverable.
 - Definition set: DrillingDataSemantics
 - Examples:
 ```dwis bhaJson
 JSonDataType:jsonType
+jsonType.SchemaURL = "https://example.org/schemas/bha-configuration-v1.json"
+jsonType.MetaDataURL = "https://example.org/metadata/bha-configuration-v1.json"
 DrillingDataPoint:bhaConfiguration
 bhaConfiguration BelongsToClass jsonType
 ```
@@ -10728,8 +10737,10 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[jsonType] -->|BelongsToClass| N0001(JSonDataType) 
-	N0002[bhaConfiguration] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[bhaConfiguration] -->|BelongsToClass| N0000(jsonType) 
+	N0000[jsonType] -->|SchemaURL| N0002(("https://example.org/schemas/bha-configuration-v1.json")) 
+	N0000[jsonType] -->|MetaDataURL| N0003(("https://example.org/metadata/bha-configuration-v1.json")) 
+	N0004[bhaConfiguration] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0004[bhaConfiguration] -->|BelongsToClass| N0000(jsonType) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -10739,11 +10750,130 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?bhaJson
 WHERE {
 	?jsonType rdf:type ddhub:JSonDataType .
+	?jsonType ddhub:SchemaURL ?Attribute000 .
+	?jsonType ddhub:MetaDataURL ?Attribute001 .
 	?bhaConfiguration rdf:type ddhub:DrillingDataPoint .
 	?bhaConfiguration rdf:type ddhub:jsonType .
+  FILTER (
+	?Attribute000 = "https://example.org/schemas/bha-configuration-v1.json"
+	&& 	?Attribute001 = "https://example.org/metadata/bha-configuration-v1.json"
+  )
 }
 ```
 This example stores BHA configuration as JSON.
+## MeasurementCollection <!-- NOUN -->
+- Display name: Measurement Collection
+- Parent class: [JSonDataType](#JSonDataType)
+- Description: 
+A JSON value containing a collection of measurement entries. The JSON Schema defines the entry structure, identifiers, engineering values, timestamps and quality fields. The collection can aggregate measurements from one or more measurement devices; use IsMeasuredBy once for each device represented by the collection when those devices are known in the semantic graph.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis measurementCollection
+DynamicDrillingSignal:distributedWeightSignal
+MeasurementCollection:distributedWeight
+distributedWeight BelongsToClass DerivedMeasurement
+distributedWeight.SchemaURL = "https://example.org/schemas/statistical-measurement-collection-v1.json"
+distributedWeight HasDynamicValue distributedWeightSignal
+MeasurementDevice:lowerWeightSensor
+MeasurementDevice:upperWeightSensor
+distributedWeight IsMeasuredBy lowerWeightSensor
+distributedWeight IsMeasuredBy upperWeightSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[distributedWeightSignal] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[distributedWeight] -->|BelongsToClass| N0003(MeasurementCollection) 
+	N0002[distributedWeight] -->|BelongsToClass| N0004(DerivedMeasurement) 
+	N0002[distributedWeight] -->|SchemaURL| N0005(("https://example.org/schemas/statistical-measurement-collection-v1.json")) 
+	N0002[distributedWeight] -->|HasDynamicValue| N0000((distributedWeightSignal)) 
+	N0006[lowerWeightSensor] -->|BelongsToClass| N0007(MeasurementDevice) 
+	N0008[upperWeightSensor] -->|BelongsToClass| N0007(MeasurementDevice) 
+	N0002[distributedWeight] -->|IsMeasuredBy| N0006((lowerWeightSensor)) 
+	N0002[distributedWeight] -->|IsMeasuredBy| N0008((upperWeightSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?measurementCollection
+WHERE {
+	?distributedWeightSignal rdf:type ddhub:DynamicDrillingSignal .
+	?distributedWeight rdf:type ddhub:MeasurementCollection .
+	?distributedWeight rdf:type ddhub:DerivedMeasurement .
+	?distributedWeight ddhub:SchemaURL ?Attribute000 .
+	?lowerWeightSensor rdf:type ddhub:MeasurementDevice .
+	?upperWeightSensor rdf:type ddhub:MeasurementDevice .
+  FILTER (
+	?Attribute000 = "https://example.org/schemas/statistical-measurement-collection-v1.json"
+	&& 	?Attribute001 = distributedWeightSignal
+	&& 	?Attribute002 = lowerWeightSensor
+	&& 	?Attribute003 = upperWeightSensor
+  )
+}
+```
+This example describes one JSON value that aggregates measurements from two identified sensors.
+## AlongStringMeasurementCollection <!-- NOUN -->
+- Display name: Along String Measurement Collection
+- Parent class: [MeasurementCollection](#MeasurementCollection)
+- Description: 
+A measurement collection whose entries identify their positions along a drill-string or bottom-hole assembly relative to a stated reference such as the bit. The JSON Schema and metadata must define the position field, its unit, sign convention and reference location. Distinct instrument and sensor instances remain explicit semantic nodes and can be associated with the collection through repeated IsMeasuredBy facts.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis alongStringMeasurementCollection
+DynamicDrillingSignal:alongStringAnnulusPressureSignal
+AlongStringMeasurementCollection:alongStringAnnulusPressure
+alongStringAnnulusPressure BelongsToClass DerivedMeasurement
+alongStringAnnulusPressure.SchemaURL = "https://example.org/schemas/along-string-measurements-v1.json"
+alongStringAnnulusPressure.MetaDataURL = "https://example.org/metadata/along-string-measurements-v1.json"
+alongStringAnnulusPressure HasDynamicValue alongStringAnnulusPressureSignal
+alongStringAnnulusPressure IsOfMeasurableQuantity PressureDrilling
+MeasurementDevice:nearBitPressureSensor
+MeasurementDevice:upperBhaPressureSensor
+alongStringAnnulusPressure IsMeasuredBy nearBitPressureSensor
+alongStringAnnulusPressure IsMeasuredBy upperBhaPressureSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[alongStringAnnulusPressureSignal] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[alongStringAnnulusPressure] -->|BelongsToClass| N0003(AlongStringMeasurementCollection) 
+	N0002[alongStringAnnulusPressure] -->|BelongsToClass| N0004(DerivedMeasurement) 
+	N0002[alongStringAnnulusPressure] -->|SchemaURL| N0005(("https://example.org/schemas/along-string-measurements-v1.json")) 
+	N0002[alongStringAnnulusPressure] -->|MetaDataURL| N0006(("https://example.org/metadata/along-string-measurements-v1.json")) 
+	N0002[alongStringAnnulusPressure] -->|HasDynamicValue| N0000((alongStringAnnulusPressureSignal)) 
+	N0002[alongStringAnnulusPressure] -->|IsOfMeasurableQuantity| N0007((PressureDrilling)) 
+	N0008[nearBitPressureSensor] -->|BelongsToClass| N0009(MeasurementDevice) 
+	N0010[upperBhaPressureSensor] -->|BelongsToClass| N0009(MeasurementDevice) 
+	N0002[alongStringAnnulusPressure] -->|IsMeasuredBy| N0008((nearBitPressureSensor)) 
+	N0002[alongStringAnnulusPressure] -->|IsMeasuredBy| N0010((upperBhaPressureSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?alongStringMeasurementCollection
+WHERE {
+	?alongStringAnnulusPressureSignal rdf:type ddhub:DynamicDrillingSignal .
+	?alongStringAnnulusPressure rdf:type ddhub:AlongStringMeasurementCollection .
+	?alongStringAnnulusPressure rdf:type ddhub:DerivedMeasurement .
+	?alongStringAnnulusPressure ddhub:SchemaURL ?Attribute000 .
+	?alongStringAnnulusPressure ddhub:MetaDataURL ?Attribute001 .
+	?nearBitPressureSensor rdf:type ddhub:MeasurementDevice .
+	?upperBhaPressureSensor rdf:type ddhub:MeasurementDevice .
+  FILTER (
+	?Attribute000 = "https://example.org/schemas/along-string-measurements-v1.json"
+	&& 	?Attribute001 = "https://example.org/metadata/along-string-measurements-v1.json"
+	&& 	?Attribute002 = alongStringAnnulusPressureSignal
+	&& 	?Attribute003 = PressureDrilling
+	&& 	?Attribute004 = nearBitPressureSensor
+	&& 	?Attribute005 = upperBhaPressureSensor
+  )
+}
+```
+This example describes a JSON measurement collection whose entries carry pressure values and positions along the string.
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: [DWISNoun](#DWISNoun)
@@ -11904,8 +12034,8 @@ graph LR
 	N0000[wobSeries] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
 	N0002[weightOnBit] -->|BelongsToClass| N0003(DrillingDataPoint) 
 	N0002[weightOnBit] -->|HasDynamicValue| N0000((wobSeries)) 
-	N0004[=] -->|BelongsToClass| N0005(wobSeries.TimeStampAtSource) 
-	N0004[=] -->|BelongsToClass| N0006(wobSeries.TimeStampAcquisition) 
+	N0000[wobSeries] -->|TimeStampAtSource| N0004(("2024-06-01T12:00:00Z")) 
+	N0000[wobSeries] -->|TimeStampAcquisition| N0004(("2024-06-01T12:00:00Z")) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -11916,10 +12046,12 @@ SELECT ?timeStampedWob
 WHERE {
 	?wobSeries rdf:type ddhub:DynamicDrillingSignal .
 	?weightOnBit rdf:type ddhub:DrillingDataPoint .
-	?= rdf:type ddhub:wobSeries.TimeStampAtSource .
-	?= rdf:type ddhub:wobSeries.TimeStampAcquisition .
+	?wobSeries ddhub:TimeStampAtSource ?Attribute001 .
+	?wobSeries ddhub:TimeStampAcquisition ?Attribute002 .
   FILTER (
 	?Attribute000 = wobSeries
+	&& 	?Attribute001 = "2024-06-01T12:00:00Z"
+	&& 	?Attribute002 = "2024-06-01T12:00:00Z"
   )
 }
 ```

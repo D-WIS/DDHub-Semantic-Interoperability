@@ -210,7 +210,7 @@ an AdvisorySystemAdvice.
               rdfs:subClassOf ddhub:ComputationUnit. 
 ddhub:AdvisorySystemAdvice a owl:Class; 
                            rdfs:comment """An advisory system provides one or several advices. These advices are structured data that are stored as a JSon
-string. 
+string. SchemaURL and MetaDataURL are inherited from JSonDataType.
 """@EN; 
                            rdfs:subClassOf ddhub:JSonDataType. 
 ddhub:AfmAutofluidMeasSkid a owl:Class; 
@@ -254,6 +254,10 @@ is ignored.
                                rdfs:domain ddhub:DrillingDataPoint; 
                                rdfs:range ddhub:ActivableFunction; 
                                rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:AlongStringMeasurementCollection a owl:Class; 
+                                       rdfs:comment """A measurement collection whose entries identify their positions along a drill-string or bottom-hole assembly relative to a stated reference such as the bit. The JSON Schema and metadata must define the position field, its unit, sign convention and reference location. Distinct instrument and sensor instances remain explicit semantic nodes and can be associated with the collection through repeated IsMeasuredBy facts.
+"""@EN; 
+                                       rdfs:subClassOf ddhub:MeasurementCollection. 
 ddhub:AmountSubstanceQuantity a owl:Class; 
                               rdfs:comment """The **amount of substance** refers to the quantity of entities (such as atoms, molecules, ions, or other particles) in a system.The standard unit used to measure the amount of substance is the **mole** (mol). One mole corresponds to $6.022×10^{23}$ entities (Avogadro's number) of the given substance.
 This is one of the nine fundamental dimensions in the International System of Units (SI).A fundamental quantity does not depend on any combinations of other fundamental dimensions.It is denoted $[N]$.
@@ -4401,8 +4405,8 @@ ddhub:DWISAdviceComposer a owl:Class;
 """@EN; 
                          rdfs:subClassOf ddhub:DWISInternalService. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:InstrumentInstance, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:InstrumentModel, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:TimeWindow, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
-                                          owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:SerialNumber, ddhub:AssetIdentifier, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:ModelIdentifier, ddhub:ModelName, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Duration, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:JSonDataType, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:InstrumentInstance, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:InstrumentModel, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:TimeWindow, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
+                                          owl:onProperty ddhub:IsAuxiliary, ddhub:SchemaURL, ddhub:MetaDataURL, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:SerialNumber, ddhub:AssetIdentifier, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:ModelIdentifier, ddhub:ModelName, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Duration, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
 ddhub:DWISBlackboard a owl:Class; 
                      rdfs:comment """The DWIS blackboard is a shared data structure that allows different DWIS components to share information and coordinate their activities.
@@ -9023,7 +9027,7 @@ Unit = 1.0
 """@EN; 
                     rdfs:subClassOf ddhub:Unit. 
 ddhub:JSonDataType a owl:Class; 
-                   rdfs:comment """Specifies that the data is a string that contains the serialization in Json of an object.
+                   rdfs:comment """Specifies that the data is a string containing the JSON serialization of an object. SchemaURL and MetaDataURL can make the structure and field-level meaning discoverable.
 """@EN; 
                    rdfs:subClassOf ddhub:StringDataType. 
 ddhub:JunkBasket a owl:Class; 
@@ -11654,6 +11658,10 @@ ddhub:Measurement a owl:Class;
                   rdfs:comment """Represents individuals that are measured by some instrument and whose value can be compared with another measurement.
 """@EN; 
                   rdfs:subClassOf ddhub:PhysicalData. 
+ddhub:MeasurementCollection a owl:Class; 
+                            rdfs:comment """A JSON value containing a collection of measurement entries. The JSON Schema defines the entry structure, identifiers, engineering values, timestamps and quality fields. The collection can aggregate measurements from one or more measurement devices; use IsMeasuredBy once for each device represented by the collection when those devices are known in the semantic graph.
+"""@EN; 
+                            rdfs:subClassOf ddhub:JSonDataType. 
 ddhub:MeasurementDevice a owl:Class; 
                         rdfs:comment """Denotes a physical sensor
 """@EN; 
@@ -12071,6 +12079,11 @@ Mega = 1e6
 ddhub:Melon a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:BladeShape. 
+ddhub:MetaDataURL a owl:DatatypeProperty, owl:FunctionalProperty; 
+                  rdfs:comment """URL of machine-readable metadata that gives semantic meaning to the JSON Schema fields, including quantities, units, identifiers and reference conventions where applicable.
+"""@EN; 
+                  rdfs:domain ddhub:JSonDataType; 
+                  rdfs:range xsd:string. 
 ddhub:Metre a owl:Class; 
             rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -19413,6 +19426,11 @@ and
 ScandinavianMile = 10000.0
 """@EN; 
                        rdfs:subClassOf ddhub:Unit. 
+ddhub:SchemaURL a owl:DatatypeProperty, owl:FunctionalProperty; 
+                rdfs:comment """URL of the JSON Schema that defines the serialized value. The referenced schema defines the payload structure and validation rules; it does not replace the semantic graph.
+"""@EN; 
+                rdfs:domain ddhub:JSonDataType; 
+                rdfs:range xsd:string. 
 ddhub:ScientificDrilling a owl:Class; 
                          rdfs:comment """A directional drilling and measurement company active in MWD, survey, wellbore placement, and directional drilling data.
 """@EN; 

@@ -26,6 +26,12 @@ BaseStar's separate wired-pipe and MWD mud-pulse streams. General sensing princi
 are in `MeasurementPrinciples.md`; flow-specific principles remain in `Hydraulics.md`.
 Instrument identity is in `InstrumentIdentity.md`, separate from the spreadsheet-generated
 `DrillingEquipment.md` taxonomy.
+Structured measurement aggregates use `MeasurementCollection` and
+`AlongStringMeasurementCollection`. General JSON values expose inherited `SchemaURL`
+and `MetaDataURL` attributes so consumers can validate the payload and resolve the
+field-level semantic description. See the
+[BaseStar collection example](docs/vocabulary_development/examples-new/BaseStarAlongStringMeasurementCollections.md)
+for multiple tools and separate mud-pulse and wired-pipe collections.
 The source definitions, generated vocabulary and C# schemas are checked in together. Review the
 example's ancestry compatibility notes before regenerating downstream artifacts.
 

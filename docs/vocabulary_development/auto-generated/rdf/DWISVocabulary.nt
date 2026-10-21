@@ -68,6 +68,9 @@
 <http://ddhub.no/StringDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataType> .
 <http://ddhub.no/JSonDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/JSonDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/StringDataType> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/SchemaURL> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/JSonDataType> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/MetaDataURL> .
 <http://ddhub.no/AdvisorySystemAdvice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/AdvisorySystemAdvice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/JSonDataType> .
 <http://ddhub.no/DigitalTwinAdvice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -164,6 +167,10 @@
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/JSonDataType> .
+<http://ddhub.no/MeasurementCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/MeasurementCollection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/JSonDataType> .
+<http://ddhub.no/AlongStringMeasurementCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AlongStringMeasurementCollection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MeasurementCollection> .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataType> .
 <http://ddhub.no/DateDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -5552,8 +5559,8 @@
 <http://ddhub.no/CorrectionFactor> <http://www.w3.org/2000/01/rdf-schema#comment> "An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.\n"@EN .
 <http://ddhub.no/DataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Characterizes the type of data that is stored in a signal.\n"@EN .
 <http://ddhub.no/StringDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is a string.\n"@EN .
-<http://ddhub.no/JSonDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is a string that contains the serialization in Json of an object.\n"@EN .
-<http://ddhub.no/AdvisorySystemAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "An advisory system provides one or several advices. These advices are structured data that are stored as a JSon\nstring. \n"@EN .
+<http://ddhub.no/JSonDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is a string containing the JSON serialization of an object. SchemaURL and MetaDataURL can make the structure and field-level meaning discoverable.\n"@EN .
+<http://ddhub.no/AdvisorySystemAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "An advisory system provides one or several advices. These advices are structured data that are stored as a JSon\nstring. SchemaURL and MetaDataURL are inherited from JSonDataType.\n"@EN .
 <http://ddhub.no/DigitalTwinAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "A digital twin simulates the drilling operation using the boundary conditions applied to the drilling system.\nIt provides information about the plausible values that can be expected anywhere along the drilling system. These results\nare stored in a DigitalTwinAdvice.\n"@EN .
 <http://ddhub.no/DrillingStandardProcedureAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling standard procedure advisor provides parameters for a standard procedure like starting the mud pumps or\nrunning a friction test.\n"@EN .
 <http://ddhub.no/DrillingControlAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling control advisor provides information on how to control a part of the drilling process to stay as close\nas possible to one or several desired values.\n"@EN .
@@ -5601,6 +5608,8 @@
 <http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.\n"@EN .
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The rig data structure describes the characteristics of the drilling equipment and any additional equipment\nassociated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,... It is the detailed\ncounterpart of the Rig noun, which only identifies a rig.\n"@EN .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "The currently executed state of the rig action plan, stored in a JSon string.\n"@EN .
+<http://ddhub.no/MeasurementCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "A JSON value containing a collection of measurement entries. The JSON Schema defines the entry structure, identifiers, engineering values, timestamps and quality fields. The collection can aggregate measurements from one or more measurement devices; use IsMeasuredBy once for each device represented by the collection when those devices are known in the semantic graph.\n"@EN .
+<http://ddhub.no/AlongStringMeasurementCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "A measurement collection whose entries identify their positions along a drill-string or bottom-hole assembly relative to a stated reference such as the bit. The JSON Schema and metadata must define the position field, its unit, sign convention and reference location. Distinct instrument and sensor instances remain explicit semantic nodes and can be associated with the collection through repeated IsMeasuredBy facts.\n"@EN .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is continuous.\n"@EN .
 <http://ddhub.no/DateDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the data is a date.\n"@EN .
 <http://ddhub.no/ElapsedTimeDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the data is an elapsed time.\n"@EN .
@@ -8235,6 +8244,14 @@
 <http://ddhub.no/IsAuxiliary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/IsAuxiliary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/RunnableFunction> .
 <http://ddhub.no/IsAuxiliary> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://ddhub.no/SchemaURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/SchemaURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/SchemaURL> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/JSonDataType> .
+<http://ddhub.no/SchemaURL> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://ddhub.no/MetaDataURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/MetaDataURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/MetaDataURL> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/JSonDataType> .
+<http://ddhub.no/MetaDataURL> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://ddhub.no/AdviceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/AdviceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/AdviceType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Advisor> .
@@ -9348,6 +9365,8 @@
 <http://ddhub.no/HasUncertaintyHistogram> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/HasUncertaintyHistogram> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsAuxiliary> <http://www.w3.org/2000/01/rdf-schema#comment> "This attribute specifies if the function is a main or an auxilary one. A main function impacts\nsubstantially the drilling process while an auxiliary function does not impact or only in limited fashion the\ndrilling process. Example of a main functions are: Hoist, Tag Bottom, Start Circulation, Start Rotation,\nStop Circulation, Stop Rotation, Drill, Pull Out,Run In, Pull Out With Lubrication, Run In With Lubrication, Ream Up,\nReam Down,Test Friction, Reciprocate, Test Pressure Integrity, Place Cement, .... Example of auxiliary functions\nare: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...\n"@EN .
+<http://ddhub.no/SchemaURL> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of the JSON Schema that defines the serialized value. The referenced schema defines the payload structure and validation rules; it does not replace the semantic graph.\n"@EN .
+<http://ddhub.no/MetaDataURL> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of machine-readable metadata that gives semantic meaning to the JSON Schema fields, including quantities, units, identifiers and reference conventions where applicable.\n"@EN .
 <http://ddhub.no/AdviceType> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/MinFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/MaxFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .

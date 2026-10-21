@@ -5,15 +5,9 @@
 - Display name: Advisory System Advice
 - Parent class: JSonDataType
 - Attributes:
-    - SchemaURL
-        - Type: string
-        - Description: the URL of the JSon schema of the data serialized in the string.
-    - MetaDataURL
-        - Type: string
-        - Description: the URL of the JSon file that contains the semantical description of the data schema.
 - Specialization: 
 - Description: An advisory system provides one or several advices. These advices are structured data that are stored as a JSon
-string. 
+string. SchemaURL and MetaDataURL are inherited from JSonDataType.
 - Examples:
 ``` dwis adviceInfo
 DynamicDrillingSignal:adviceInfo

@@ -122,15 +122,63 @@ This example marks a job identifier as string data.
 - Display name: JSon Data Type
 - Parent class: StringDataType
 - Attributes:
+  - SchemaURL
+    - Type: string
+    - Description: URL of the JSON Schema that defines the serialized value. The referenced schema defines the payload structure and validation rules; it does not replace the semantic graph.
+  - MetaDataURL
+    - Type: string
+    - Description: URL of machine-readable metadata that gives semantic meaning to the JSON Schema fields, including quantities, units, identifiers and reference conventions where applicable.
 - Specialization:
-- Description: Specifies that the data is a string that contains the serialization in Json of an object.
+- Description: Specifies that the data is a string containing the JSON serialization of an object. SchemaURL and MetaDataURL can make the structure and field-level meaning discoverable.
 - Examples:
 ```dwis bhaJson
 JSonDataType:jsonType
+jsonType.SchemaURL = "https://example.org/schemas/bha-configuration-v1.json"
+jsonType.MetaDataURL = "https://example.org/metadata/bha-configuration-v1.json"
 DrillingDataPoint:bhaConfiguration
 bhaConfiguration BelongsToClass jsonType
 ```
 This example stores BHA configuration as JSON.
+## MeasurementCollection <!-- NOUN -->
+- Display name: Measurement Collection
+- Parent class: JSonDataType
+- Attributes:
+- Specialization:
+- Description: A JSON value containing a collection of measurement entries. The JSON Schema defines the entry structure, identifiers, engineering values, timestamps and quality fields. The collection can aggregate measurements from one or more measurement devices; use IsMeasuredBy once for each device represented by the collection when those devices are known in the semantic graph.
+- Examples:
+```dwis measurementCollection
+DynamicDrillingSignal:distributedWeightSignal
+MeasurementCollection:distributedWeight
+distributedWeight BelongsToClass DerivedMeasurement
+distributedWeight.SchemaURL = "https://example.org/schemas/statistical-measurement-collection-v1.json"
+distributedWeight HasDynamicValue distributedWeightSignal
+MeasurementDevice:lowerWeightSensor
+MeasurementDevice:upperWeightSensor
+distributedWeight IsMeasuredBy lowerWeightSensor
+distributedWeight IsMeasuredBy upperWeightSensor
+```
+This example describes one JSON value that aggregates measurements from two identified sensors.
+## AlongStringMeasurementCollection <!-- NOUN -->
+- Display name: Along String Measurement Collection
+- Parent class: MeasurementCollection
+- Attributes:
+- Specialization:
+- Description: A measurement collection whose entries identify their positions along a drill-string or bottom-hole assembly relative to a stated reference such as the bit. The JSON Schema and metadata must define the position field, its unit, sign convention and reference location. Distinct instrument and sensor instances remain explicit semantic nodes and can be associated with the collection through repeated IsMeasuredBy facts.
+- Examples:
+```dwis alongStringMeasurementCollection
+DynamicDrillingSignal:alongStringAnnulusPressureSignal
+AlongStringMeasurementCollection:alongStringAnnulusPressure
+alongStringAnnulusPressure BelongsToClass DerivedMeasurement
+alongStringAnnulusPressure.SchemaURL = "https://example.org/schemas/along-string-measurements-v1.json"
+alongStringAnnulusPressure.MetaDataURL = "https://example.org/metadata/along-string-measurements-v1.json"
+alongStringAnnulusPressure HasDynamicValue alongStringAnnulusPressureSignal
+alongStringAnnulusPressure IsOfMeasurableQuantity PressureDrilling
+MeasurementDevice:nearBitPressureSensor
+MeasurementDevice:upperBhaPressureSensor
+alongStringAnnulusPressure IsMeasuredBy nearBitPressureSensor
+alongStringAnnulusPressure IsMeasuredBy upperBhaPressureSensor
+```
+This example describes a JSON measurement collection whose entries carry pressure values and positions along the string.
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: DWISNoun
