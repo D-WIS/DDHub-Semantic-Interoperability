@@ -63,7 +63,17 @@ namespace DWIS.Vocabulary.OWL
         }
         public static RDFResource GetBaseTypeResource(string type)
         {
-            return new RDFResource("http://www.w3.org/2001/XMLSchema#" + type.ToLower());
+            // Ad hoc fix for a few special cases: bool/boolean, DateTime, int[]/intArray, and object.
+            // This is not a complete datatype mapping; other types retain the existing XSD fallback.
+            string normalizedType = type.Trim().ToLowerInvariant();
+            return normalizedType switch
+            {
+                "bool" or "boolean" => new RDFResource("http://www.w3.org/2001/XMLSchema#boolean"),
+                "datetime" => new RDFResource("http://www.w3.org/2001/XMLSchema#dateTime"),
+                "int[]" or "intarray" => new RDFResource(DDHubPrefix + "intArray"),
+                "object" => new RDFResource(DDHubPrefix + "object"),
+                _ => new RDFResource("http://www.w3.org/2001/XMLSchema#" + normalizedType)
+            };
         }
 
         private static void AddClass(Tree<Noun> currentTree, RDFResource parent, OWLOntology ontology)

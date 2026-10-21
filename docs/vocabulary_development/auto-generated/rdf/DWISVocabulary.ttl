@@ -4907,7 +4907,7 @@ ddhub:FixedIndices a owl:DatatypeProperty, owl:FunctionalProperty;
                    rdfs:comment """
 """@EN; 
                    rdfs:domain ddhub:EndPointMapping; 
-                   rdfs:range <http://www.w3.org/2001/XMLSchema#int[]>. 
+                   rdfs:range ddhub:intArray. 
 ddhub:Flange a owl:Class; 
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:Connection. 
@@ -8874,7 +8874,7 @@ ddhub:IsValid a owl:DatatypeProperty, owl:FunctionalProperty;
               rdfs:comment """
 """@EN; 
               rdfs:domain ddhub:DrillingDataPoint; 
-              rdfs:range xsd:bool. 
+              rdfs:range xsd:boolean. 
 ddhub:IsValidBy a owl:ObjectProperty; 
                 rdfs:comment """States that a validity condition applies to a data point or class of signals.
 """@EN; 
@@ -10961,7 +10961,7 @@ ddhub:LeftToRight a owl:DatatypeProperty, owl:FunctionalProperty;
                   rdfs:comment """Indicates whether the fluid can flow from the left branch to the right branch though the junction
 """@EN; 
                   rdfs:domain ddhub:HydraulicJunction; 
-                  rdfs:range xsd:bool. 
+                  rdfs:range xsd:boolean. 
 ddhub:LengthDirectionFrame a owl:Class; 
                            rdfs:comment """A reference frame that follows the length direction.
 """@EN; 
@@ -14764,7 +14764,7 @@ ddhub:PostiveUpward a owl:DatatypeProperty, owl:FunctionalProperty;
                     rdfs:comment """
 """@EN; 
                     rdfs:domain ddhub:OneDimensionalReferenceFrame; 
-                    rdfs:range xsd:bool. 
+                    rdfs:range xsd:boolean. 
 ddhub:PotableWater a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillingFluid. 
@@ -19222,7 +19222,7 @@ ddhub:RightToLeft a owl:DatatypeProperty, owl:FunctionalProperty;
                   rdfs:comment """Indicates whether the fluid can flow from the right branch to the left branch though the junction
 """@EN; 
                   rdfs:domain ddhub:HydraulicJunction; 
-                  rdfs:range xsd:bool. 
+                  rdfs:range xsd:boolean. 
 ddhub:RiserLiftPump a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:CirculationSystem. 
@@ -21226,12 +21226,12 @@ ddhub:TimeStampAcquisition a owl:DatatypeProperty, owl:FunctionalProperty;
                            rdfs:comment """this is a UTC date-time value at which the value has been acquired by the data acquisition system.
 """@EN; 
                            rdfs:domain ddhub:DynamicDrillingSignal; 
-                           rdfs:range xsd:datetime. 
+                           rdfs:range xsd:dateTime. 
 ddhub:TimeStampAtSource a owl:DatatypeProperty, owl:FunctionalProperty; 
                         rdfs:comment """this is a UTC date-time value corresponding to the time at which the value has been taken.
 """@EN; 
                         rdfs:domain ddhub:DynamicDrillingSignal; 
-                        rdfs:range xsd:datetime. 
+                        rdfs:range xsd:dateTime. 
 ddhub:TimeWindow a owl:Class, owl:DatatypeProperty, owl:FunctionalProperty; 
                  rdfs:comment """A time duration over which samples are selected or evaluated by a transformation.
 """@EN, """
@@ -21865,12 +21865,12 @@ ddhub:Value a owl:DatatypeProperty, owl:FunctionalProperty;
             rdfs:comment """
 """@EN; 
             rdfs:domain ddhub:DrillingSignal, ddhub:HydraulicConnectedState, ddhub:MechanicalElementState; 
-            rdfs:range xsd:object, xsd:bool. 
+            rdfs:range ddhub:object, xsd:boolean. 
 ddhub:ValuesIndices a owl:DatatypeProperty, owl:FunctionalProperty; 
                     rdfs:comment """
 """@EN; 
                     rdfs:domain ddhub:EndPointMapping; 
-                    rdfs:range <http://www.w3.org/2001/XMLSchema#int[]>. 
+                    rdfs:range ddhub:intArray. 
 ddhub:Variable a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:BladeShape. 
