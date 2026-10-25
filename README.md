@@ -75,3 +75,7 @@ updates only changed content, and verifies every source entry by reading the sit
 See [publisher setup and verification](docs/vocabulary_development/scripts/README.md).
 Concurrent glossary runs are serialized; failed writes and mismatches fail the workflow.
 Existing glossary URLs and unrelated entries are retained.
+
+## Active rig-job context
+
+ContextualData now defines RigJobDescription under WellBoreData, with IsRigJobForWellBore and IsRigJobOnRig relationships. Current identifies the active context; the OSDC JSON contract retains job dates, identifiers, depth ownership and canonical WGS84 depth. RigDescription remains the rig equipment description. Regenerate and verify all outputs together, then follow the dependency-ordered release runbook in Semantic-Server-Deploy/Documentation/RigJob-vocabulary-release.md, including OSDC DrillingProperties and both deploy workflows.

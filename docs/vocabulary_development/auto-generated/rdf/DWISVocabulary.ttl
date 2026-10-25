@@ -8654,6 +8654,18 @@ ddhub:IsResamplingInput a owl:ObjectProperty;
                         rdfs:domain ddhub:DrillingDataPoint; 
                         rdfs:range ddhub:Resampling; 
                         rdfs:subPropertyOf ddhub:IsTransformationInput. 
+ddhub:IsRigJobForWellBore a owl:ObjectProperty; 
+                          rdfs:comment """Identifies the wellbore to which the rig-job description belongs. Resource UUIDs and dates are provided by the referenced JSON contract.
+"""@EN; 
+                          rdfs:domain ddhub:RigJobDescription; 
+                          rdfs:range ddhub:WellBore; 
+                          rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRigJobOnRig a owl:ObjectProperty; 
+                    rdfs:comment """Identifies the rig assigned to the wellbore by the rig-job description. This association does not transfer ownership of job-specific properties to the rig description.
+"""@EN; 
+                    rdfs:domain ddhub:RigJobDescription; 
+                    rdfs:range ddhub:Rig; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsSensorOf a owl:ObjectProperty; 
                  rdfs:comment """Associates a physical sensor with its containing instrument assembly. Keep distinct sensor instances for distinct sensing elements or locations. This expresses physical ownership, not the location of the measured phenomenon or a data-processing subsystem.
 """@EN; 
@@ -19223,6 +19235,10 @@ ddhub:RightToLeft a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                   rdfs:domain ddhub:HydraulicJunction; 
                   rdfs:range xsd:bool. 
+ddhub:RigJobDescription a owl:Class; 
+                        rdfs:comment """Describes a dated association between a wellbore and a rig, including the job identifier, inclusive start, exclusive optional end, and job-specific drill-floor depth and its owner. This is distinct from the equipment characteristics in RigDescription. A Current description identifies the job active at the evaluation time; the authoritative JSON contract defines its fields and SI/WGS84 references.
+"""@EN; 
+                        rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:RiserLiftPump a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:CirculationSystem. 

@@ -49,6 +49,7 @@ WellBoreData <|-- GeoThermalDescription
 WellBoreData <|-- FormationStrengthDescription
 WellBoreData <|-- StratigraphyDescription
 ContextualData <|-- RigDescription
+WellBoreData <|-- RigJobDescription
 DWISNoun <|-- WellBoreDataCharateristic
 WellBoreDataCharateristic <|-- Planned
 WellBoreDataCharateristic <|-- Prognosed
@@ -2058,6 +2059,55 @@ WHERE {
 	?rigDescription_1 ddhub:IsCharacterizedBy ?current_1 .
 }
 ```
+## RigJobDescription <!-- NOUN -->
+- Display name: Rig Job Description
+- Parent class: [WellBoreData](./ContextualData.md#WellBoreData)
+- Description: 
+Describes a dated association between a wellbore and a rig, including the job identifier, inclusive start, exclusive optional end, and job-specific drill-floor depth and its owner. This is distinct from the equipment characteristics in RigDescription. A Current description identifies the job active at the evaluation time; the authoritative JSON contract defines its fields and SI/WGS84 references.
+- Definition set: ContextualData
+- Examples:
+```dwis currentRigJob
+DynamicDrillingSignal:rigJobSignal
+RigJobDescription:rigJobDescription
+rigJobDescription HasDynamicValue rigJobSignal
+WellBore:wellBore
+Rig:rig
+rigJobDescription IsRigJobForWellBore wellBore
+rigJobDescription IsRigJobOnRig rig
+Current:current
+rigJobDescription IsCharacterizedBy current
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigJobSignal] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rigJobDescription] -->|BelongsToClass| N0003(RigJobDescription) 
+	N0002[rigJobDescription] -->|HasDynamicValue| N0000[rigJobSignal] 
+	N0004[wellBore] -->|BelongsToClass| N0005(WellBore) 
+	N0006[rig] -->|BelongsToClass| N0007(Rig) 
+	N0002[rigJobDescription] -->|IsRigJobForWellBore| N0004[wellBore] 
+	N0002[rigJobDescription] -->|IsRigJobOnRig| N0006[rig] 
+	N0008[current] -->|BelongsToClass| N0009(Current) 
+	N0002[rigJobDescription] -->|IsCharacterizedBy| N0008[current] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?currentRigJob
+WHERE {
+	?rigJobSignal rdf:type ddhub:DynamicDrillingSignal .
+	?rigJobDescription rdf:type ddhub:RigJobDescription .
+	?rigJobDescription ddhub:HasDynamicValue ?rigJobSignal .
+	?wellBore rdf:type ddhub:WellBore .
+	?rig rdf:type ddhub:Rig .
+	?rigJobDescription ddhub:IsRigJobForWellBore ?wellBore .
+	?rigJobDescription ddhub:IsRigJobOnRig ?rig .
+	?current rdf:type ddhub:Current .
+	?rigJobDescription ddhub:IsCharacterizedBy ?current .
+}
+```
 ## WellBoreDataCharateristic <!-- NOUN -->
 - Display name: Wellbore Data Charateristic
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -2356,6 +2406,8 @@ DWISVerb <|-- HasOperationalStep
 DWISVerb <|-- IsAnActionOf
 DWISVerb <|-- IsATaskOf
 DWISVerb <|-- IsAContextOf
+DWISVerb <|-- IsRigJobForWellBore
+DWISVerb <|-- IsRigJobOnRig
 ```
 ## Relations
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
@@ -2367,6 +2419,8 @@ OperationalStep ||--o{ OperationalStep : HasOperationalStep
 ActionStep ||--o{ PhaseStep : IsAnActionOf
 TaskStep ||--o{ ActionStep : IsATaskOf
 Context ||--o{ TaskStep : IsAContextOf
+RigJobDescription ||--o{ WellBore : IsRigJobForWellBore
+RigJobDescription ||--o{ Rig : IsRigJobOnRig
 ```
 ## IsCharacterizedBy <!-- VERB -->
 - Display name: Is Characterized By
@@ -2724,5 +2778,71 @@ WHERE {
 	?actionStep_1 ddhub:IsAnActionOf ?phaseStep_1 .
 	?taskStep_1 ddhub:IsATaskOf ?actionStep_1 .
 	?contextStep_1 ddhub:IsAContextOf ?taskStep_1 .
+}
+```
+## IsRigJobForWellBore <!-- VERB -->
+- Display name: Is Rig Job For Wellbore
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [RigJobDescription](./ContextualData.md#RigJobDescription)
+- Object class: [WellBore](./ContextualData.md#WellBore)
+- Definition set: ContextualData
+- Description: 
+Identifies the wellbore to which the rig-job description belongs. Resource UUIDs and dates are provided by the referenced JSON contract.
+- Examples:
+```dwis rigJobWellBore
+RigJobDescription:job
+WellBore:wellBore
+job IsRigJobForWellBore wellBore
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[job] -->|BelongsToClass| N0001(RigJobDescription) 
+	N0002[wellBore] -->|BelongsToClass| N0003(WellBore) 
+	N0000[job] -->|IsRigJobForWellBore| N0002[wellBore] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigJobWellBore
+WHERE {
+	?job rdf:type ddhub:RigJobDescription .
+	?wellBore rdf:type ddhub:WellBore .
+	?job ddhub:IsRigJobForWellBore ?wellBore .
+}
+```
+## IsRigJobOnRig <!-- VERB -->
+- Display name: Is Rig Job On Rig
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [RigJobDescription](./ContextualData.md#RigJobDescription)
+- Object class: [Rig](./ContextualData.md#Rig)
+- Definition set: ContextualData
+- Description: 
+Identifies the rig assigned to the wellbore by the rig-job description. This association does not transfer ownership of job-specific properties to the rig description.
+- Examples:
+```dwis rigJobRig
+RigJobDescription:job
+Rig:rig
+job IsRigJobOnRig rig
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[job] -->|BelongsToClass| N0001(RigJobDescription) 
+	N0002[rig] -->|BelongsToClass| N0003(Rig) 
+	N0000[job] -->|IsRigJobOnRig| N0002[rig] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigJobRig
+WHERE {
+	?job rdf:type ddhub:RigJobDescription .
+	?rig rdf:type ddhub:Rig .
+	?job ddhub:IsRigJobOnRig ?rig .
 }
 ```

@@ -29,6 +29,11 @@ internal static class Program
         foreach (string name in new[] { "FlowMeasurementPrinciple", "AcousticMeasurementPrinciple", "ElectromagneticMeasurementPrinciple" })
             Require(source.Nouns.Single(n => n.Name == name).ParentNounName == "MeasurementPrinciple", "Principle parent " + name);
         Require(source.Verbs.Single(v => v.Name == "UsesMeasurementPrinciple").RangeNounName == "MeasurementPrinciple", "Principle range");
+        Require(source.Nouns.Single(n => n.Name == "RigJobDescription").ParentNounName == "WellBoreData", "RigJobDescription parent");
+        Require(source.Verbs.Single(v => v.Name == "IsRigJobForWellBore").DomainNounName == "RigJobDescription" &&
+            source.Verbs.Single(v => v.Name == "IsRigJobForWellBore").RangeNounName == "WellBore", "Rig job wellbore relationship");
+        Require(source.Verbs.Single(v => v.Name == "IsRigJobOnRig").DomainNounName == "RigJobDescription" &&
+            source.Verbs.Single(v => v.Name == "IsRigJobOnRig").RangeNounName == "Rig", "Rig job rig relationship");
         Require(Attributes.InstrumentModel_ModelIdentifier == "ModelIdentifier" && Attributes.InstrumentModel_ModelIdentifier_Type == "string", "Model identifier schema");
         Require(Attributes.InstrumentModel_ModelName == "ModelName" && Attributes.InstrumentModel_ModelName_Type == "string", "Model name schema");
         Require(Attributes.InstrumentInstance_SerialNumber == "SerialNumber" && Attributes.InstrumentInstance_SerialNumber_Type == "string", "Serial number schema");

@@ -771,6 +771,25 @@ rigDescription_1 IsProvidedTo contextualDataBuilder_1
 Current:current_1
 rigDescription_1 IsCharacterizedBy current_1
 ```
+## RigJobDescription <!-- NOUN -->
+- Display name: Rig Job Description
+- Parent class: WellBoreData
+- Attributes:
+- Specialization:
+- Description: Describes a dated association between a wellbore and a rig, including the job identifier, inclusive start, exclusive optional end, and job-specific drill-floor depth and its owner. This is distinct from the equipment characteristics in RigDescription. A Current description identifies the job active at the evaluation time; the authoritative JSON contract defines its fields and SI/WGS84 references.
+- Examples:
+```dwis currentRigJob
+DynamicDrillingSignal:rigJobSignal
+RigJobDescription:rigJobDescription
+rigJobDescription HasDynamicValue rigJobSignal
+WellBore:wellBore
+Rig:rig
+rigJobDescription IsRigJobForWellBore wellBore
+rigJobDescription IsRigJobOnRig rig
+Current:current
+rigJobDescription IsCharacterizedBy current
+```
+
 ## WellBoreDataCharateristic <!-- NOUN -->
 - Display name: Wellbore Data Charateristic
 - Parent class: DWISNoun
@@ -1006,4 +1025,30 @@ rigActionPlan_1 HasOperationalStep phaseStep_1
 actionStep_1 IsAnActionOf phaseStep_1
 taskStep_1 IsATaskOf actionStep_1
 contextStep_1 IsAContextOf taskStep_1
+```
+
+## IsRigJobForWellBore <!-- VERB -->
+- Display name: Is Rig Job For Wellbore
+- Parent verb: DWISVerb
+- Subject class: RigJobDescription
+- Object class: WellBore
+- Description: Identifies the wellbore to which the rig-job description belongs. Resource UUIDs and dates are provided by the referenced JSON contract.
+- Examples:
+```dwis rigJobWellBore
+RigJobDescription:job
+WellBore:wellBore
+job IsRigJobForWellBore wellBore
+```
+
+## IsRigJobOnRig <!-- VERB -->
+- Display name: Is Rig Job On Rig
+- Parent verb: DWISVerb
+- Subject class: RigJobDescription
+- Object class: Rig
+- Description: Identifies the rig assigned to the wellbore by the rig-job description. This association does not transfer ownership of job-specific properties to the rig description.
+- Examples:
+```dwis rigJobRig
+RigJobDescription:job
+Rig:rig
+job IsRigJobOnRig rig
 ```

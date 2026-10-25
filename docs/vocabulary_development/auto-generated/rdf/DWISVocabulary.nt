@@ -161,6 +161,8 @@
 <http://ddhub.no/FormationStrengthDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
+<http://ddhub.no/RigJobDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RigJobDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
 <http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/RigDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -5605,6 +5607,7 @@
 <http://ddhub.no/GeoThermalDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The geothermal data structure describes the temperature and thermophysical properties of the formation encountered\nalong the wellbore.\n"@EN .
 <http://ddhub.no/FormationStrengthDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The formation strength data structure describes the formation strength and internal friction angle of the formation\nencountered along the wellbore.\n"@EN .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The stratigraphy data structure describes the type of rock, the porosity, permeability and fluid saturations\nof the formation layers that are encountered along the wellbore.\n"@EN .
+<http://ddhub.no/RigJobDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes a dated association between a wellbore and a rig, including the job identifier, inclusive start, exclusive optional end, and job-specific drill-floor depth and its owner. This is distinct from the equipment characteristics in RigDescription. A Current description identifies the job active at the evaluation time; the authoritative JSON contract defines its fields and SI/WGS84 references.\n"@EN .
 <http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.\n"@EN .
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The rig data structure describes the characteristics of the drilling equipment and any additional equipment\nassociated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,... It is the detailed\ncounterpart of the Rig noun, which only identifies a rig.\n"@EN .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "The currently executed state of the rig action plan, stored in a JSon string.\n"@EN .
@@ -8716,6 +8719,14 @@
 <http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Context> .
 <http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/TaskStep> .
 <http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsRigJobForWellBore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRigJobForWellBore> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/RigJobDescription> .
+<http://ddhub.no/IsRigJobForWellBore> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/WellBore> .
+<http://ddhub.no/IsRigJobForWellBore> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsRigJobOnRig> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRigJobOnRig> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/RigJobDescription> .
+<http://ddhub.no/IsRigJobOnRig> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Rig> .
+<http://ddhub.no/IsRigJobOnRig> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
@@ -9482,6 +9493,8 @@
 <http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an action step to its parent phase step.\n"@EN .
 <http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an task step to its parent action step.\n"@EN .
 <http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate a context to its parent task step.\n"@EN .
+<http://ddhub.no/IsRigJobForWellBore> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the wellbore to which the rig-job description belongs. Resource UUIDs and dates are provided by the referenced JSON contract.\n"@EN .
+<http://ddhub.no/IsRigJobOnRig> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the rig assigned to the wellbore by the rig-job description. This association does not transfer ownership of job-specific properties to the rig description.\n"@EN .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.\n"@EN .
 <http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.\n"@EN .
 <http://ddhub.no/HasTemperatureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.\n"@EN .
